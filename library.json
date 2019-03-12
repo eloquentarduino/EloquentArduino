@@ -1,0 +1,16 @@
+{
+  "name": "EloquentArdunio",
+  "keywords": "",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agrimagsrl/EloquentArduino"
+  },
+  "version": "1.0.0",
+  "authors": {
+    "name": "Simone Salerno",
+    "url": "https://github.com/agrimagsrl"
+  },
+  "frameworks": "arduino",
+  "platforms": "*"
+}
