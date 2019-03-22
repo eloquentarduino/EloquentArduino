@@ -3,26 +3,9 @@
 #include "EloquentLogging.h"
 
 /**
- * 
- * Usage:
- * 
- *  OutputPin led(10);
- * 
- *  while (!led.isAtFullBrightness())
- *      led += 5
- *  while (!led.isOff())
- *      led -= 5
- * ==========================
- * InputPin button(1, DIGITAL);
- * 
- * button.setDebounceDelay(1000)
- * 
- * button.read()
- * if (button.debounced()) // if (button.rising())
- *      print("Pushed")
- * 
- * 
- * */
+ * A pin management library.
+ * Stop using analogWrite and the likes.
+ */
 
 
 namespace Eloquent {
@@ -48,7 +31,7 @@ namespace Eloquent {
     class Pin {
     public:
 
-        Pin(byte pin, PinType type, PinMode mode) {
+        Pin(uint8_t pin, PinType type, PinMode mode) {
             _pin = pin;
             _mode = mode;
             _type = type;
@@ -271,7 +254,7 @@ namespace Eloquent {
 
 
     protected:
-         byte _pin;
+         uint8_t _pin;
          uint16_t _prev;
          uint16_t _curr;
          PinMode _mode;
