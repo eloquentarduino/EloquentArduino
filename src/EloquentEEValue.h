@@ -7,9 +7,11 @@
 
 namespace Eloquent {
 
-  /**
-   * Manipulate values stored in EEPROM as native types
-   */
+    /**
+     * Sychornize a variable to the EEPROM, so it keeps its value
+     * even after reboots
+     * @tparam T
+     */
     template<class T>
     class eeValue {
     public:
@@ -32,8 +34,8 @@ namespace Eloquent {
         /**
          * 
          */
-        T operator+(const T value) {
-            set(_value + value);
+        T operator+(const T v) {
+            set(_value + v);
 
             return value();
         }
@@ -41,8 +43,8 @@ namespace Eloquent {
         /**
          * 
          */
-        T operator-(const T value) {
-            set(_value - value);
+        T operator-(const T v) {
+            set(_value - v);
 
             return value();
         }

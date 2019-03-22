@@ -29,8 +29,8 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="h" value="63" />
-          <entry key="ino" value="3" />
+          <entry key="h" value="75" />
+          <entry key="ino" value="16" />
           <entry key="json" value="3" />
           <entry key="txt" value="9" />
         </counts>
@@ -38,21 +38,21 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="3" />
-          <entry key="ObjectiveC" value="66" />
+          <entry key="ObjectiveC" value="91" />
           <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="h" value="3099" />
-          <entry key="ino" value="570" />
+          <entry key="h" value="3125" />
+          <entry key="ino" value="1644" />
           <entry key="txt" value="127" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Doxygen file" value="37" />
-          <entry key="ObjectiveC" value="3632" />
+          <entry key="Doxygen file" value="47" />
+          <entry key="ObjectiveC" value="4722" />
           <entry key="PLAIN_TEXT" value="127" />
         </counts>
       </usages-collector>
@@ -61,10 +61,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/examples/EloquentLoggingExample.ino">
+        <entry file="file://$PROJECT_DIR$/examples/EloquentEEValueExample.ino">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
-              <caret line="33" column="35" lean-forward="true" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+            <state relative-caret-position="420">
+              <caret line="48" column="55" selection-start-line="48" selection-start-column="55" selection-end-line="48" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -92,7 +92,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/keywords.txt" />
-        <option value="$PROJECT_DIR$/src/EloquentEEValue.h" />
         <option value="$PROJECT_DIR$/src/EloquentRainGauge.h" />
         <option value="$PROJECT_DIR$/src/EloquentCounter.h" />
         <option value="$PROJECT_DIR$/src/EloquentInterruptCounter.h" />
@@ -100,6 +99,8 @@
         <option value="$PROJECT_DIR$/src/EloquentPin.h" />
         <option value="$PROJECT_DIR$/src/EloquentLogging.h" />
         <option value="$PROJECT_DIR$/examples/EloquentLoggingExample.ino" />
+        <option value="$PROJECT_DIR$/src/EloquentEEValue.h" />
+        <option value="$PROJECT_DIR$/examples/EloquentEEValueExample.ino" />
       </list>
     </option>
   </component>
@@ -126,6 +127,11 @@
               <item name="EloquentArduino" type="b2602c69:ProjectViewProjectNode" />
               <item name="EloquentArduino" type="462c0819:PsiDirectoryNode" />
               <item name="__src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EloquentArduino" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EloquentArduino" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EloquentArduino" type="b2602c69:ProjectViewProjectNode" />
@@ -192,11 +198,6 @@
     <entry file="file://$PROJECT_DIR$/library.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentPicoFarad.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1435" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/keywords.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -204,24 +205,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentEEValue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/EloquentRainGauge.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="639">
           <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentInterruptCounter.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -257,13 +244,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentCounter.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/EloquentPin.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
@@ -278,10 +258,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/EloquentCounter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EloquentInterruptCounter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="896">
+          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EloquentPicoFarad.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1435" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/examples/EloquentLoggingExample.ino">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="33" column="35" lean-forward="true" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+        <state relative-caret-position="387">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EloquentEEValue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-817">
+          <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/EloquentEEValueExample.ino">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="48" column="55" selection-start-line="48" selection-start-column="55" selection-end-line="48" selection-end-column="55" />
         </state>
       </provider>
     </entry>
