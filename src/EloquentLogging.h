@@ -49,4 +49,4 @@
 #define log_info_unless(condition, msg)         log_info_if(!(condition), msg)
 #define log_debug_unless(condition, msg)        log_debug_if(!(condition), msg)
 
-#define var_dump(k, v) Serial.print(k); Serial.print(":\t"); Serial.println(v);
+#define var_dump(k, v) Serial.print("[DUMP] "); Serial.print(k); Serial.print(":\t"); Serial.println(v);

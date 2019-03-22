@@ -29,7 +29,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="h" value="27" />
+          <entry key="h" value="59" />
           <entry key="json" value="3" />
           <entry key="txt" value="9" />
         </counts>
@@ -37,20 +37,20 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="3" />
-          <entry key="ObjectiveC" value="27" />
+          <entry key="ObjectiveC" value="59" />
           <entry key="PLAIN_TEXT" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="h" value="1352" />
+          <entry key="h" value="2968" />
           <entry key="txt" value="127" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Doxygen file" value="10" />
-          <entry key="ObjectiveC" value="1342" />
+          <entry key="Doxygen file" value="19" />
+          <entry key="ObjectiveC" value="2949" />
           <entry key="PLAIN_TEXT" value="127" />
         </counts>
       </usages-collector>
@@ -59,10 +59,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/EloquentLogging.h">
+        <entry file="file://$PROJECT_DIR$/src/EloquentPin.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+            <state relative-caret-position="525">
+              <caret line="243" column="53" selection-start-line="243" selection-start-column="53" selection-end-line="243" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -74,6 +74,8 @@
       <find>warn</find>
       <find>(condition)</find>
       <find>if \(!\(condition\)\) \{ log_([a-z]+)\(msg\);\s+\}</find>
+      <find>PinType::</find>
+      <find>Digital</find>
     </findStrings>
     <replaceStrings>
       <replace>warning</replace>
@@ -92,6 +94,7 @@
         <option value="$PROJECT_DIR$/src/EloquentInterruptCounter.h" />
         <option value="$PROJECT_DIR$/__src/EloquentLogging.h" />
         <option value="$PROJECT_DIR$/src/EloquentLogging.h" />
+        <option value="$PROJECT_DIR$/src/EloquentPin.h" />
       </list>
     </option>
   </component>
@@ -135,6 +138,9 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -155,7 +161,7 @@
     <frame x="1984" y="-11" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2310757" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2430279" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -229,8 +235,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EloquentLogging.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        <state relative-caret-position="959">
+          <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__src/EloquentInterfaces.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-791" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__src/EloquentPin.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="41" column="6" lean-forward="true" selection-end-line="107" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__src/EloquentInputPin.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1337">
+          <caret line="68" column="9" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="68" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__src/EloquentOutputPin.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="196" column="9" lean-forward="true" selection-start-line="191" selection-start-column="8" selection-end-line="196" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/EloquentPin.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="243" column="53" selection-start-line="243" selection-start-column="53" selection-end-line="243" selection-end-column="53" />
         </state>
       </provider>
     </entry>
