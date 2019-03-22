@@ -9,21 +9,34 @@
 
 namespace Eloquent {
 
+
     class Counter {
     public:
         /**
          * Just an alias for `increment()`
          */
         Counter* operator++() {
-            return increment();
+            increment();
+
+            return this;
         }
         
         /**
          * Init the counter
          */
-        void begin() {
+        void begin(uint32_t initial = 0) {
             _start = millis();
-            _last  = _start; 
+            _last  = _start;
+            _count = initial;
+        }
+
+        /**
+         * Reset count to 0
+         */
+        void reset() {
+            _count = 0;
+            _start = millis();
+            _last  = _start;
         }
 
         /**
@@ -36,15 +49,13 @@ namespace Eloquent {
         /**
          * Increment the counter, if debounced 
          */
-        Counter* increment() {
+        void increment(uint32_t increment = 1) {
             uint32_t now = millis();
 
             if (now - _last >= _debounce) {
-                _count++;
+                _count += increment;
                 _last = now;
             }
-
-            return this;
         }
 
         /**

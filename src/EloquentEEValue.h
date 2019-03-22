@@ -82,7 +82,9 @@ namespace Eloquent {
         /**
          * Initialize value from EEPROM, if any
          */
-        void begin(const T defaultValue) {
+        void begin(const T defaultValue = 0) {
+            EEPROM.begin();
+
             // check the control byte
             // if present, load the stored value
             if (EEPROM.read(_address) == ELOQUENT_EEVALUE_CONTROL_BYTE) {
@@ -91,7 +93,7 @@ namespace Eloquent {
             // if not present, initialize to default
             else {
                 EEPROM.write(_address, ELOQUENT_EEVALUE_CONTROL_BYTE);
-                set(0);
+                set(defaultValue);
             }
         }
 
@@ -138,4 +140,15 @@ namespace Eloquent {
                 EEPROM.write(_address + 1 + i, *p++);
         }
     };
+
+
+    /**
+     * Some alias
+     */
+     typedef eeValue<uint8_t>  eeUint8;
+     typedef eeValue<uint16_t> eeUint16;
+     typedef eeValue<uint32_t> eeUint32;
+     typedef eeValue<int8_t>   eeInt8;
+     typedef eeValue<int16_t>  eeInt16;
+     typedef eeValue<int32_t>  eeInt32;
 }

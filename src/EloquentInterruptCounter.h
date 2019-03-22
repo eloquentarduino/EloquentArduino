@@ -5,8 +5,15 @@
 
 namespace Eloquent {
 
-    #define attachInterruptCounter(counter) attachInterrupt(counter.pin(),[]() { counter++; }, counter.mode());
+    /**
+     * Macro to attach interrupt for counter
+     */
+    #define attachInterruptCounter(counter) attachInterrupt(counter.pin(), []() { counter++; }, counter.mode());
 
+
+    /**
+     * Count the occurrences of an interrupt 
+     */
     class InterruptCounter : public Counter {
 
         public:
