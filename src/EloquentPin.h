@@ -19,14 +19,14 @@ namespace Eloquent {
     };
 
 
-    /** **/
+    /**
+     * Aliased type for INPUT, OUTPUT, INPUT_PULLUP
+     **/
     typedef uint8_t PinType;
 
 
     /**
-     * Class: Pin
      *
-     * Abstract class for pin manipulation
      */
     class Pin {
     public:
@@ -36,6 +36,100 @@ namespace Eloquent {
             _mode = mode;
             _type = type;
             _curr = _prev = 0;
+        }
+
+        /**
+         * Alias for `write`
+         * @param value
+         * @return
+         */
+        Pin& operator=(uint8_t value) {
+            write(value);
+
+            return *this;
+        }
+
+        /**
+         * Alias for `increment`
+         * @param value
+         * @return
+         */
+        Pin& operator+=(uint8_t value) {
+            increment(value);
+
+            return *this;
+        }
+
+        /**
+         * Alias for `decrement`
+         * @param value
+         * @return
+         */
+        Pin& operator-=(uint8_t value) {
+            decrement(value);
+
+            return *this;
+        }
+
+        /**
+         * Test pin value
+         * @param value
+         * @return
+         */
+        bool operator==(uint8_t value) {
+            return _curr == value;
+        }
+
+        /**
+         * Test pin value
+         * @param value
+         * @return
+         */
+        bool operator!=(uint8_t value) {
+            return _curr != value;
+        }
+
+        /**
+         * Test pin value
+         * @param value
+         * @return
+         */
+        bool operator<(uint8_t value) {
+            return _curr < value;
+        }
+
+        /**
+         * Test pin value
+         * @param value
+         * @return
+         */
+        bool operator<=(uint8_t value) {
+            return _curr <= value;
+        }
+
+        /**
+         * Test pin value
+         * @param value
+         * @return
+         */
+        bool operator>(uint8_t value) {
+            return _curr > value;
+        }
+
+        /**
+         * Test pin value
+         * @param value
+         * @return
+         */
+        bool operator>=(uint8_t value) {
+            return _curr >= value;
+        }
+
+        /**
+         * Init pin
+         */
+        void begin() {
+            pinMode(_pin, _type);
         }
 
         /**
@@ -112,6 +206,7 @@ namespace Eloquent {
          * Get pin value
          */
          uint16_t read() {
+             begin();
              log_warning_if(isOutput(), "Pin is set as output, you should not read from it")
 
              _prev = _curr;
@@ -125,6 +220,7 @@ namespace Eloquent {
           * @param value
           */
          void write(uint8_t value) {
+             begin();
              log_warning_if(isInput(), "Pin is set as input, you should not write to it")
 
             _prev = _curr;
@@ -165,11 +261,26 @@ namespace Eloquent {
          }
 
         /**
+         * Alias for `isOn`
+         * @return
+         */
+        bool isHigh() {
+            return isOn();
+        }
+
+        /**
          * Test if pin is off
          * @return
          */
         bool isOff() {
             return !isOn();
+        }
+
+        /**Alias for `isOff`
+          * @return
+          */
+        bool isLow() {
+            return isOff();
         }
 
         /**
