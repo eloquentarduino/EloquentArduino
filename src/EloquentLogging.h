@@ -20,7 +20,9 @@
 #define LOG_SEVERITY LOG_SEVERITY_DEBUG
 #endif
 
-#define __log(severity, severity_string, msg) if (severity <= LOG_SEVERITY) { Serial.print('['); Serial.print(severity_string); Serial.print("] "); Serial.println(msg); }
+#define __log(severity, severity_string, msg) if (severity <= LOG_SEVERITY) { \
+    Serial.print('('); Serial.print(__FILE__); Serial.print(':'); Serial.print(__LINE__); Serial.print(") "); \
+    Serial.print('['); Serial.print(severity_string); Serial.print("] "); Serial.println(msg); }
 
 #define log_emergency(msg)  __log(LOG_SEVERITY_EMERGENCY, "EMERGENCY", msg);
 #define log_alert(msg)      __log(LOG_SEVERITY_ALERT, "ALERT", msg);
@@ -50,3 +52,5 @@
 #define log_debug_unless(condition, msg)        log_debug_if(!(condition), msg)
 
 #define var_dump(k, v) if (LOG_SEVERITY >= LOG_SEVERITY_DEBUG) { Serial.print("[DUMP] "); Serial.print(k); Serial.print(":\t"); Serial.println(v); }
+#define assert(msg, condition) Serial.print((condition) ? "OK " : "ERR"); Serial.print('\t'); Serial.println(msg);
+#define assert_equal(msg, actual, truth) if ((actual) == (truth)) { Serial.print("OK \t"); Serial.println(msg); } else { Serial.print("ERR\t"); Serial.print(msg); Serial.print("\tGot "); Serial.print(actual); Serial.print(" instead of "); Serial.println(truth); }

@@ -215,6 +215,26 @@ namespace Eloquent {
              return _curr;
          }
 
+        /**
+        * Get pin average value
+        */
+        uint16_t readAverage(uint8_t numReadings, uint16_t interval) {
+            uint16_t accumulator = 0;
+
+            begin();
+            log_warning_if(isOutput(), "Pin is set as output, you should not read from it")
+
+            for (uint8_t i = 0; i < numReadings; i++) {
+                accumulator += isDigital() ? digitalRead(_pin) : analogRead(_pin);
+                delay(interval);
+            }
+
+            _prev = _curr;
+            _curr = isDigital() ? accumulator > numReadings / 2 : accumulator / numReadings;
+
+            return _curr;
+        }
+
          /**
           * Set pin value
           * @param value

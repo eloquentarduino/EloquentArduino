@@ -1,5 +1,5 @@
+#include <EloquentLogging.h>
 #include <EloquentPin.h>
-#define assert(msg, condition) Serial.print((condition) ? "OK " : "ERR"); Serial.print('\t'); Serial.println(msg);
 
 /**
  * The Pin class lets you manipulate a pin like a number.
