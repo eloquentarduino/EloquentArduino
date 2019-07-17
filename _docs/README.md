@@ -1,11 +1,15 @@
+---
+home: true
+---
+
 Eloquent Arduino is an attempt to bring sanity and most of all clarity in Arduino projects' code. 
 Arduino sells itself as a platform well suited for beginners, and it is for sure.
-Lots of non-tech people are able to bring their ideas to life thanks to this awesome platform. 
-Nevertheless, I often stumble on random bits of code over the internet that make me think about the 
+Lots of non-tech people are able to bring their ideas to life thanks to this awesome platform.
+Nevertheless, I often stumble on random bits of code over the internet that make me think about the
 quality of the projects people are producing.
 
 Even the Arduino official site is misleading in this sense, in my opinion, since it promotes a code style 
-really straighforward, but suited for almost-easy projects, with little logics and low complexity level. 
+really straighforward, but suited for toy projects, with little logics and low complexity level.
 When things start to get seriuous (and it soon happens as your project grows),
  it is quite inevitable that you'll come into trouble, since you will be mixing lots of variables, 
  flags and states, thus producing the (in)famous spaghetti code.

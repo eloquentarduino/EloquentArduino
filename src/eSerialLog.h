@@ -20,9 +20,13 @@
 #define LOG_SEVERITY LOG_SEVERITY_DEBUG
 #endif
 
+#ifdef LOG_DISABLED
+#define __log(severity, severity_string, msg)
+#else
 #define __log(severity, severity_string, msg) if (severity <= LOG_SEVERITY) { \
     Serial.print('('); Serial.print(__FILE__); Serial.print(':'); Serial.print(__LINE__); Serial.print(") "); \
     Serial.print('['); Serial.print(severity_string); Serial.print("] "); Serial.println(msg); }
+#endif
 
 #define log_emergency(msg)  __log(LOG_SEVERITY_EMERGENCY, "EMERGENCY", msg);
 #define log_alert(msg)      __log(LOG_SEVERITY_ALERT, "ALERT", msg);

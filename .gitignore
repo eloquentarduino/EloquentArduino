@@ -1,3 +1,5 @@
 __src
 __examples
+__ignore
 src/.vscode
+node_modules

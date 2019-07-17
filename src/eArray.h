@@ -1,7 +1,8 @@
 #pragma once
 
-#include "EloquentLogging.h"
+#include "eSerialLog.h"
 
+#define ARRAY_ITEM_NOT_FOUND 255
 
 namespace Eloquent {
 
@@ -12,7 +13,7 @@ namespace Eloquent {
     template<class T>    
     class Array {
         public: 
-            Array(uint8_t count, T* items) {
+            Array(uint16_t count, T* items) {
                 _startIndex = 0;
                 _count = count;
                 _items = items;
@@ -26,9 +27,9 @@ namespace Eloquent {
              * @return 
              */
             template<class U>
-            U reduce(U (*reducer)(U carry, T item), U initial) {
-                for (uint8_t i = _startIndex; i < _startIndex + _count; i++) {
-                    initial = reducer(initial, _items[i]);
+            U reduce(U (*reducer)(U carry, T item, uint16_t index), U initial) {
+                for (uint16_t i = _startIndex; i < _startIndex + _count; i++) {
+                    initial = reducer(initial, _items[i], i);
                 }
 
                 return initial;
@@ -40,7 +41,7 @@ namespace Eloquent {
              * @param count 
              * @return 
              */
-             void slice(int8_t startIndex, uint8_t count = 0) {
+             Array slice(int8_t startIndex, uint16_t count = 0) {
                 // allow for slice from the end
                 if (startIndex < 0) {
                     // you can't slice more items than current count
@@ -62,6 +63,8 @@ namespace Eloquent {
                     // count can't exceed available items
                     _count = min(count > 0 ? count : _count, _count - startIndex);
                 }
+
+                return *this;
             }
 
             /**
@@ -69,15 +72,34 @@ namespace Eloquent {
              * @param index 
              * @param item 
              */
-            void put(uint8_t index, T item) {
-                _items[index] = item;
+            void put(uint16_t index, T item) {
+                if (_startIndex + index > _count) {
+                    log_error("Array index out of bounds")
+                    return;
+                }
+
+                _items[_startIndex + index] = item;
+            }
+
+            /**
+             *
+             * @param needle
+             * @return
+             */
+            uint16_t indexOf(T needle) {
+                for (uint16_t i = _startIndex; i < _startIndex + _count; i++) {
+                    if (_items[i] == needle)
+                        return i;
+                }
+
+                return ARRAY_ITEM_NOT_FOUND;
             }
 
             /**
              * 
              * @return 
              */
-            uint8_t count() {
+            uint16_t count() {
                 return _count;
             }
 
@@ -86,7 +108,9 @@ namespace Eloquent {
              * @return 
              */
             T getMin() {
-                return reduce<T>([](T carry, T item) { return item < carry ? item : carry; }, _items[_startIndex]);
+                return reduce<T>(
+                        [](T carry, T item, uint16_t i) { return item < carry ? item : carry; },
+                        _items[_startIndex]);
             }
 
             /**
@@ -94,7 +118,9 @@ namespace Eloquent {
              * @return 
              */
             T getMax() {
-                return reduce<T>([](T carry, T item) { return item > carry ? item : carry; }, _items[_startIndex]);
+                return reduce<T>(
+                        [](T carry, T item, uint16_t i) { return item > carry ? item : carry; },
+                        _items[_startIndex]);
             }
 
             /**
@@ -102,7 +128,9 @@ namespace Eloquent {
              * @return 
              */
             T getSum() {
-                return reduce<T>([](T carry, T item) { return carry + item; }, _items[_startIndex]) - _items[_startIndex];
+                return reduce<T>(
+                        [](T carry, T item, uint16_t i) { return carry + item; },
+                        0);
             }
 
             /**
@@ -113,9 +141,25 @@ namespace Eloquent {
                 return (float) getSum() / count();
             }
 
+            /**
+             *
+             * @return
+             */
+            uint16_t argmin() {
+                return indexOf(getMin());
+            }
+
+            /**
+             *
+             * @return
+             */
+            uint16_t argmax() {
+                return indexOf(getMax());
+            }
+
         protected:
-            uint8_t _startIndex;
-            uint8_t _count;
+            uint16_t _startIndex;
+            uint16_t _count;
             T *_items;
     };
 }
