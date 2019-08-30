@@ -2,6 +2,8 @@
 
 #include <Adafruit_Fingerprint.h>
 #include "eUtils.h"
+#include "eTimeUtils.h"
+
 
 namespace Eloquent {
 
@@ -69,8 +71,8 @@ namespace Eloquent {
          *
          * @return
          */
-        bool convert(uint8_t i) {
-            return _finger.image2Tz(i) == FINGERPRINT_OK;
+        bool convert(uint8_t idx) {
+            return _finger.image2Tz(idx) == FINGERPRINT_OK;
         }
 
         /**
@@ -78,8 +80,8 @@ namespace Eloquent {
          * @param id
          * @return
          */
-        bool getModel(uint8_t id) {
-            return _finger.loadModel(id) == FINGERPRINT_OK && _finger.getModel() == FINGERPRINT_OK;
+        bool getModel(uint8_t idx) {
+            return _finger.loadModel(idx) == FINGERPRINT_OK && _finger.getModel() == FINGERPRINT_OK;
         }
 
         /**
@@ -89,32 +91,32 @@ namespace Eloquent {
          * @param maxNumber
          * @return
          */
-        uint16_t getModelChecksum(uint8_t id) {
-            int i = 0;
-            int checksum[4];
-
-            if (!id || !getModel(id))
-                return 0;
-
-            // set a timeoute
-            within(5 Seconds) {
-                while (i < 534) {
-                    if (_serial->available() && i++) {
-                        uint8_t c = read();
-
-                        // last 2 bytes of the 2 packets (267 bytes each) are the checksum
-                        if (i == 265) checksum[0] = c;
-                        else if (i == 266) checksum[1] = c;
-                        else if (i == 265 + 267) checksum[2] = c;
-                        else if (i == 266 + 267) checksum[3] = c;
-                    }
-
-                    check_within;
-                }
-            }
-
-            return checksum[0] + 256 * checksum[1];
-        }
+//        uint16_t getModelChecksum(uint8_t idx) {
+//            int i = 0;
+//            int checksum[4];
+//
+//            if (!idx || !getModel(idx))
+//                return 0;
+//
+//            // set a timeoute
+//            within(5 Seconds) {
+//                while (i < 534) {
+//                    if (_serial->available() && i++) {
+//                        uint8_t c = read();
+//
+//                        // last 2 bytes of the 2 packets (267 bytes each) are the checksum
+//                        if (i == 265) checksum[0] = c;
+//                        else if (i == 266) checksum[1] = c;
+//                        else if (i == 265 + 267) checksum[2] = c;
+//                        else if (i == 266 + 267) checksum[3] = c;
+//                    }
+//
+//                    check_within;
+//                }
+//            }
+//
+//            return checksum[0] + 256 * checksum[1];
+//        }
 
 
         /**
@@ -123,14 +125,14 @@ namespace Eloquent {
          * @param max
          * @return
          */
-        uint32_t getModelChecksum2(uint8_t id, uint16_t take = 256, uint16_t maxNumber = UINT16_MAX) {
+        uint32_t getModelChecksum2(uint8_t idx, uint16_t take = 256, uint16_t maxNumber = UINT16_MAX) {
             int i = 0;
             int32_t checksum = 0;
             uint8_t bytesReceived[534]; // 2 data packets
 
             memset(bytesReceived, 0xff, 534);
 
-            if (!getModel(id))
+            if (!getModel(idx))
                 return 0;
 
             within(5 Seconds) {
@@ -174,7 +176,7 @@ namespace Eloquent {
          * @param timeout
          * @return
          */
-        bool awaitFinger(uint32_t timeout = 300) {
+        bool awaitFinger(uint32_t timeout = 5000) {
             for (uint32_t until = millis() + timeout; millis() < until; delay(10)) {
                 if (getImage())
                     return true;
@@ -186,9 +188,11 @@ namespace Eloquent {
         /**
          *
          */
-        void awaitNoFinger() {
-            while (_finger.getImage() != FINGERPRINT_NOFINGER)
-                delay(10);
+        void awaitNoFinger(uint16_t timeout = 20000) {
+            for (uint32_t until = millis() + timeout; millis() < until; delay(10)) {
+                if (_finger.getImage() == FINGERPRINT_NOFINGER))
+                    return;
+            }
         }
 
         /**
@@ -209,15 +213,8 @@ namespace Eloquent {
          * @param id
          * @return
          */
-        bool newModel(uint8_t id) {
-            int response = _finger.createModel();
-
-            if (response != FINGERPRINT_OK)
-                return false;
-
-            response = _finger.storeModel(id);
-
-            return response == FINGERPRINT_OK;
+        bool newModel(uint8_t idx) {
+            return _finger.createModel() == FINGERPRINT_OK && _finger.storeModel(idx) == FINGERPRINT_OK;
         }
 
         /**
@@ -225,7 +222,7 @@ namespace Eloquent {
          * @param id
          * @return
          */
-        bool newModelProcedure(uint8_t id) {
+        bool newModelProcedure(uint8_t idx) {
             Serial.println("Put your finger on...");
 
             if (!awaitFinger(5000)) {
@@ -254,13 +251,22 @@ namespace Eloquent {
                 return false;
             }
 
-            Serial.println("Saving...");
+            Serial.print("Saving at index ");
+            Serial.println(idx);
 
-            return newModel(id);
+            return newModel(idx);
         }
 
     protected:
         Stream* _serial;
         Adafruit_Fingerprint _finger;
+
+
+        /**
+         *
+         */
+        bool exec(int (*command)(void)) {
+            return command() == FINGERPRINT_OK;
+        }
     };
 }

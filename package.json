@@ -6,8 +6,8 @@
   "author": "SimoneS93 <salernosimone.uni@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev _docs",
-    "docs:build": "vuepress build _docs"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "dependencies": {
     "vuepress": "^0.14.11"

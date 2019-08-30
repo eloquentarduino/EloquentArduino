@@ -3,3 +3,4 @@ __examples
 __ignore
 src/.vscode
 node_modules
+yarn-error.log

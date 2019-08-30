@@ -1,4 +1,4 @@
-# Serial Logging
+# Serial logging
 
 Serial debug is the most used method to test if our code is behaving as expected. It is not
 unusual to intermingle our code with lots of `Serial.print` statements to record what
@@ -12,7 +12,7 @@ sigle command. It even provides a construct to debug the value of a variable.
 
 ### Import
 
-```#include "EloquentLogging.h"```
+```#include "eSerialLog.h"```
 
 ### How to use
 
@@ -44,7 +44,7 @@ void setup() {
 }
 ```
 
-You can than control what messages get actually displayed with the constant `LOG_SEVERITY`,
+You can then control what messages get actually displayed with the constant `LOG_SEVERITY`,
 which defaults to `LOG_SEVERITY_DEBUG` (meaning all messages are displayed):
 
 ```cpp
@@ -57,5 +57,5 @@ void setup() {
 }
 ```
 
-You have `LOG_SEVERITY_SILENT` to completely silent the logging.
+You can define `LOG_SEVERITY_SILENT` to completely silent the logging.
 

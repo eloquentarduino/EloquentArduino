@@ -7,7 +7,7 @@
     <meta name="description" content="A collection of eloquent APIs for Arduino">
     
     
-    <link rel="preload" href="/EloquentArduino/assets/css/0.styles.4405d043.css" as="style"><link rel="preload" href="/EloquentArduino/assets/js/app.b48d131f.js" as="script"><link rel="preload" href="/EloquentArduino/assets/js/3.7c513c20.js" as="script"><link rel="prefetch" href="/EloquentArduino/assets/js/2.d8f505d4.js"><link rel="prefetch" href="/EloquentArduino/assets/js/4.facae2f5.js"><link rel="prefetch" href="/EloquentArduino/assets/js/5.04cdad08.js"><link rel="prefetch" href="/EloquentArduino/assets/js/6.109e905b.js"><link rel="prefetch" href="/EloquentArduino/assets/js/7.a0893bfc.js"><link rel="prefetch" href="/EloquentArduino/assets/js/8.2c93483e.js"><link rel="prefetch" href="/EloquentArduino/assets/js/9.d93e2f94.js">
+    <link rel="preload" href="/EloquentArduino/assets/css/0.styles.4405d043.css" as="style"><link rel="preload" href="/EloquentArduino/assets/js/app.5f476931.js" as="script"><link rel="preload" href="/EloquentArduino/assets/js/3.7c513c20.js" as="script"><link rel="prefetch" href="/EloquentArduino/assets/js/2.d8f505d4.js"><link rel="prefetch" href="/EloquentArduino/assets/js/4.facae2f5.js"><link rel="prefetch" href="/EloquentArduino/assets/js/5.04cdad08.js"><link rel="prefetch" href="/EloquentArduino/assets/js/6.109e905b.js"><link rel="prefetch" href="/EloquentArduino/assets/js/7.a0893bfc.js"><link rel="prefetch" href="/EloquentArduino/assets/js/8.2c93483e.js"><link rel="prefetch" href="/EloquentArduino/assets/js/9.d93e2f94.js">
     <link rel="stylesheet" href="/EloquentArduino/assets/css/0.styles.4405d043.css">
   </head>
   <body>
@@ -22,7 +22,7 @@ Serial<span class="token punctuation">.</span><span class="token function">print
 <span class="token punctuation">}</span>
 </code></pre></div><p>If the connection doesn't succeed, you're stuck in the loop. A proper way for handling
 such situations is with a timeout that gets you out of the loop with an error status
-so you can handle the failure.</p> <p><code>Await</code> is exactly this: a straightforward construct that eloquently does what it is named
+so you can handle the failure.</p> <p><code>await</code> is exactly this: a straightforward construct that eloquently does what it is named
 after: waits for a condition to become true until a timeout expires, returning true or false
 as a response.</p> <h3 id="import"><a href="#import" aria-hidden="true" class="header-anchor">#</a> Import</h3> <p><code>#include &quot;EloquentTimeUtils.h&quot;</code></p> <h3 id="how-to-use"><a href="#how-to-use" aria-hidden="true" class="header-anchor">#</a> How to use</h3> <div class="language-cpp extra-class"><pre class="language-cpp"><code><span class="token keyword">bool</span> wifiConnected <span class="token operator">=</span> <span class="token function">await</span><span class="token punctuation">(</span>WiFi<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> WL_CONNECTED<span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span>
 
@@ -35,6 +35,6 @@ will be false and you can gently fail.</p> <p>You can use it for any kind of che
 you can use the more verbose <code>await_with_interval</code>:</p> <div class="language-cpp extra-class"><pre class="language-cpp"><code><span class="token comment">// await WiFi for 10 seconds, check if connected every 500 millis</span>
 <span class="token keyword">bool</span> wifiConnected <span class="token operator">=</span> <span class="token function">await_with_interval</span><span class="token punctuation">(</span>WiFi<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> WL_CONNECTED<span class="token punctuation">,</span> <span class="token number">10</span> Seconds<span class="token punctuation">,</span> <span class="token number">500</span> Millis<span class="token punctuation">)</span>
 </code></pre></div></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
-    <script src="/EloquentArduino/assets/js/app.b48d131f.js" defer></script><script src="/EloquentArduino/assets/js/3.7c513c20.js" defer></script>
+    <script src="/EloquentArduino/assets/js/app.5f476931.js" defer></script><script src="/EloquentArduino/assets/js/3.7c513c20.js" defer></script>
   </body>
 </html>

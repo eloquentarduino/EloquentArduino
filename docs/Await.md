@@ -11,8 +11,7 @@ the response from a SoftwareSerial peripheral.
 Most often, you see example code of this kind:
 
 ```cpp
-Serial.print("Attempting to connect to open SSID: ");
-Serial.println(ssid);
+Serial.print("Attempting to connect to WiFi");
 
 while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
@@ -24,15 +23,19 @@ If the connection doesn't succeed, you're stuck in the loop. A proper way for ha
 such situations is with a timeout that gets you out of the loop with an error status
 so you can handle the failure.
 
-`Await` is exactly this: a straightforward construct that eloquently does what it is named
-after: waits for a condition to become true until a timeout expires, returning true or false
-as a response.
+`await` is exactly this: awaits for a condition to become true until a timeout expires,
+returning true or false as a response.
 
 ### Import
 
-```#include "EloquentTimeUtils.h"```
+```#include "eTimeUtils.h"```
 
 ### How to use
+
+It needs two arguments:
+
+ 1. the condition to wait for
+ 2. the timeout, in milliseconds
 
 ```cpp
 bool wifiConnected = await(WiFi.status() == WL_CONNECTED, 10000)
@@ -41,12 +44,7 @@ bool wifiConnected = await(WiFi.status() == WL_CONNECTED, 10000)
 bool wifiConnected = await(WiFi.status() == WL_CONNECTED, 10 Seconds)
 ```
 
-It needs two arguments:
-
- 1. the condition to wait for
- 2. the timeout, in milliseconds
-
-It means that it will await 10 seconds for the wifi to connect: on failure, `wifiConnected`
+The code above will await 10 seconds for the wifi to connect: on failure, `wifiConnected`
 will be false and you can gently fail.
 
 You can use it for any kind of check, like waiting for `Serial`

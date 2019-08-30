@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="false">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated />
   </component>
   <component name="CMakeSettings">
@@ -9,76 +9,54 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="" />
+    <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/SVM.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/ML/SVM.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/Await.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/Every.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/SerialLogging.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/css/0.styles.3e1d0bd1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/img/search.83621669.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/2.d8f505d4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/3.7c513c20.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/4.facae2f5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/5.19001f11.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/6.993e1634.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/7.d71211a0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/app.a75b5dd7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/Await.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/Every.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/Finite State Machine - Macros.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/Pin.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_docs/SerialLogging.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Await.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Await.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Every.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Every.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Finite State Machine - Macros.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Finite State Machine - Macros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Pin.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Pin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/SerialLogging.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/SerialLogging.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.b48d131f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eFingerprint.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eFingerprint.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eUtils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eWisol.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eWisol.h" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1366677444">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="45" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.4" value="35" />
-          <entry key="project.open.time.5" value="11" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="51" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="gitignore" value="1" />
-          <entry key="h" value="397" />
-          <entry key="ino" value="31" />
-          <entry key="js" value="1" />
-          <entry key="json" value="6" />
-          <entry key="md" value="32" />
-          <entry key="txt" value="9" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JSON" value="6" />
-          <entry key="ObjectiveC" value="428" />
-          <entry key="PLAIN_TEXT" value="43" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="h" value="27494" />
-          <entry key="ino" value="2758" />
-          <entry key="json" value="21" />
-          <entry key="md" value="6399" />
-          <entry key="txt" value="127" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Doxygen file" value="231" />
-          <entry key="JSON" value="21" />
-          <entry key="ObjectiveC" value="30021" />
-          <entry key="PLAIN_TEXT" value="6526" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -109,6 +87,7 @@
       <find>sensor</find>
       <find>uint8_t</find>
       <find>uint32_t</find>
+      <find>wind</find>
     </findStrings>
     <replaceStrings>
       <replace>warning</replace>
@@ -134,69 +113,17 @@
       <dir>$PROJECT_DIR$/src</dir>
     </dirStrings>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
       <list>
-        <option value="$PROJECT_DIR$/src/EloquentPin.h" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/docs/README.md" />
-        <option value="$PROJECT_DIR$/src/EloquentArray.h" />
-        <option value="$PROJECT_DIR$/docs/SerialLogging.md" />
-        <option value="$PROJECT_DIR$/docs/Await.md" />
-        <option value="$PROJECT_DIR$/docs/Every.md" />
-        <option value="$PROJECT_DIR$/src/IO/ReadsNumericValue.h" />
-        <option value="$PROJECT_DIR$/src/IO/EloquentSensor.h" />
-        <option value="$PROJECT_DIR$/src/IO/EloquentReadsMultipleNumericValues.h" />
-        <option value="$PROJECT_DIR$/src/IO/EloquentBME280.h" />
-        <option value="$PROJECT_DIR$/src/EloquentHasName.h" />
-        <option value="$PROJECT_DIR$/src/EloquentSensor.h" />
-        <option value="$PROJECT_DIR$/src/EloquentReadsMultipleNumericValues.h" />
-        <option value="$PROJECT_DIR$/src/EloquentBME280.h" />
-        <option value="$PROJECT_DIR$/src/EloquentSi7021.h" />
-        <option value="$PROJECT_DIR$/src/EloquentCapacitive32.h" />
-        <option value="$PROJECT_DIR$/src/EloquentEWMA.h" />
-        <option value="$PROJECT_DIR$/src/EloquentRTC.h" />
-        <option value="$PROJECT_DIR$/src/EloquentSimpleFSM.h" />
-        <option value="$PROJECT_DIR$/docs/Pin.md" />
-        <option value="$PROJECT_DIR$/src/EloquentAbstractPin.h" />
-        <option value="$PROJECT_DIR$/src/EloquentReadsNumericValue.h" />
-        <option value="$PROJECT_DIR$/src/Elo__NumericWritable.h" />
-        <option value="$PROJECT_DIR$/src/Elo__TransformsNumericValue.h" />
-        <option value="$PROJECT_DIR$/src/Elo__ReadsNumericValue.h" />
-        <option value="$PROJECT_DIR$/src/Elo__RemembersNumericValue.h" />
-        <option value="$PROJECT_DIR$/src/Elo__DigitalOutput.h" />
-        <option value="$PROJECT_DIR$/src/Elo__SensorWrapper.h" />
-        <option value="$PROJECT_DIR$/src/Elo__FSMMacro.h" />
-        <option value="$PROJECT_DIR$/src/Elo__WritesNumericValue.h" />
-        <option value="$PROJECT_DIR$/src/eReadsNumericValue.h" />
-        <option value="$PROJECT_DIR$/src/eReadsNumericValueWrapper.h" />
-        <option value="$PROJECT_DIR$/docs/Finite State Machine - Macros.md" />
-        <option value="$PROJECT_DIR$/src/eMacroFSM.h" />
-        <option value="$PROJECT_DIR$/src/EloquentTimeUtils.h" />
-        <option value="$PROJECT_DIR$/src/eDigitalOut.h" />
-        <option value="$PROJECT_DIR$/src/eKVStore.h" />
-        <option value="$PROJECT_DIR$/src/eEEPROMKVStore.h" />
-        <option value="$PROJECT_DIR$/src/eDS3231.h" />
-        <option value="$PROJECT_DIR$/src/eSerialLog.h" />
-        <option value="$PROJECT_DIR$/src/eRange.h" />
-        <option value="$PROJECT_DIR$/src/eArray.h" />
-        <option value="$PROJECT_DIR$/src/eSPIFFS.h" />
-        <option value="$PROJECT_DIR$/src/eWisol.h" />
-        <option value="$PROJECT_DIR$/src/eRollingWindow.h" />
-        <option value="$PROJECT_DIR$/src/Fingerprint.h" />
-        <option value="$PROJECT_DIR$/src/eUtils.h" />
-        <option value="$PROJECT_DIR$/src/eMacroFSM2.h" />
-        <option value="$PROJECT_DIR$/src/eFingerprint.h" />
-        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="232" />
-    <option name="y" value="-4" />
-    <option name="width" value="1299" />
-    <option name="height" value="764" />
-  </component>
+  <component name="ProjectId" id="1PhMVa0lHCRGCsGBGy6zv0Qs8Kf" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -212,49 +139,25 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="EloquentArduino" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EloquentArduino" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EloquentArduino" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EloquentArduino" type="462c0819:PsiDirectoryNode" />
-              <item name="_docs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EloquentArduino" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EloquentArduino" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/IO" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/IO" />
       <recent name="$PROJECT_DIR$/docs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/__ignore" />
+      <recent name="$PROJECT_DIR$/src/IO" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -269,361 +172,35 @@
       </list>
     </option>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21673307" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3275862" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2729885" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/examples/EloquentPinExample.ino">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EWMA.h" />
-    <entry file="file://$PROJECT_DIR$/src/EloquentWindVane.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-495">
-          <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentCounter.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-812">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentInterruptCounter.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentDallasArray.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md" />
-    <entry file="file://$PROJECT_DIR$/_docs/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/EloquentTimeUtilsExample.ino">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_docs/SerialLogging.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="12" selection-start-line="12" selection-end-line="14" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_docs/Every.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentHasName.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentReadsMultipleNumericValues.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentSi7021.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentSensor.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentCapacitive32.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentSmoothable.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentEWMA.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentRTC.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentSimpleFSM.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_docs/Pin.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentAbstractPin.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Foo/Bar.h" />
-    <entry file="file://$PROJECT_DIR$/src/EloquentReadsNumericValue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentPot.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1675">
-          <caret line="107" column="10" selection-start-line="107" selection-start-column="10" selection-end-line="107" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentPin.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8617">
-          <caret line="81" column="9" lean-forward="true" selection-start-line="74" selection-start-column="8" selection-end-line="81" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eTransformsNumericValue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elo__RemembersNumericValue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EloquentBME280.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elo__WritesNumericValue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eReadsNumericValue.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-336">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eReadsNumericValueWrapper.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_docs/Await.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_docs/Finite State Machine - Macros.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eDigitalOut.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eKVStore.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eEEPROMKVStore.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eDS3231.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eSerialLog.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-112">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eRange.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="56" column="22" lean-forward="true" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eSPIFFS.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eWisol.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eArray.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4155">
-          <caret line="157" column="13" lean-forward="true" selection-start-line="143" selection-start-column="12" selection-end-line="157" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eRollingWindow.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="20" column="56" lean-forward="true" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eMacroFSM.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eMacroFSM2.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/eFingerprint.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="115" column="50" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_docs/.vuepress/config.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="" />
+      <created>1566321898874</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566321898874</updated>
+      <workItem from="1566321902643" duration="1530000" />
+      <workItem from="1567184114824" duration="760000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

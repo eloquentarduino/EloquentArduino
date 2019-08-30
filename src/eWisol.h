@@ -122,7 +122,7 @@ namespace Eloquent {
         /**
          * Get response
          */
-        String read(uint16_t timeout = 5000) {
+        String read(uint16_t timeout = 10000) {
             uint32_t start = millis();
             String data = "";
 
@@ -167,7 +167,7 @@ namespace Eloquent {
         bool send(const void *data, uint8_t size, bool ack = false) {
             sendNoAck(data, size, ack);
 
-            return read().indexOf("OK") >= 0;
+            return read(20000).indexOf("OK") >= 0;
         }
 
 

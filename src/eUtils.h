@@ -1,11 +1,5 @@
 #pragma once
 
-#ifndef ELOQUENT_UTILS_NO_TIME_CONSTANTS
-    #define Second *1000
-    #define Seconds *1000
-	#define Millis
-#endif
-
 /**
  * Execute code periodically.
  * Stop using `millis`
@@ -61,15 +55,15 @@ bool retry(bool (*f)(), uint8_t retries) {
  * @param timeout
  * @return
  */
-bool await(bool (*f)(), uint32_t timeout) {
-	uint32_t start = millis();
-
-	while (millis() - start < timeout) {
-		if (f())
-			return true;
-
-		delay(10);
-	}
-
-	return false;
-}
+//bool await(bool (*f)(), uint32_t timeout) {
+//	uint32_t start = millis();
+//
+//	while (millis() - start < timeout) {
+//		if (f())
+//			return true;
+//
+//		delay(10);
+//	}
+//
+//	return false;
+//}
