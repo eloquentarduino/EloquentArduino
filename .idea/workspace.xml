@@ -10,44 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/SVM.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/ML/SVM.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/Await.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/Every.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/SerialLogging.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/css/0.styles.3e1d0bd1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/img/search.83621669.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/2.d8f505d4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/3.7c513c20.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/4.facae2f5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/5.19001f11.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/6.993e1634.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/7.d71211a0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/assets/js/app.a75b5dd7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/.vuepress/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/Await.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/Every.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/Finite State Machine - Macros.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/Pin.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_docs/SerialLogging.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Await.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Await.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Every.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Every.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Finite State Machine - Macros.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Finite State Machine - Macros.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Pin.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Pin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/SerialLogging.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/SerialLogging.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.b48d131f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eFingerprint.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eFingerprint.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eUtils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eWisol.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eWisol.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/ML/SVM.ino" beforeDir="false" afterPath="$PROJECT_DIR$/examples/ML/SVM.ino" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +147,7 @@
       <option name="presentableId" value="Default" />
       <updated>1566321898874</updated>
       <workItem from="1566321902643" duration="1530000" />
-      <workItem from="1567184114824" duration="760000" />
+      <workItem from="1567184114824" duration="1209000" />
     </task>
     <servers />
   </component>

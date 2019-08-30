@@ -9,6 +9,11 @@
  * This is useful with classic Arduino boards (UNO, Nano) which have 32kb of flash
  * and 2kb of RAM.
  *
+ * https://github.com/nok/sklearn-porter is a mature project in the same vain,
+ * if you need one.
+ * I looked at their output code to fix a bug in my implementation.
+ * Their approach, however, is not memory-efficient, since it stores all
+ * support vectors in memory.
  */
 
 #define DATASET_SIZE 30
