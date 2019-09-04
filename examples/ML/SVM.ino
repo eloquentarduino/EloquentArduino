@@ -8,12 +8,15 @@
  * to achieve a memory footprint of a few bytes.
  * This is useful with classic Arduino boards (UNO, Nano) which have 32kb of flash
  * and 2kb of RAM.
+ * And yes, it compiles on ATtiny85.
  *
  * https://github.com/nok/sklearn-porter is a mature project in the same vain,
  * if you need one.
  * I looked at their output code to fix a bug in my implementation.
  * Their approach, however, is not memory-efficient, since it stores all
  * support vectors in memory.
+ * This implementation needs M + (N * 2) doubles of memory, where
+ * M = number of support vectors and N = number of classes.
  */
 
 #define DATASET_SIZE 30
@@ -65,7 +68,7 @@ double dot(double *x, float *w, uint8_t len) {
  * SVM classification
  */
 int predict(double *x) {
-    float w[27];
+    float w[4];
 
     // reset variables
     for (uint8_t i = 0; i < 27; i++) kernels[i] = 0;

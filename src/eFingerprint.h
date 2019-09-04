@@ -190,7 +190,7 @@ namespace Eloquent {
          */
         void awaitNoFinger(uint16_t timeout = 20000) {
             for (uint32_t until = millis() + timeout; millis() < until; delay(10)) {
-                if (_finger.getImage() == FINGERPRINT_NOFINGER))
+                if (_finger.getImage() == FINGERPRINT_NOFINGER)
                     return;
             }
         }

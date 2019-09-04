@@ -10,8 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Await.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Await.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/ML/SVM.ino" beforeDir="false" afterPath="$PROJECT_DIR$/examples/ML/SVM.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eFingerprint.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eFingerprint.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +148,9 @@
       <option name="presentableId" value="Default" />
       <updated>1566321898874</updated>
       <workItem from="1566321902643" duration="1530000" />
-      <workItem from="1567184114824" duration="1209000" />
+      <workItem from="1567184114824" duration="1710000" />
+      <workItem from="1567242493089" duration="822000" />
+      <workItem from="1567247121187" duration="24000" />
     </task>
     <servers />
   </component>
