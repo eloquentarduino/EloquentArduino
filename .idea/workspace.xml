@@ -10,9 +10,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/blog/2019/11/Fruit Identification using Arduino and SVM.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/blog/2019/11/You may not need TensorFlow.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/blog/2019/11/_fruit-identification-pca.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/exampleInputStream.ino" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_src/eMatrixCollector.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cv/Comparator.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cv/MotionDetector.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cv/TiledImage.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structures/PackedBitArray.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structures/Queue.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/black_magic.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/print_utils.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/voltage.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eCV.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eDataStructures.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eDev.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/eIO.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/AnalogPinInputStream.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/ArrayInputStream.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/AssignableInputStream.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/AtLeast.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/Average.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/Baseline.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/Constrain.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/Derivative.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/EWMA.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/InputStream.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/Map.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/Round.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/InputStream/Transformer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/Pin/DigitalIn.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/Pin/DigitalOut.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/Pin/Pin.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/Spiffs/Dir.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/Spiffs/File.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Wisol.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Await.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Await.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eFingerprint.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eFingerprint.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Every.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Every.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Finite State Machine - Macros.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Finite State Machine - Macros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Pin.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Pin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/SerialLogging.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/SerialLogging.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/3.7c513c20.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.2c93483e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.d93e2f94.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.5f476931.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EloquentAbstractPin.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/EloquentAbstractPin.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EloquentBME280.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/EloquentBME280.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EloquentCapacitive32.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/EloquentCapacitive32.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_e.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/_e.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eArray.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structures/Array.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eCounter.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structures/Counter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eDS3231.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/DS3231.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eDigitalOut.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eEEPROMKVStore.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eEEPROMKVStore.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eFingerprint.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eFingerprint.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eKVStore.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eKVStore.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eMacroFSM.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eMacroFSM.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eMacroFSM2.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eMacroFSM2.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eMacroFSM3.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eMacroFSM3.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eRange.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eRange.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eReadsNumericValue.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eReadsNumericValueWrapper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eRollingWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eRollingWindow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eSPIFFS.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eSerialLog.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/serial_logging.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eTimeUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eTimeUtils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eTransformsNumericValue.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eUtils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eWind.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eWind.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eWisol.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eWisol.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,61 +92,6 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>warn</find>
-      <find>(condition)</find>
-      <find>if \(!\(condition\)\) \{ log_([a-z]+)\(msg\);\s+\}</find>
-      <find>PinType::</find>
-      <find>Digital</find>
-      <find>byte</find>
-      <find>isOn</find>
-      <find>*</find>
-      <find>retry</find>
-      <find />
-      <find>count</find>
-      <find>this-&gt;startIndex</find>
-      <find>return co</find>
-      <find>items</find>
-      <find>var_d</find>
-      <find>blink</find>
-      <find>NORTHE</find>
-      <find>turnOff</find>
-      <find>BME280_READINGS</find>
-      <find>_began</find>
-      <find>prev</find>
-      <find>_prev</find>
-      <find>NumericWritable</find>
-      <find>WritesNumber</find>
-      <find>sensor</find>
-      <find>uint8_t</find>
-      <find>uint32_t</find>
-      <find>wind</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>warning</replace>
-      <replace>_unless</replace>
-      <replace>(!(condition))</replace>
-      <replace>log_$1_if(!(condition), msg)</replace>
-      <replace>uint8_t</replace>
-      <replace>\t</replace>
-      <replace>_count</replace>
-      <replace>_startIndex</replace>
-      <replace>_items</replace>
-      <replace>NORTH_EAST</replace>
-      <replace>BME280_Readings</replace>
-      <replace>_first</replace>
-      <replace>_remember_value</replace>
-      <replace>WritesNumber</replace>
-      <replace>WritesNumericValue</replace>
-      <replace>native</replace>
-      <replace>uint16_t</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/__src</dir>
-      <dir>$PROJECT_DIR$/src</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -110,19 +125,23 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/blog/images" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/blog/images" />
+      <recent name="$PROJECT_DIR$/src/io/Pin" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/IO" />
       <recent name="$PROJECT_DIR$/docs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/__ignore" />
-      <recent name="$PROJECT_DIR$/src/IO" />
+      <recent name="$PROJECT_DIR$/docs/blog/2019/11" />
+      <recent name="$PROJECT_DIR$/src/dev" />
+      <recent name="$PROJECT_DIR$/src/io/Spiffs" />
+      <recent name="$PROJECT_DIR$/src/io/InputStream" />
+      <recent name="$PROJECT_DIR$/src/io/Pin" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -151,6 +170,38 @@
       <workItem from="1567184114824" duration="1710000" />
       <workItem from="1567242493089" duration="822000" />
       <workItem from="1567247121187" duration="24000" />
+      <workItem from="1567577934803" duration="849000" />
+      <workItem from="1568477609240" duration="8000" />
+      <workItem from="1569165278067" duration="57000" />
+      <workItem from="1569165347298" duration="5423000" />
+      <workItem from="1569496878417" duration="4295000" />
+      <workItem from="1569567796298" duration="1860000" />
+      <workItem from="1569771326744" duration="5527000" />
+      <workItem from="1569952296280" duration="4033000" />
+      <workItem from="1570288659048" duration="1872000" />
+      <workItem from="1570795307360" duration="59000" />
+      <workItem from="1570889916709" duration="3983000" />
+      <workItem from="1571148059050" duration="672000" />
+      <workItem from="1571677428973" duration="769000" />
+      <workItem from="1571746025490" duration="516000" />
+      <workItem from="1571768462390" duration="778000" />
+      <workItem from="1572271351840" duration="4922000" />
+      <workItem from="1572287687949" duration="3055000" />
+      <workItem from="1572459347737" duration="6674000" />
+      <workItem from="1572630737930" duration="6878000" />
+      <workItem from="1572714357142" duration="4673000" />
+      <workItem from="1572812131791" duration="737000" />
+      <workItem from="1572891332493" duration="1226000" />
+      <workItem from="1572951344759" duration="643000" />
+      <workItem from="1573317355008" duration="4325000" />
+      <workItem from="1573545753956" duration="1238000" />
+      <workItem from="1573663060931" duration="1489000" />
+      <workItem from="1573668058346" duration="1662000" />
+      <workItem from="1573669921121" duration="390000" />
+      <workItem from="1573670334988" duration="3058000" />
+      <workItem from="1573726264163" duration="617000" />
+      <workItem from="1573751687671" duration="2400000" />
+      <workItem from="1573893833682" duration="1991000" />
     </task>
     <servers />
   </component>
