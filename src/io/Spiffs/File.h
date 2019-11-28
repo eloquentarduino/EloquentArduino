@@ -10,6 +10,10 @@ namespace Eloquent {
          */
         class SpiffsFile {
          public:
+            /**
+             * Constructor
+             * @param filename
+             */
             SpiffsFile(String filename) :
                 _filename(filename),
                 _opened(false) {
@@ -25,7 +29,7 @@ namespace Eloquent {
             }
 
             /**
-             *
+             * Open file
              * @param mode
              * @return
              */
@@ -35,17 +39,18 @@ namespace Eloquent {
             }
 
             /**
-             *
+             * Close file
              */
             void close() {
-                _opened = false;
-
                 if (_opened)
                     _file.close();
+
+                _opened = false;
             }
 
             /**
-             * Dump content to stream
+             * Dump content to stream.
+             * Will close the file at the end
              * @param stream
              */
             void cat(Stream *stream) {
@@ -59,7 +64,7 @@ namespace Eloquent {
             }
 
             /**
-             *
+             * Delete file contents
              */
             void wipe() {
                 open("w");
@@ -108,14 +113,13 @@ namespace Eloquent {
             File _file;
 
             /**
-             *
+             * Actual print
              * @tparam T
              */
             template<typename T>
             SpiffsFile& print(T t) {
                 if (_opened) {
                     _file.print(t);
-                    _file.flush();
                 }
 
                 return *this;

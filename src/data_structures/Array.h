@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../dev/serial_logging.h"
+#include "../dev/logging.h"
 
 namespace Eloquent {
 

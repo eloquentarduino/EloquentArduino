@@ -10,71 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/AlgoliaSearchBox.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/DropdownLink.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/DropdownTransition.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/Home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/Layout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/NavLink.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/NavLinks.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/Navbar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/NotFound.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/Page.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/SWUpdatePopup.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/SearchBox.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/Sidebar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/SidebarButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/SidebarGroup.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/SidebarLink.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/styles/arrow.styl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/styles/code.styl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/styles/config.styl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/styles/custom-blocks.styl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/styles/mobile.styl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/styles/nprogress.styl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/styles/theme.styl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/styles/toc.styl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/styles/wrapper.styl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vuepress/theme/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Blog/series/Eloquent/IO/InputStream_1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Blog/series/Eloquent/IO/InputStream_3.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Blog/series/Eloquent/IO/Pin.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Blog/series/MicroML/Gesture Identification using Arduino and MicroML.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Blog/series/MicroML/Introducing MicroML.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Blog/series/MicroML/Voice Identification using Arduino and MicroML.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Blog/series/MicroML/_You may not need Neural Networks - Introducing MicroML.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Blog/series/MicroML/_gesture-identification-pca.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Blog/series/MicroML/_voice-identification-pca.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Documentation/IO/DigitalIn.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/Documentation/Pin.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/deepSleep/attiny13.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/io/Pin/AnalogIn.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Await.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Documentation/Await.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Every.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Documentation/Every.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Finite State Machine - Macros.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Documentation/Finite State Machine - Macros.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Pin.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Blog/series/Eloquent/IO/InputStream_2.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/SVM.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Documentation/SVM.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/SerialLogging.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Documentation/SerialLogging.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/2019/11/Fruit Identification using Arduino and SVM.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Blog/series/MicroML/Fruit Identification using Arduino and MicroML.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/2019/11/You may not need TensorFlow.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Blog/series/MicroML/_You may not need TensorFlow.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/2019/11/_fruit-identification-pca.svg" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Blog/series/MicroML/_fruit-identification-pca.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_src/EloquentBME280.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/EloquentBME280.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_structures/Array.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structures/Array.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_structures/Counter.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structures/Counter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/deepSleep/attiny13.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/print_utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/print_utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/voltage.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/voltage.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/serial_logging.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/logging.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/eDev.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eDev.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/InputStream/Average.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/InputStream/Average.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/InputStream/Baseline.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/InputStream/Baseline.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/InputStream/InputStream.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/InputStream/InputStream.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/InputStream/Transformer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/InputStream/Transformer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/Pin/DigitalIn.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/Pin/DigitalIn.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/Pin/DigitalOut.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/Pin/DigitalOut.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/Pin/Pin.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/Pin/Pin.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/Spiffs/Dir.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/Spiffs/Dir.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/Spiffs/File.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/Spiffs/File.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,19 +77,19 @@
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/io/Pin" />
+      <recent name="$PROJECT_DIR$/docs/.vuepress" />
+      <recent name="$PROJECT_DIR$/docs/Blog/series/Eloquent/IO" />
+      <recent name="$PROJECT_DIR$/node_modules/vuepress-theme-custom" />
+      <recent name="$PROJECT_DIR$/docs/blog/2019/11" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/docs/Blog/series/MicroML" />
       <recent name="$PROJECT_DIR$/docs/Documentation" />
       <recent name="$PROJECT_DIR$/src/dev/deepSleep" />
       <recent name="$PROJECT_DIR$/docs/blog/2019/11" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/docs/.vuepress" />
-      <recent name="$PROJECT_DIR$/docs/Blog/series/Eloquent/IO" />
-      <recent name="$PROJECT_DIR$/node_modules/vuepress-theme-custom" />
-      <recent name="$PROJECT_DIR$/docs/blog/2019/11" />
-      <recent name="$PROJECT_DIR$/docs/blog/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -221,7 +163,7 @@
       <workItem from="1574713581049" duration="6936000" />
       <workItem from="1574778184365" duration="692000" />
       <workItem from="1574880077839" duration="9168000" />
-      <workItem from="1574963881840" duration="600000" />
+      <workItem from="1574963881840" duration="1054000" />
     </task>
     <servers />
   </component>

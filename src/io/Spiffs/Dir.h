@@ -9,6 +9,10 @@ namespace Eloquent {
          */
         class Dir {
         public:
+            /**
+             * Constructor
+             * @param dirname
+             */
             Dir(String dirname) :
                     _dirname(dirname) {
 

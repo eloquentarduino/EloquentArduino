@@ -16,10 +16,6 @@
 #define LOG_SEVERITY_INFO 7
 #define LOG_SEVERITY_DEBUG 8
 
-#ifndef LOG_OUTPUT
-#define LOG_OUTPUT Serial
-#endif
-
 #ifndef LOG_SEVERITY
 #define LOG_SEVERITY LOG_SEVERITY_DEBUG
 #endif
@@ -27,6 +23,11 @@
 #if defined(LOG_DISABLED)
 #define __log(severity, severity_string, msg)
 #else
+    // if log is on, but no output set => default to Serial
+    #ifndef LOG_OUTPUT
+    #define LOG_OUTPUT Serial
+    #endif
+
 #define __log(severity, severity_string, msg) \
     if (severity <= LOG_SEVERITY) { \
         LOG_OUTPUT.print('('); \
@@ -37,7 +38,8 @@
         LOG_OUTPUT.print('['); \
         LOG_OUTPUT.print(severity_string); \
         LOG_OUTPUT.print("] "); \
-        LOG_OUTPUT.println(msg); \
+        LOG_OUTPUT.print(msg); \
+        LOG_OUTPUT.print('\n'); \
     }
 #endif
 

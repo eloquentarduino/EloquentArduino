@@ -4,7 +4,7 @@
 #include <Adafruit_BME280.h>
 #include "EloquentSensor.h"
 #include "EloquentReadsMultipleNumericValues.h"
-#include "../dev/serial_logging.h"
+#include "../dev/logging.h"
 
 namespace Eloquent {
 

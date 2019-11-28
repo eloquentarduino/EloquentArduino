@@ -2,7 +2,7 @@
 
 #if defined(Stream_h)
 
-#include "black_magic.h"
+//#include "black_magic.h"
 
 //#define serialprint(...) EVAL(MAP(Serial.print, __VA_ARGS__))
 
