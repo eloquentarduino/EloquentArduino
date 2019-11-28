@@ -32,7 +32,7 @@ namespace Eloquent {
                 if (_i > 5)
                     _average += value / (_samples - 5);
 
-                return sqrt(-1);
+                return NaN;
             }
         };
     }

@@ -1,8 +1,10 @@
 #pragma once
 
+#if defined(Stream_h)
+
 #include "black_magic.h"
 
-#define serialprint(...) EVAL(MAP(Serial.print, __VA_ARGS__))
+//#define serialprint(...) EVAL(MAP(Serial.print, __VA_ARGS__))
 
 //#define _FCSV(f, x) f.print(x); f.print('\t');
 //#define fcsv(f, ...) EVAL(MAP(Serial.print, __VA_ARGS__)) f.print('\n');
@@ -11,16 +13,12 @@
 
 
 /**
- * @private
- * @tparam T
+ * Stop condition
  * @param stream
- * @param v
  */
-template<typename T>
-void __csv(Stream* stream, T v) { stream->print(v); stream->print('\t'); }
+void fprint_all(Stream* stream) {}
 
 /**
- * @private
  * @tparam T
  * @tparam Args
  * @param stream
@@ -28,22 +26,51 @@ void __csv(Stream* stream, T v) { stream->print(v); stream->print('\t'); }
  * @param args
  */
 template<typename T, typename... Args>
-void __csv(Stream* stream, T first, Args... args) { __csv(stream, first); __csv(stream, args...); }
-
+void fprint_all(Stream* stream, T first, Args... args) {
+    stream->print(first);
+    fprint_all(stream, args...);
+}
 
 /**
- * CSV to Stream public interface
  * @tparam Args
- * @param stream
  * @param args
  */
 template<typename... Args>
-void fcsv(Stream* stream, Args... args) { __csv(stream, args...); stream->print('\n'); }
+void print_all(Args... args) {
+    fprint_all(&Serial, args...);
+}
+
 
 /**
- * CSV to Serial public interface
+ * Stop condition
+ * @param stream
+ */
+void fcsv(Stream* stream) {
+    stream->print('\n');
+}
+
+/**
+ *
+ * @tparam T
+ * @tparam Args
+ * @param stream
+ * @param first
+ * @param args
+ */
+template<typename T, typename... Args>
+void fcsv(Stream* stream, T first, Args... args) {
+    stream->print(first);
+    stream->print('\t');
+    fcsv(stream, args...);
+}
+
+/**
+ *
  * @tparam Args
  * @param args
  */
 template<typename... Args>
 void csv(Args... args) { fcsv(&Serial, args...); }
+
+
+#endif

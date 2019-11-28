@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef NaN
+#define NaN sqrt(-1)
+#endif
+
 namespace Eloquent {
     namespace InputStream {
 

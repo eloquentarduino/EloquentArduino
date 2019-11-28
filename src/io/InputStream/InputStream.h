@@ -2,11 +2,13 @@
 
 #include "Transformer.h"
 
+
+
 namespace Eloquent {
     namespace InputStream {
         /**
          * An abstract type for an input stream
-         * That is, a source that can generate values
+         * That is, a source that can generate values over time
          * @tparam T
          */
         class InputStream {
@@ -24,7 +26,7 @@ namespace Eloquent {
              */
             float read() {
                 if (!available()) {
-                    return (_value = _raw = sqrt(-1));
+                    return (_value = _raw = NaN);
                 }
 
                 _value = _raw = _read();

@@ -10,6 +10,9 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "vuepress": "^0.14.11"
+    "markdown-it-katex": "^2.0.3",
+    "vuepress": "^0.14.11",
+    "vuepress-plugin-mathjax": "^1.2.8",
+    "vuepress-sidebar-generator": "^0.1.1"
   }
 }

@@ -1,6 +1,5 @@
 #pragma once
 
-#if defined(_BV) && defined(ADCH)
 /**
  *
  * @param calibrationFactor
@@ -16,8 +15,10 @@ float readVcc(float calibrationFactor = 1) {
         ADMUX = _BV(MUX5) | _BV(MUX0);
     #elif defined (__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
         ADMUX = _BV(MUX3) | _BV(MUX2);
-    #else
+    #elif defined(_BV) && defined(REFS0) && defined(MUX1) && defined(MUX2) && defined(MUX3)
         ADMUX = _BV(REFS0) | _BV(MUX3) | _BV(MUX2) | _BV(MUX1);
+    #else
+        return 0;
     #endif
 
     delay(2); // Wait for Vref to settle
@@ -33,5 +34,3 @@ float readVcc(float calibrationFactor = 1) {
     // Calculate Vcc (in mV); 1125300 = 1.1*1023*1000
     return calibrationFactor * (1125300.0f / result);
 }
-
-#endif

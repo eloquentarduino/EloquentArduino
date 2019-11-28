@@ -32,7 +32,7 @@ namespace Eloquent {
                 _average += value / _count;
 
                 if (_counter != 0)
-                    return sqrt(-1);
+                    return NaN;
 
                 const float average = _average;
 

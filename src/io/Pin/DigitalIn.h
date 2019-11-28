@@ -1,3 +1,4 @@
+// @public
 #pragma once
 
 #include "Pin.h"
@@ -5,42 +6,62 @@
 namespace Eloquent {
     namespace Pin {
         /**
-         *
+         * A class to interact with digital input pins
          */
         class DigitalIn : public Pin {
         public:
-            DigitalIn(uint8_t pin) : Pin(pin) {
+            /**
+             * Contructor
+             * @param pin Pin number
+             */
+            DigitalIn(uint8_t pin) :
+                Pin(pin),
+                _positive(HIGH) {
 
             }
 
             /**
-             *
+             * Set pin mode to INPUT
              */
             void begin() {
                 pinMode(_pin, INPUT);
             }
 
             /**
-             *
+             * Set pin mode to INPUT_PULLUP
+             */
+            void pullup() {
+                pinMode(_pin, INPUT_PULLUP);
+            }
+
+            /**
+             * Active low means that the pin is `ON`
+             * when digitalRead returns LOW
              */
             void activeLow() {
-                _active_low = true;
+                _positive = LOW;
+            }
+
+            /**
+             * Read the pin
+             * @return whether the pin is ON
+             */
+            bool read() {
+                _value = digitalRead(_pin);
+
+                return isOn();
             }
 
             /**
              * Test if pin is ON
-             * @param read
              * @return
              */
-            bool isOn(bool read = true) {
-                if (read)
-                    _value = digitalRead(_pin);
-
-                return _active_low ? _value == LOW : _value == HIGH;
+            bool isOn() {
+                return _value == _positive;
             }
 
         protected:
-            bool _active_low = false;
+            bool _positive;
         };
     }
 }

@@ -11,7 +11,8 @@ namespace Eloquent {
         class SpiffsFile {
          public:
             SpiffsFile(String filename) :
-                _filename(filename) {
+                _filename(filename),
+                _opened(false) {
 
             }
 
@@ -29,6 +30,7 @@ namespace Eloquent {
              * @return
              */
             void open(const char* mode) {
+                _opened = true;
                 _file = SPIFFS.open(_filename, mode);
             }
 
@@ -36,7 +38,10 @@ namespace Eloquent {
              *
              */
             void close() {
-                _file.close();
+                _opened = false;
+
+                if (_opened)
+                    _file.close();
             }
 
             /**
@@ -44,13 +49,21 @@ namespace Eloquent {
              * @param stream
              */
             void cat(Stream *stream) {
-                File file = SPIFFS.open(_filename, "r");
+                close();
+                open("r");
 
-                if (file.available())
-                    while (file.available())
-                        stream->print((char) file.read());
+                while (_file.available())
+                    stream->print((char) _file.read());
 
-                file.close();
+                close();
+            }
+
+            /**
+             *
+             */
+            void wipe() {
+                open("w");
+                close();
             }
 
             /**
@@ -59,9 +72,16 @@ namespace Eloquent {
              * @return
              */
            SpiffsFile& print(char c) {
-                _file.print(c);
+               return print<char>(c);
+            }
 
-                return *this;
+            /**
+             * @see parent
+             * @param c
+             * @return
+             */
+            SpiffsFile& print(const char *string) {
+                return print<const char *>(string);
             }
 
             /**
@@ -70,9 +90,7 @@ namespace Eloquent {
              * @return
              */
            SpiffsFile& print(float number) {
-                _file.print(number);
-
-                return *this;
+                return print<float>(number);
             }
 
             /**
@@ -81,14 +99,27 @@ namespace Eloquent {
              * @return
              */
            SpiffsFile& print(String string) {
-                _file.print(string);
-
-                return *this;
+                return print<String>(string);
             }
 
          protected:
             const String _filename;
+            bool _opened;
             File _file;
+
+            /**
+             *
+             * @tparam T
+             */
+            template<typename T>
+            SpiffsFile& print(T t) {
+                if (_opened) {
+                    _file.print(t);
+                    _file.flush();
+                }
+
+                return *this;
+            }
          };
     }
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Pin | EloquentArduino</title>
+    <meta name="description" content="A collection of eloquent APIs for Arduino">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+  <script defer="true" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    
+    <link rel="preload" href="/EloquentArduino/assets/css/0.styles.a949dd8e.css" as="style"><link rel="preload" href="/EloquentArduino/assets/js/app.2d29deaa.js" as="script"><link rel="preload" href="/EloquentArduino/assets/js/9.2147c3b5.js" as="script"><link rel="prefetch" href="/EloquentArduino/assets/js/10.d18d8445.js"><link rel="prefetch" href="/EloquentArduino/assets/js/11.1fcda93d.js"><link rel="prefetch" href="/EloquentArduino/assets/js/12.71c3100b.js"><link rel="prefetch" href="/EloquentArduino/assets/js/13.28c14d81.js"><link rel="prefetch" href="/EloquentArduino/assets/js/14.e2b02aab.js"><link rel="prefetch" href="/EloquentArduino/assets/js/15.b6727a3b.js"><link rel="prefetch" href="/EloquentArduino/assets/js/16.c22cc59a.js"><link rel="prefetch" href="/EloquentArduino/assets/js/17.301f8078.js"><link rel="prefetch" href="/EloquentArduino/assets/js/18.9bfef7ce.js"><link rel="prefetch" href="/EloquentArduino/assets/js/19.7e08e6a1.js"><link rel="prefetch" href="/EloquentArduino/assets/js/2.c3c2ef99.js"><link rel="prefetch" href="/EloquentArduino/assets/js/20.86b3dfc4.js"><link rel="prefetch" href="/EloquentArduino/assets/js/21.5d82e070.js"><link rel="prefetch" href="/EloquentArduino/assets/js/3.aef08e8b.js"><link rel="prefetch" href="/EloquentArduino/assets/js/4.682a9bca.js"><link rel="prefetch" href="/EloquentArduino/assets/js/5.0d52884a.js"><link rel="prefetch" href="/EloquentArduino/assets/js/6.20135cc5.js"><link rel="prefetch" href="/EloquentArduino/assets/js/7.71090359.js"><link rel="prefetch" href="/EloquentArduino/assets/js/8.89bf04f1.js">
+    <link rel="stylesheet" href="/EloquentArduino/assets/css/0.styles.a949dd8e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/EloquentArduino/" class="home-link router-link-active"><!----> <span class="site-name">EloquentArduino</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/EloquentArduino/Blog.html" class="nav-link">Blog</a></div><div class="nav-item"><a href="/EloquentArduino/docs.html" class="nav-link">Docs</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/EloquentArduino/Blog.html" class="nav-link">Blog</a></div><div class="nav-item"><a href="/EloquentArduino/docs.html" class="nav-link">Docs</a></div> <!----></nav>  <!----> </div> <div class="page"> <div class="content"><h1 id="io-pin"><a href="#io-pin" aria-hidden="true" class="header-anchor">#</a> IO::Pin</h1> <p><code>Pin</code> is an abstract class for pin manipulation. You won't use it directly,
+but through its specialized implementations:</p> <ol><li>DigitalIn</li> <li>DigitalOut</li> <li>AnalogIn</li> <li>AnalogOut</li></ol> <p>These classes will let you stop writing horrible code like <code>digitalWrite(led, HIGH)</code>
+and do <code>led.turnOn()</code> instead, for example.</p> <p>You may be asking if a whole class to save a few keystrokes is whortwhile. I strongly
+believe it is!
+What's the use case, you may ask? Well, one emblematic example is that of the
+builtin led on the ESP8266: it is active low, so you write <code>digitalWrite(BUILTIN_LED, LOW)</code>
+to actually turn it on. Does it look intuitive? Does it look <em>eloquent</em>? Not really.
+<code>builtinLed.turnOn()</code> does, however. All you need to get it working is calling
+<code>builtinLed.activeLow()</code> in your setup to hide the reversed logic.</p> <p>Want another example? Toggle. If you need to toggle the current state of a digital
+output, you need an helper variable to keep track of the state (and remember to <strong>ALWAYS</strong>
+update that variable when you write to the output). With a class, the state is
+tightly bound to the instance, so you have a <a href="https://en.wikipedia.org/wiki/Single_source_of_truth" target="_blank" rel="noopener noreferrer">single source of truth<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>:
+<code>turnOn()</code>, <code>turnOff()</code> and <code>toggle()</code> will take care of updating the inner state accordingly.</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token comment">// BEFORE</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> LED 1</span>
+
+bool ledState <span class="token operator">=</span> true<span class="token punctuation">;</span>
+
+<span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">digitalWrite</span><span class="token punctuation">(</span>LED<span class="token punctuation">,</span> ledState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ledState <span class="token operator">=</span> <span class="token operator">!</span>ledState
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">// AFTER</span>
+DigitalOut <span class="token function">led</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    led<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Not convinced yet? What if you have an analog input and want to know if its valued
+changed by at least X from your latest reading? You would need an helper variable
+again. Now imagine if you have 5 analog inputs you want to track: you'll end up
+with 10 variables and of course you have again to <em>ALWAYS</em> keep both in sync.
+<code>AnalogIn</code>, conveniently, provides a <code>delta()</code> method that gives you the change
+from the previous reading and will always be in sync. Awesome!</p> <div class="language-c extra-class"><pre class="language-c"><code><span class="token comment">// BEFORE</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> INPUT1 A1</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> INPUT2 A2</span>
+
+uint16_t current1<span class="token punctuation">,</span> prev1<span class="token punctuation">;</span>
+uint16_t current2<span class="token punctuation">,</span> prev2<span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    prev1 <span class="token operator">=</span> current1<span class="token punctuation">;</span>
+    current1 <span class="token operator">=</span> <span class="token function">analogRead</span><span class="token punctuation">(</span>INPUT1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    prev2 <span class="token operator">=</span> current2<span class="token punctuation">;</span>
+    current2 <span class="token operator">=</span> <span class="token function">analogRead</span><span class="token punctuation">(</span>INPUT2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>current1 <span class="token operator">-</span> prev1<span class="token punctuation">)</span> <span class="token operator">&gt;</span> THRESHOLD<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+
+<span class="token comment">// AFTER</span>
+AnalogIn <span class="token function">input1</span><span class="token punctuation">(</span>A1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">input2</span><span class="token punctuation">(</span>A2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    input1<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    input2<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>input1<span class="token punctuation">.</span><span class="token function">absDelta</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> THRESHOLD<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Does it feel more <em>natural</em>?</p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/EloquentArduino/assets/js/app.2d29deaa.js" defer></script><script src="/EloquentArduino/assets/js/9.2147c3b5.js" defer></script>
+  </body>
+</html>

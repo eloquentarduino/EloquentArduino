@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SPIFFS.h>
+
 namespace Eloquent {
     namespace Spiffs {
         /**

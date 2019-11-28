@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>You may not need Neural Networks - Introducing MicroML | EloquentArduino</title>
+    <meta name="description" content="A collection of eloquent APIs for Arduino">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+  <script defer="true" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    
+    <link rel="preload" href="/EloquentArduino/assets/css/0.styles.a949dd8e.css" as="style"><link rel="preload" href="/EloquentArduino/assets/js/app.2d29deaa.js" as="script"><link rel="preload" href="/EloquentArduino/assets/js/11.1fcda93d.js" as="script"><link rel="prefetch" href="/EloquentArduino/assets/js/10.d18d8445.js"><link rel="prefetch" href="/EloquentArduino/assets/js/12.71c3100b.js"><link rel="prefetch" href="/EloquentArduino/assets/js/13.28c14d81.js"><link rel="prefetch" href="/EloquentArduino/assets/js/14.e2b02aab.js"><link rel="prefetch" href="/EloquentArduino/assets/js/15.b6727a3b.js"><link rel="prefetch" href="/EloquentArduino/assets/js/16.c22cc59a.js"><link rel="prefetch" href="/EloquentArduino/assets/js/17.301f8078.js"><link rel="prefetch" href="/EloquentArduino/assets/js/18.9bfef7ce.js"><link rel="prefetch" href="/EloquentArduino/assets/js/19.7e08e6a1.js"><link rel="prefetch" href="/EloquentArduino/assets/js/2.c3c2ef99.js"><link rel="prefetch" href="/EloquentArduino/assets/js/20.86b3dfc4.js"><link rel="prefetch" href="/EloquentArduino/assets/js/21.5d82e070.js"><link rel="prefetch" href="/EloquentArduino/assets/js/3.aef08e8b.js"><link rel="prefetch" href="/EloquentArduino/assets/js/4.682a9bca.js"><link rel="prefetch" href="/EloquentArduino/assets/js/5.0d52884a.js"><link rel="prefetch" href="/EloquentArduino/assets/js/6.20135cc5.js"><link rel="prefetch" href="/EloquentArduino/assets/js/7.71090359.js"><link rel="prefetch" href="/EloquentArduino/assets/js/8.89bf04f1.js"><link rel="prefetch" href="/EloquentArduino/assets/js/9.2147c3b5.js">
+    <link rel="stylesheet" href="/EloquentArduino/assets/css/0.styles.a949dd8e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/EloquentArduino/" class="home-link router-link-active"><!----> <span class="site-name">EloquentArduino</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/EloquentArduino/Blog.html" class="nav-link">Blog</a></div><div class="nav-item"><a href="/EloquentArduino/docs.html" class="nav-link">Docs</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/EloquentArduino/Blog.html" class="nav-link">Blog</a></div><div class="nav-item"><a href="/EloquentArduino/docs.html" class="nav-link">Docs</a></div> <!----></nav>  <!----> </div> <div class="page"> <div class="content"><p>In the last weeks Tensorflow Lite for microcontrollers has gained
+quite some momentum, thanks to its promise of delivering sophisticated
+AI to tiny computers. I'm astonished too, of course: I would have never
+tought it could be possible to run <a href="https://github.com/tensorflow/tensorflow/tree/ac960b6b5a3b8a4cd69d59e63914a971e9bac8e2/tensorflow/lite/experimental/micro/examples/person_detection" target="_blank" rel="noopener noreferrer">person detection<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+in a 256 Kb microcontroller!</p> <p>Still, I'm not a big fan of neural networks in general: I never used them for
+anything &quot;serious&quot;, so I didn't took the time to learn all the ins and outs.
+When I had to use them, I just added a bunch of hidden layers randomly and hoped
+for the best: sometimes it worked, sometimes not.
+They just don't caught me up, though I know they can do all sort of magic!</p> <p>The only thing I know for sure is they're not the most efficient algorithm
+in the machine learning world: space and time can grow quite fast adding
+more and more layers.
+This is why I was surprised to read about the Tensorflow effort to bring
+neural networks to microcontrollers: the first thing I thought was &quot;<em>WHY?</em>&quot;.
+There are much more efficient (in both terms of space and time) algorithms
+to perform machine learning, so why whould I opt for NN? Following their blog,
+it still remains a mystery for me.</p> <p>Anyway, when I read about NN on microcontrollers for the first time (August 2019),
+I listed all the algorithms I knew - not many - searching for alternatives to NN.
+This is the list of what I know (and used during my CS degree):</p> <ul><li>KNN</li> <li>decision tree</li> <li>random forest</li> <li>SVM</li> <li>naive bayes</li></ul> <p>Apart from decision tree, which is probably the simplest and fastest option if
+the data is well separable, I selected <strong>SVM</strong> as a good candidate, because
+of it's non-linearity, high dimensionality and support vectors encoding
+which seemed to be quite space efficient from my own point of view.</p> <p>Then I started searching the internet for attempts to bring SVMs to microcontrollers:
+I only found the <a href="https://github.com/nok/sklearn-porter" target="_blank" rel="noopener noreferrer">sklearn-porter<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> project,
+that actually does much more than SVM in C.
+So I tried fitting the Iris dataset to a linear SVC in scikit-learn and run the porter;
+it was a success: the sketch occupied 4642 bytes (15%) of program space and
+860 bytes (41%) of memory of an Arduino Nano (old generation) and
+the classifier predicted 20 test samples at 100% accuracy. Problem solved!</p> <p>Well, not exactly: I tried with another sample dataset (breast cancer) and I hit a wall.
+The sketch occupied 9964 bytes (32%) of program space and 7268 bytes (354%) of memory.</p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/EloquentArduino/assets/js/app.2d29deaa.js" defer></script><script src="/EloquentArduino/assets/js/11.1fcda93d.js" defer></script>
+  </body>
+</html>
