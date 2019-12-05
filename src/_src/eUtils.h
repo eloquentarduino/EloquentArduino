@@ -1,6 +1,9 @@
 #pragma once
 
 
+/**
+ * Exceute a piece of code once, in the loop
+ */
 #define once static bool __once = false; if (!__once && (__once = true))
 
 /**

@@ -2,7 +2,7 @@ module.exports = {
 	title: "EloquentArduino",
 	description: "A collection of eloquent APIs for Arduino",
 	base: "/EloquentArduino/",
-	// theme: 'custom',
+	theme: 'custom',
 	head: [
 		// ['link', {
 		// 	rel:"stylesheet",
@@ -42,6 +42,9 @@ module.exports = {
 			{text: 'Docs', link: '/docs'},
 		]
 	},
+	markdown: {
+		lineNumbers: true,
+	}
 	// markdown: {
 	// 	// options for markdown-it-anchor
 	// 	anchor: { permalink: false },

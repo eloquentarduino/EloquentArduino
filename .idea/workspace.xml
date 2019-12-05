@@ -10,13 +10,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/_src/EloquentBME280.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/EloquentBME280.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_structures/Array.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structures/Array.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_structures/Counter.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structures/Counter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/deepSleep/attiny13.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/print_utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/print_utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/serial_logging.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/logging.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eDev.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eDev.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/InputStream_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/InputStream_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/InputStream_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/InputStream_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/InputStream_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/InputStream_3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/Pin.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/Pin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Fruit Identification using Arduino and MicroML.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Fruit Identification using Arduino and MicroML.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Gesture Identification using Arduino and MicroML.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Gesture Identification using Arduino and MicroML.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Introducing MicroML.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Introducing MicroML.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Voice Identification using Arduino and MicroML.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Voice Identification using Arduino and MicroML.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/_You may not need Neural Networks - Introducing MicroML.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/_You may not need Neural Networks - Introducing MicroML.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/_You may not need TensorFlow.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/_You may not need TensorFlow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Await.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Await.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Every.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Every.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Finite State Machine - Macros.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Finite State Machine - Macros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/IO/DigitalIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/IO/DigitalIn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Pin.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Pin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/SVM.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/SVM.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/SerialLogging.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/SerialLogging.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/css/0.styles.a949dd8e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/7.71090359.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/7.71090359.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.89bf04f1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.2d29deaa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vuepress/theme/styles/config.styl" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/theme/styles/config.styl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Documentation/Pin.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_src/eUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eUtils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +70,18 @@
     <expand />
     <select />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
@@ -73,23 +112,24 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/io/Pin" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/Hexo/source/_posts" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/io/Pin" />
-      <recent name="$PROJECT_DIR$/docs/.vuepress" />
-      <recent name="$PROJECT_DIR$/docs/Blog/series/Eloquent/IO" />
-      <recent name="$PROJECT_DIR$/node_modules/vuepress-theme-custom" />
-      <recent name="$PROJECT_DIR$/docs/blog/2019/11" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/docs/Blog/series/MicroML" />
       <recent name="$PROJECT_DIR$/docs/Documentation" />
       <recent name="$PROJECT_DIR$/src/dev/deepSleep" />
       <recent name="$PROJECT_DIR$/docs/blog/2019/11" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/Hexo/source/_posts" />
+      <recent name="$PROJECT_DIR$/src/io/Pin" />
+      <recent name="$PROJECT_DIR$/docs/.vuepress" />
+      <recent name="$PROJECT_DIR$/docs/Blog/series/Eloquent/IO" />
+      <recent name="$PROJECT_DIR$/node_modules/vuepress-theme-custom" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -163,7 +203,14 @@
       <workItem from="1574713581049" duration="6936000" />
       <workItem from="1574778184365" duration="692000" />
       <workItem from="1574880077839" duration="9168000" />
-      <workItem from="1574963881840" duration="1054000" />
+      <workItem from="1574963881840" duration="3774000" />
+      <workItem from="1575041734396" duration="4924000" />
+      <workItem from="1575131543802" duration="2336000" />
+      <workItem from="1575134361674" duration="2511000" />
+      <workItem from="1575196925245" duration="2969000" />
+      <workItem from="1575208030563" duration="2374000" />
+      <workItem from="1575388897659" duration="1226000" />
+      <workItem from="1575482850379" duration="1564000" />
     </task>
     <servers />
   </component>

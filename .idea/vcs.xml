@@ -3,5 +3,9 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/docs/.vuepress/dist" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/docs/EloquentDocs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/docs/EloquentDocs/themes/base16" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/docs/Hexo/themes/autumn" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/docs/metalsmith" vcs="Git" />
   </component>
 </project>
