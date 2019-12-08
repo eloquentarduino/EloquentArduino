@@ -10,42 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structures/HashMap.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/InputStream_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/InputStream_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/InputStream_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/InputStream_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/InputStream_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/InputStream_3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/Pin.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/Eloquent/IO/Pin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Fruit Identification using Arduino and MicroML.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Fruit Identification using Arduino and MicroML.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Gesture Identification using Arduino and MicroML.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Gesture Identification using Arduino and MicroML.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Introducing MicroML.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Introducing MicroML.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Voice Identification using Arduino and MicroML.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/Voice Identification using Arduino and MicroML.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/_You may not need Neural Networks - Introducing MicroML.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/_You may not need Neural Networks - Introducing MicroML.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/_You may not need TensorFlow.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Blog/series/MicroML/_You may not need TensorFlow.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Await.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Await.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Every.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Every.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Finite State Machine - Macros.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Finite State Machine - Macros.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/IO/DigitalIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/IO/DigitalIn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Pin.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/Pin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/SVM.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/SVM.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/SerialLogging.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/Documentation/SerialLogging.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/css/0.styles.a949dd8e.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/7.71090359.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/7.71090359.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.89bf04f1.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.2d29deaa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/theme/styles/config.styl" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/theme/styles/config.styl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Documentation/Pin.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_src/eUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/_src/eUtils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dev/logging.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/logging.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eDataStructures.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eDataStructures.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -211,6 +185,8 @@
       <workItem from="1575208030563" duration="2374000" />
       <workItem from="1575388897659" duration="1226000" />
       <workItem from="1575482850379" duration="1564000" />
+      <workItem from="1575568245651" duration="2147000" />
+      <workItem from="1575803371045" duration="2403000" />
     </task>
     <servers />
   </component>

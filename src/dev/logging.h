@@ -6,6 +6,23 @@
  * Adheres to the severities of PSR-3 Logger Interface @ https://www.php-fig.org/psr/psr-3/
  */
 
+
+/**
+* 0 - LOG_LEVEL_SILENT     no output
+* 1 - LOG_LEVEL_FATAL      fatal errors
+* 2 - LOG_LEVEL_ERROR      all errors
+* 3 - LOG_LEVEL_WARNING    errors, and warnings
+* 4 - LOG_LEVEL_NOTICE     errors, warnings and notices
+* 5 - LOG_LEVEL_TRACE      errors, warnings, notices & traces
+* 6 - LOG_LEVEL_VERBOSE    all
+ */
+
+//#if LOG_SEVERITY >= LOG_SEVERITY_FATAL
+//#define log_fatal(message) Serial.print(...)
+//#else
+//#define log_fatal(message)
+//#endif
+
 #define LOG_SEVERITY_SILENT 0
 #define LOG_SEVERITY_EMERGENCY 1
 #define LOG_SEVERITY_ALERT 2
