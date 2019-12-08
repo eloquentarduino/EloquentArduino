@@ -10,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data_structures/HashMap.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" afterDir="false" />
@@ -18,8 +17,6 @@
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/logging.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/logging.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eDataStructures.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eDataStructures.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +183,7 @@
       <workItem from="1575388897659" duration="1226000" />
       <workItem from="1575482850379" duration="1564000" />
       <workItem from="1575568245651" duration="2147000" />
-      <workItem from="1575803371045" duration="2403000" />
+      <workItem from="1575803371045" duration="4421000" />
     </task>
     <servers />
   </component>

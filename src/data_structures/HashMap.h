@@ -25,6 +25,15 @@ namespace Eloquent {
              * @param value
              */
             void put(K key, V value) {
+                int16_t existing = indexOf(key);
+
+                // override existing
+                if (existing >= 0) {
+                    values[existing] = value;
+                    return;
+                }
+
+                // if buffer is full, skip
                 if (i >= size)
                     return;
 
@@ -67,6 +76,24 @@ namespace Eloquent {
              */
             V* getValues() {
                 return this->values;
+            }
+
+            /**
+             * Copy keys to given array
+             * @param dest
+             */
+            void saveKeysTo(K *dest) {
+                for (int j = 0; j < size; j++)
+                    dest[j] = (j < i) ? keys[j] : 0;
+            }
+
+            /**
+             * Copy values to given array
+             * @param dest
+             */
+            void saveValuesTo(V *dest) {
+                for (int j = 0; j < size; j++)
+                    dest[j] = (j < i) ? values[j] : 0;
             }
 
         protected:
