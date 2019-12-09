@@ -17,6 +17,7 @@
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/MicromlWifiIndoorPositioningExample/MicromlWifiIndoorPositioningExample.ino" beforeDir="false" afterPath="$PROJECT_DIR$/examples/MicromlWifiIndoorPositioningExample/MicromlWifiIndoorPositioningExample.ino" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +82,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/Hexo/source/_posts" />
@@ -183,7 +185,8 @@
       <workItem from="1575388897659" duration="1226000" />
       <workItem from="1575482850379" duration="1564000" />
       <workItem from="1575568245651" duration="2147000" />
-      <workItem from="1575803371045" duration="4421000" />
+      <workItem from="1575803371045" duration="5532000" />
+      <workItem from="1575912876627" duration="5677000" />
     </task>
     <servers />
   </component>

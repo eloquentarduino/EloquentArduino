@@ -6,7 +6,7 @@ using namespace Eloquent::DataStructures;
 
 
 /**
- * The HashMap needs 3 template arguments:
+ * The HashMap class needs 3 template arguments:
  *  1. key datatype
  *  2. value datatype
  *  3. max number of entries
@@ -65,7 +65,7 @@ test(prevents_overflow) {
 
 
 void setup() {
-    Serial.begin(9600);
+    Serial.begin(115200);
 }
 
 

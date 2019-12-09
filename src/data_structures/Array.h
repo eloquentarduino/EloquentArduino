@@ -1,92 +1,71 @@
 #pragma once
 
-#include "../dev/logging.h"
 
 namespace Eloquent {
+    namespace DataStructures {
 
-    /**
-     * Array manipulation made easy
-     * @tparam T 
-     */
-    template<class T>    
-    class Array {
-        public: 
-            Array(uint16_t count, T* items) {
-                _startIndex = 0;
-                _count = count;
-                _items = items;
-            }
-
+        /**
+         * Array manipulation made easy
+         * @tparam T
+         */
+        template<typename T, uint16_t size>
+        class Array {
+        public:
             /**
-             * Apply reduce function
-             * @tparam U 
-             * @param reducer 
-             * @param initial 
-             * @return 
+             * Constructor
+             * @param defaultValue
              */
-            template<class U>
-            U reduce(U (*reducer)(U carry, T item, uint16_t index), U initial) {
-                for (uint16_t i = _startIndex; i < _startIndex + _count; i++) {
-                    initial = reducer(initial, _items[i], i);
-                }
+            Array(T defaultValue) :
+                index(0),
+                zero(defaultValue) {
 
-                return initial;
+                for (int i = 0; i < size; i++)
+                    items[i] = zero;
             }
 
             /**
-             * Select a sub-part of the array
-             * @param startIndex 
-             * @param count 
-             * @return 
-             */
-             Array slice(int8_t startIndex, uint16_t count = 0) {
-                // allow for slice from the end
-                if (startIndex < 0) {
-                    // you can't slice more items than current count
-                    startIndex = constrain(startIndex, -_count, 0);
-                    _startIndex = (_count + _startIndex) - abs(startIndex);
-                    // count can't exceed available items
-                    _count = count > 0 ? min(count, abs(startIndex)) : abs(startIndex);
-
-                    return *this;
-                }
-
-                _startIndex += startIndex;
-
-                if (_startIndex >= _count) {
-                    library_log_warning("Slice is empty");
-                    _count = 0;
-                }
-                else {
-                    // count can't exceed available items
-                    _count = min(count > 0 ? count : _count, _count - startIndex);
-                }
-
-                return *this;
-            }
-
-            /**
-             * Set item value
+             * Access array with subscript syntax
              * @param index 
-             * @param item 
+             * @return 
              */
-            void put(uint16_t index, T item) {
-                if (_startIndex + index > _count) {
-                    library_log_error("Array index out of bounds")
-                    return;
-                }
-
-                _items[_startIndex + index] = item;
+            T& operator[](uint16_t index) {
+                return at(index);
             }
 
             /**
              *
+             */
+            T& at(uint16_t index) {
+                if (index < size)
+                    return items[index];
+
+                return zero;
+            }
+
+            /**
+             * Push element at the end of the array
+             * @param e
+             * @return whether the element was pushed
+             */
+            bool push(T e) {
+                if (index < size) {
+                    items[index++] = e;
+
+                    return true;
+                }
+
+                return false;
+            }
+
+            /**
+             * Get index of given value.
+             * Returns NaN if not found.
              * @param needle
              * @return
              */
             uint16_t indexOf(T needle) {
-                for (uint16_t i = _startIndex; i < _startIndex + _count; i++) {
-                    if (_items[i] == needle)
+                for (uint16_t i = 0; i < size; i++) {
+                    if (at(i) == needle)
                         return i;
                 }
 
@@ -94,49 +73,57 @@ namespace Eloquent {
             }
 
             /**
-             * 
-             * @return 
+             * Apply reduce function
+             * @tparam U
+             * @param reducer
+             * @param initial
+             * @return
              */
-            uint16_t count() {
-                return _count;
-            }
+            template<class U>
+            U reduce(U (*reducer)(U carry, T item, uint16_t index), U initial) {
+                for (uint16_t i = 0; i < size; i++) {
+                    initial = reducer(initial, at(i), i);
+                }
 
-            /**
-             * 
-             * @return 
-             */
-            T getMin() {
-                return reduce<T>(
-                        [](T carry, T item, uint16_t i) { return item < carry ? item : carry; },
-                        _items[_startIndex]);
-            }
-
-            /**
-             * 
-             * @return 
-             */
-            T getMax() {
-                return reduce<T>(
-                        [](T carry, T item, uint16_t i) { return item > carry ? item : carry; },
-                        _items[_startIndex]);
-            }
-
-            /**
-             * 
-             * @return 
-             */
-            T getSum() {
-                return reduce<T>(
-                        [](T carry, T item, uint16_t i) { return carry + item; },
-                        0);
+                return initial;
             }
 
             /**
              *
              * @return
              */
-            float getAvg() {
-                return (float) getSum() / count();
+            uint16_t length() {
+                return index;
+            }
+
+            /**
+             *
+             * @return
+             */
+            T getMin() {
+                return reduce<T>(
+                        [](T carry, T item, uint16_t i) { return item < carry ? item : carry; },
+                        at(0));
+            }
+
+            /**
+             *
+             * @return
+             */
+            T getMax() {
+                return reduce<T>(
+                        [](T carry, T item, uint16_t i) { return item > carry ? item : carry; },
+                        at(0));
+            }
+
+            /**
+             *
+             * @return
+             */
+            T getSum(T zero = 0) {
+                return reduce<T>(
+                        [](T carry, T item, uint16_t i) { return carry + item; },
+                        zero);
             }
 
             /**
@@ -156,8 +143,9 @@ namespace Eloquent {
             }
 
         protected:
-            uint16_t _startIndex;
-            uint16_t _count;
-            T *_items;
-    };
+            uint16_t index;
+            T& zero;
+            T items[size];
+        };
+    }
 }
