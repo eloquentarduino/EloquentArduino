@@ -10,6 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/examples/MicromlMorseIdentificationExample/MicromlMorseIdentificationExample.ino" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/MicromlMorseIdentificationExample/classify.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/MicromlMorseIdentificationExample/classify_noserial.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/MicromlMorseIdentificationExample/record.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" afterDir="false" />
@@ -17,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/MicromlWifiIndoorPositioningExample/MicromlWifiIndoorPositioningExample.ino" beforeDir="false" afterPath="$PROJECT_DIR$/examples/MicromlWifiIndoorPositioningExample/MicromlWifiIndoorPositioningExample.ino" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,24 +88,24 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/Hexo/source/_posts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/examples/MicromlMorseIdentificationExample" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples/MicromlMorseIdentificationExample" />
+      <recent name="$PROJECT_DIR$/docs/Hexo/source/_posts" />
+      <recent name="$PROJECT_DIR$/src/io/Pin" />
+      <recent name="$PROJECT_DIR$/docs/.vuepress" />
+      <recent name="$PROJECT_DIR$/docs/Blog/series/Eloquent/IO" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/docs/Blog/series/MicroML" />
       <recent name="$PROJECT_DIR$/docs/Documentation" />
       <recent name="$PROJECT_DIR$/src/dev/deepSleep" />
       <recent name="$PROJECT_DIR$/docs/blog/2019/11" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/docs/Hexo/source/_posts" />
-      <recent name="$PROJECT_DIR$/src/io/Pin" />
-      <recent name="$PROJECT_DIR$/docs/.vuepress" />
-      <recent name="$PROJECT_DIR$/docs/Blog/series/Eloquent/IO" />
-      <recent name="$PROJECT_DIR$/node_modules/vuepress-theme-custom" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -186,7 +189,8 @@
       <workItem from="1575482850379" duration="1564000" />
       <workItem from="1575568245651" duration="2147000" />
       <workItem from="1575803371045" duration="5532000" />
-      <workItem from="1575912876627" duration="5677000" />
+      <workItem from="1575912876627" duration="6600000" />
+      <workItem from="1576408429261" duration="1388000" />
     </task>
     <servers />
   </component>
