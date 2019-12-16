@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/examples/MicromlColorIdentificationExample/MicromlColorIdentificationExample.ino" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" afterDir="false" />
@@ -188,6 +189,7 @@
       <workItem from="1575912876627" duration="6600000" />
       <workItem from="1576408429261" duration="1886000" />
       <workItem from="1576420001425" duration="1999000" />
+      <workItem from="1576523162204" duration="1536000" />
     </task>
     <servers />
   </component>
