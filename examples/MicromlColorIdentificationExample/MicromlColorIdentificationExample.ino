@@ -1,6 +1,6 @@
 // uncomment when you have a model.h
 // to tun the classification
-//#define CLASSIFY
+// #define CLASSIFY
 
 #define S2 2
 #define S3 3
