@@ -31,7 +31,7 @@ namespace Eloquent {
              * @param value
              * @return the written value
              */
-            uint16_t write(uint16_t value) {
+            uint8_t write(uint8_t value) {
                 _value = analogWrite(value);
 
                 return this->value();

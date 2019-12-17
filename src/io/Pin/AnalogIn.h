@@ -54,6 +54,14 @@ namespace Eloquent {
                 return _value - _prev;
             }
 
+            /**
+             * Get absolute value of delta()
+             * @return
+             */
+            uint16_t absDelta() {
+                return abs(delta());
+            }
+
         protected:
             uint16_t _prev;
         };

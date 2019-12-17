@@ -47,6 +47,7 @@ namespace Eloquent {
              * @return whether the pin is ON
              */
             bool read() {
+                _prev = isOn();
                 _value = digitalRead(_pin);
 
                 return isOn();
@@ -60,8 +61,25 @@ namespace Eloquent {
                 return _value == _positive;
             }
 
+            /**
+             * Test if pin is OFF
+             * @return
+             */
+            bool isOff() {
+                return !isOn();
+            }
+
+            /**
+             * Test if the value changed from the last read
+             * @return
+             */
+            bool changed() {
+                return _prev != isOn();
+            }
+
         protected:
             bool _positive;
+            bool _prev;
         };
     }
 }
