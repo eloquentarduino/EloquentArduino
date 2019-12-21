@@ -32,7 +32,8 @@ namespace Eloquent {
              * @return the written value
              */
             uint8_t write(uint8_t value) {
-                _value = analogWrite(value);
+                _value = value;
+                analogWrite(_pin, value);
 
                 return this->value();
             }

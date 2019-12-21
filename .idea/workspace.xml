@@ -10,9 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/MicromlGestureIdentificationExample/MicromlGestureIdentificationExample.ino" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/MicromlGestureIdentificationExample/imu.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/7.71090359.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/7.71090359.js" afterDir="false" />
@@ -194,6 +191,7 @@
       <workItem from="1576534326987" duration="174000" />
       <workItem from="1576597761556" duration="2861000" />
       <workItem from="1576775167748" duration="7067000" />
+      <workItem from="1576784878513" duration="269000" />
     </task>
     <servers />
   </component>
