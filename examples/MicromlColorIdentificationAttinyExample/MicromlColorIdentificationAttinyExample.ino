@@ -1,21 +1,21 @@
-// On the Attiny we can only do classification
-// since there's no serial
+// On Attiny we can only do classification
+// since there's no Serial
+// We'll light a led based on the detected color
 
-#include "model_attiny.h"
+#include "model.h"
 
-
-#define LED 0
 #define S2 2
 #define S3 3
 #define sensorOut 4
+#define LED 0
 
 double features[3];
+
 
 void setup() {
     pinMode(S2, OUTPUT);
     pinMode(S3, OUTPUT);
     pinMode(sensorOut, INPUT);
-    pinMode(LED, OUTPUT);
 }
 
 void loop() {
@@ -39,5 +39,10 @@ void readRGB() {
 }
 
 void classify() {
-    analogWrite(LED, classIdxToName(predict(features)));
+    for (uint8_t times = predict(features) + 1; times > 0; times--) {
+        digitalWrite(LED, HIGH);
+        delay(10);
+        digitalWrite(LED, LOW);
+        delay(10);
+    }
 }
