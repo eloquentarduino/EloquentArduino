@@ -1,26 +1,35 @@
-// On the Attiny we can only do classification
-// since there's no serial
+// uncomment when you have a model.h
+// to tun the classification
+// #define CLASSIFY
 
-#include "model_attiny.h"
-
-
-#define LED 0
 #define S2 2
 #define S3 3
 #define sensorOut 4
 
 double features[3];
 
+#if defined(CLASSIFY)
+#include "model.h"
+
+    void classify() {
+        Serial.print("Detected color: ");
+        Serial.println(classIdxToName(predict(features)));
+    }
+#endif
+
 void setup() {
+    Serial.begin(115200);
     pinMode(S2, OUTPUT);
     pinMode(S3, OUTPUT);
     pinMode(sensorOut, INPUT);
-    pinMode(LED, OUTPUT);
 }
 
 void loop() {
     readRGB();
+    printFeatures();
+#if defined(CLASSIFY)
     classify();
+#endif
     delay(100);
 }
 
@@ -38,6 +47,11 @@ void readRGB() {
     features[2] = readComponent(LOW, HIGH);
 }
 
-void classify() {
-    analogWrite(LED, classIdxToName(predict(features)));
+void printFeatures() {
+    const uint16_t numFeatures = sizeof(features) / sizeof(double);
+
+    for (int i = 0; i < numFeatures; i++) {
+        Serial.print(features[i]);
+        Serial.print(i == numFeatures - 1 ? '\n' : ',');
+    }
 }

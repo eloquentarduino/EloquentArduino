@@ -39,7 +39,12 @@ void readRGB() {
 }
 
 void classify() {
-    for (uint8_t times = predict(features) + 1; times > 0; times--) {
+    uint8_t classIdx = predict(features);
+
+    if (classIdx == 0)
+        return;
+
+    for (uint8_t i = 0; i < classIdx; i++) {
         digitalWrite(LED, HIGH);
         delay(10);
         digitalWrite(LED, LOW);

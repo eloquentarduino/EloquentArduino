@@ -3,3 +3,4 @@
 #include "data_structures/HashMap.h"
 #include "data_structures/PackedBitArray.h"
 #include "data_structures/Queue.h"
+#include "data_structures/FSM.h"

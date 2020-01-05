@@ -1,6 +1,5 @@
-// uncomment when you have a model.h
-// to tun the classification
-// #define CLASSIFY
+// uncomment when doing classification
+#include "model.h"
 
 #define IN 4
 #define NUM_SAMPLES 30
@@ -8,27 +7,23 @@
 
 double features[NUM_SAMPLES];
 
-#if defined(CLASSIFY)
-    #include "model.h"
-
-    void classify() {
-        Serial.print("Detected letter: ");
-        Serial.println(classIdxToName(predict(features)));
-    }
-#endif
 
 void setup() {
     Serial.begin(115200);
     pinMode(IN, INPUT_PULLUP);
+    Serial.println("Begin");
+    self_test();
 }
 
 void loop() {
     if (digitalRead(IN) == 0) {
         recordButtonStatus();
         printFeatures();
-#if defined(CLASSIFY)
-        classify();
-#endif
+
+        // uncomment when doing classification
+        Serial.print("Detected letter: ");
+        Serial.println(classIdxToName(predict(features)));
+
         delay(1000);
     }
 

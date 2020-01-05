@@ -10,12 +10,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/examples/ESP32CameraNaiveMotionDetection/ESP32CameraNaiveMotionDetection.ino" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cv/Kernels.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structures/FSM.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/retry.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/7.71090359.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/7.71090359.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/MicromlColorIdentificationAttinyExample/MicromlColorIdentificationAttinyExample.ino" beforeDir="false" afterPath="$PROJECT_DIR$/examples/MicromlColorIdentificationAttinyExample/MicromlColorIdentificationAttinyExample.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/MicromlColorIdentificationExample/MicromlColorIdentificationExample.ino" beforeDir="false" afterPath="$PROJECT_DIR$/examples/MicromlColorIdentificationExample/MicromlColorIdentificationExample.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/MicromlIrisExample/MicromlIrisExample.ino" beforeDir="false" afterPath="$PROJECT_DIR$/examples/MicromlIrisExample/MicromlIrisExample.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/MicromlIrisExample/iris_attiny.h" beforeDir="false" afterPath="$PROJECT_DIR$/examples/MicromlIrisExample/iris_attiny.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/MicromlMorseIdentificationExample/MicromlMorseIdentificationExample.ino" beforeDir="false" afterPath="$PROJECT_DIR$/examples/MicromlMorseIdentificationExample/MicromlMorseIdentificationExample.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/MicromlMorseIdentificationExample/record.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/MicromlWakeWordIdentificationExample/MicromlWakeWordIdentificationExample.ino" beforeDir="false" afterPath="$PROJECT_DIR$/examples/MicromlWakeWordIdentificationExample/MicromlWakeWordIdentificationExample.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cv/Comparator.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/cv/DownsampledImageComparator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cv/MotionDetector.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/cv/MotionDetector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cv/TiledImage.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/cv/DownsampledImage.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eCV.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eCV.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eDataStructures.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eDataStructures.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eDev.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eDev.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/Pin/DigitalOut.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/Pin/DigitalOut.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,24 +102,24 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/examples/MicromlIrisExample" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/examples" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples" />
+      <recent name="$PROJECT_DIR$/examples/MicromlColorIdentificationExample" />
+      <recent name="$PROJECT_DIR$/examples/MicromlIrisExample" />
+      <recent name="$PROJECT_DIR$/examples/MicromlMorseIdentificationExample" />
+      <recent name="$PROJECT_DIR$/docs/Hexo/source/_posts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/docs/Blog/series/MicroML" />
       <recent name="$PROJECT_DIR$/docs/Documentation" />
       <recent name="$PROJECT_DIR$/src/dev/deepSleep" />
       <recent name="$PROJECT_DIR$/docs/blog/2019/11" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/examples/MicromlIrisExample" />
-      <recent name="$PROJECT_DIR$/examples/MicromlMorseIdentificationExample" />
-      <recent name="$PROJECT_DIR$/docs/Hexo/source/_posts" />
-      <recent name="$PROJECT_DIR$/src/io/Pin" />
-      <recent name="$PROJECT_DIR$/docs/.vuepress" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -192,6 +211,24 @@
       <workItem from="1576597761556" duration="2861000" />
       <workItem from="1576775167748" duration="7067000" />
       <workItem from="1576784878513" duration="269000" />
+      <workItem from="1576913528779" duration="651000" />
+      <workItem from="1576949920630" duration="1876000" />
+      <workItem from="1576959092732" duration="2416000" />
+      <workItem from="1577030333965" duration="7254000" />
+      <workItem from="1577118202541" duration="1945000" />
+      <workItem from="1577200425142" duration="1420000" />
+      <workItem from="1577266798517" duration="4981000" />
+      <workItem from="1577377365939" duration="619000" />
+      <workItem from="1577451617131" duration="5051000" />
+      <workItem from="1577522259416" duration="2124000" />
+      <workItem from="1577549547836" duration="2000000" />
+      <workItem from="1577645501226" duration="127000" />
+      <workItem from="1577732286251" duration="4390000" />
+      <workItem from="1577794382289" duration="605000" />
+      <workItem from="1577801816423" duration="2178000" />
+      <workItem from="1577897687879" duration="1074000" />
+      <workItem from="1577987983406" duration="711000" />
+      <workItem from="1578231138571" duration="711000" />
     </task>
     <servers />
   </component>

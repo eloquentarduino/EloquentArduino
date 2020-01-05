@@ -56,7 +56,7 @@ namespace Eloquent {
              * @param times
              * @param interval in millis
              */
-            void blink(uint8_t times, uint16_t interval = 100) {
+            void blink(uint8_t times = 1, uint16_t interval = 100) {
                 while (times-- > 0) {
                     turnOn();
                     delay(interval);
