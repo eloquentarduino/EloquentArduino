@@ -39,6 +39,13 @@ namespace Eloquent {
         /**
          *
          */
+        void reset() {
+            cmd("AT$P=0\r");
+        }
+
+        /**
+         *
+         */
         bool wakeup() {
             _stream->print('\n');
 

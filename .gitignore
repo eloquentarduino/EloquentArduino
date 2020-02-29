@@ -8,3 +8,5 @@ yarn-error.log
 *.patch
 model.h
 tensorflow
+.idea/
+examples/.idea/
