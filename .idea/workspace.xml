@@ -10,7 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf73a11e-ca6d-4399-ac80-fa871ae11ab8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AttinyLowPower.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EloquentPersistentInt32.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EloquentPin.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_structures/PersistentInt32.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/16.c22cc59a.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/6.20135cc5.js" afterDir="false" />
@@ -18,14 +21,10 @@
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/8.c252aaeb.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/9.2147c3b5.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vuepress/dist/assets/js/app.1470b0bf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/.idea/examples.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/library.json" beforeDir="false" afterPath="$PROJECT_DIR$/library.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library.properties" beforeDir="false" afterPath="$PROJECT_DIR$/library.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Wisol.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Wisol.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/MicromlWakeWordIdentificationExample/MicromlWakeWordIdentificationExample.ino" beforeDir="false" afterPath="$PROJECT_DIR$/examples/MicromlWakeWordIdentificationExample/MicromlWakeWordIdentificationExample.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_structures/PersistentInt.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_structures/PersistentInt16.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eDataStructures.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eDataStructures.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eIO.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/eIO.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +93,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.advertisement.text.has.clang-format" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/examples/ThermalCameraToAsciiArtExample" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -107,11 +106,11 @@
       <recent name="$PROJECT_DIR$/docs/blog/2019/11" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/data_structures" />
+      <recent name="$PROJECT_DIR$/examples/ThermalCameraToAsciiArtExample" />
       <recent name="$PROJECT_DIR$/examples" />
       <recent name="$PROJECT_DIR$/examples/MicromlColorIdentificationExample" />
-      <recent name="$PROJECT_DIR$/examples/MicromlIrisExample" />
-      <recent name="$PROJECT_DIR$/examples/MicromlMorseIdentificationExample" />
-      <recent name="$PROJECT_DIR$/docs/Hexo/source/_posts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -247,7 +246,19 @@
       <workItem from="1582561773603" duration="1015000" />
       <workItem from="1582630106405" duration="248000" />
       <workItem from="1582630542653" duration="676000" />
-      <workItem from="1582990831860" duration="631000" />
+      <workItem from="1582990831860" duration="1941000" />
+      <workItem from="1583663419668" duration="379000" />
+      <workItem from="1583665631927" duration="407000" />
+      <workItem from="1583830212643" duration="195000" />
+      <workItem from="1583929789663" duration="347000" />
+      <workItem from="1583933649183" duration="2452000" />
+      <workItem from="1584267156372" duration="2003000" />
+      <workItem from="1584373868577" duration="752000" />
+      <workItem from="1584375508276" duration="152000" />
+      <workItem from="1584873727009" duration="671000" />
+      <workItem from="1584974450685" duration="617000" />
+      <workItem from="1585341251306" duration="606000" />
+      <workItem from="1585413860880" duration="2030000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 #pragma once
 
-#ifndef ESP8266
+#if defined(EEPROM_h)
 
 #include <EEPROM.h>
 
@@ -10,9 +10,9 @@ namespace Eloquent {
         /**
          * Backup value to EEPROM
          */
-        class PersistentInt {
+        class PersistentInt32 {
         public:
-            PersistentInt(uint16_t address) :
+            PersistentInt32(uint16_t address) :
                 _address(address),
                 _value(0) {
 
@@ -23,7 +23,7 @@ namespace Eloquent {
              * @param value
              * @return
              */
-            PersistentInt& operator=(const int value) {
+            PersistentInt32& operator=(const int value) {
                 write(value);
 
                 return *this;
@@ -34,7 +34,7 @@ namespace Eloquent {
              * @param value
              * @return
              */
-            PersistentInt& operator+=(const int value) {
+            PersistentInt32& operator+=(const int value) {
                 write(_value + value);
 
                 return *this;
@@ -45,7 +45,7 @@ namespace Eloquent {
              * @param value
              * @return
              */
-            PersistentInt& operator-=(const int value) {
+            PersistentInt32& operator-=(const int value) {
                 write(value > _value ? 0 : _value - value);
 
                 return *this;
@@ -80,10 +80,12 @@ namespace Eloquent {
              * @return
              */
             int read() {
-                uint8_t high = EEPROM.read(_address);
-                uint8_t low = EEPROM.read(_address + 1);
+                uint8_t a = EEPROM.read(_address);
+                uint8_t b = EEPROM.read(_address + 1);
+                uint8_t c = EEPROM.read(_address + 2);
+                uint8_t d = EEPROM.read(_address + 3);
 
-                return (high << 8) | low;
+                return (a << 24) | (b << 16) | (c << 8) | d;
             }
 
             /**
@@ -93,8 +95,10 @@ namespace Eloquent {
              */
             void write(const int value) {
                 _value = value;
-                EEPROM.write(_address, value >> 8);
-                EEPROM.update(_address + 1, value & 0xFF);
+                EEPROM.write(_address + 0, value >> 24);
+                EEPROM.write(_address + 1, value >> 16);
+                EEPROM.write(_address + 2, value >> 8);
+                EEPROM.update(_address + 4, value & 0xFF);
             }
         };
     }

@@ -11,11 +11,7 @@
 //#include "io/InputStream/Map.h"
 //#include "io/InputStream/Round.h"
 //#include "io/InputStream/Transformer.h"
-#include "io/Pin/Pin.h"
-#include "io/Pin/DigitalIn.h"
-#include "io/Pin/DigitalOut.h"
-#include "io/Pin/AnalogIn.h"
-#include "io/Pin/AnalogOut.h"
+#include "EloquentPin.h"
 
 #if defined(SPIFFS_OK)
 #include "io/Spiffs/Dir.h"

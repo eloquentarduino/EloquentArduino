@@ -1,7 +1,6 @@
 #include <arduinoFFT.h>
 // uncomment when doing classification
- #include "model.h"
-
+#include "model.h"
 #define MIC A0
 #define NUM_SAMPLES 64
 #define SAMPLING_FREQUENCY 1024
@@ -15,13 +14,13 @@ int32_t backgroundSound;
 double features[NUM_SAMPLES];
 arduinoFFT fft;
 
-
 void setup() {
     Serial.begin(115200);
     pinMode(MIC, INPUT);
 
     samplingPeriod = round(1000000*(1.0/SAMPLING_FREQUENCY));
     calibrate();
+
 }
 
 void loop() {
@@ -33,25 +32,28 @@ void loop() {
     captureWord();
     printFeatures();
 
-    // uncomment when doing classification
-     Serial.print("You said ");
-     Serial.println(classIdxToName(predict(features)));
+// uncomment when doing classification
+    Serial.print("You said ");
+    Serial.println(classIdxToName(predict(features)));
 
     delay(1000);
+
 }
 
 /**
- * Get analog readings
- * @return
- */
+
+    Get analog readings
+    @return
+    */
 int16_t readMic() {
     return analogRead(MIC);
-    return  (analogRead(MIC) - 512) >> 2;
+    return (analogRead(MIC) - 512) >> 2;
 }
 
 /**
- * Get "ambient" volume
- */
+
+    Get "ambient" volume
+    */
 void calibrate() {
     for (int i = 0; i < 200; i++)
         backgroundSound += readMic();
@@ -75,6 +77,7 @@ void captureWord() {
     }
 
     fft.Windowing(features, NUM_SAMPLES, FFT_WIN_TYP_HAMMING, FFT_FORWARD);
+
 }
 
 void printFeatures() {
@@ -84,4 +87,5 @@ void printFeatures() {
         Serial.print(features[i]);
         Serial.print(i == numFeatures - 1 ? '\n' : ',');
     }
+
 }

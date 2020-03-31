@@ -16,8 +16,6 @@
 
 uint16_t prev_frame[H][W] = { 0 };
 uint16_t current_frame[H][W] = { 0 };
-camera_config_t config;
-
 
 
 bool setup_camera(framesize_t);
@@ -32,7 +30,6 @@ void print_frame(uint16_t frame[H][W]);
  */
 void setup() {
     Serial.begin(115200);
-    delay(5000);
     Serial.println(setup_camera(FRAME_SIZE) ? "OK" : "ERR INIT");
 }
 
@@ -60,6 +57,8 @@ void loop() {
  *
  */
 bool setup_camera(framesize_t frameSize) {
+    camera_config_t config;
+
     config.ledc_channel = LEDC_CHANNEL_0;
     config.ledc_timer = LEDC_TIMER_0;
     config.pin_d0 = Y2_GPIO_NUM;
@@ -92,7 +91,6 @@ bool setup_camera(framesize_t frameSize) {
     return ok;
 }
 
-
 /**
  * Capture image and do down-sampling
  */
@@ -101,27 +99,6 @@ bool capture_still() {
 
     if (!frame_buffer)
         return false;
-
-    Serial.print("GRAY len: ");
-    Serial.println(frame_buffer != NULL ? frame_buffer->len : 0);
-    //sensor_t *sensor = esp_camera_sensor_get();
-    //Serial.print("Switch to JPEG: ");
-    //Serial.println(sensor->set_pixformat(sensor, PIXFORMAT_RGB565));
-
-    config.pixel_format = PIXFORMAT_RGB565;
-    Serial.print("Switch ok? ");
-    Serial.println(esp_camera_init(&config) == ESP_OK ? "yes" : "no");
-
-    frame_buffer = esp_camera_fb_get();
-    Serial.print("JPEG len: ");
-    Serial.println(frame_buffer != NULL ? frame_buffer->len : 0);
-    //sensor->set_pixformat(sensor, PIXFORMAT_GRAYSCALE);
-    frame_buffer = esp_camera_fb_get();
-    Serial.print("GRAY len: ");
-    Serial.println(frame_buffer != NULL ? frame_buffer->len : 0);
-
-    while (1) delay(50000);
-
 
     // set all 0s in current frame
     for (int y = 0; y < H; y++)
