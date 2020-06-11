@@ -1,5 +1,6 @@
-#include "imu.h"
-//#include "model.h"
+#include "imu_6050.h"
+#include "pca.h"
+#include "model.h"
 
 #define NUM_SAMPLES 30
 #define NUM_AXES 3
@@ -7,8 +8,10 @@
 #define ACCEL_THRESHOLD 5
 #define INTERVAL 30
 
-double baseline[NUM_AXES];
-double features[NUM_SAMPLES * NUM_AXES];
+float baseline[NUM_AXES];
+float features[NUM_SAMPLES * NUM_AXES];
+Eloquent::ML::Port::PCA pca;
+Eloquent::ML::Port::SVM clf;
 
 
 void setup() {
@@ -34,7 +37,7 @@ void loop() {
     recordIMU();
     printFeatures();
     // un-comment to run classification
-//    classify();
+    classify();
     delay(2000);
 }
 
@@ -87,7 +90,7 @@ void recordIMU() {
  * Dump the feature vector to Serial monitor
  */
 void printFeatures() {
-    const uint16_t numFeatures = sizeof(features) / sizeof(double);
+    const uint16_t numFeatures = sizeof(features) / sizeof(float);
 
     for (int i = 0; i < numFeatures; i++) {
         Serial.print(features[i]);
@@ -99,6 +102,7 @@ void printFeatures() {
  *
  */
 void classify() {
+    pca.transform(features);
     Serial.print("Detected gesture: ");
-    Serial.println(classIdxToName(predict(features)));
+    Serial.println(clf.predictLabel(features));
 }

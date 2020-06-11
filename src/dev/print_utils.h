@@ -73,4 +73,26 @@ template<typename... Args>
 void csv(Args... args) { fcsv(&Serial, args...); }
 
 
+/**
+ *
+ */
+template<typename T>
+void fprint_array(Stream *stream, T *array, uint16_t length, char separator=',') {
+    for (uint16_t i = 0; i < length; i++) {
+        stream->print(array[i]);
+        stream->print(i == length - 1 ? '\n' : separator);
+    }
+}
+
+
+/**
+ *
+ */
+template<typename T>
+void print_array(T *array, uint16_t length, char separator=',') {
+    fprint_array(&Serial, array, length, separator);
+}
+
+
+
 #endif

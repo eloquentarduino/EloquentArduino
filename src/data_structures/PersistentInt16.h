@@ -64,6 +64,22 @@ namespace Eloquent {
              *
              * @return
              */
+            int16_t zero() {
+                return write(0);
+            }
+
+            /**
+             *
+             * @return
+             */
+            int16_t increment() {
+                return write(toInt() + 1);
+            }
+
+            /**
+             *
+             * @return
+             */
             int16_t toInt() {
                 return _value;
             }
@@ -91,10 +107,12 @@ namespace Eloquent {
              * @tparam T
              * @param value
              */
-            void write(const int16_t value) {
+            int16_t write(const int16_t value) {
                 _value = value;
                 EEPROM.write(_address, value >> 8);
                 EEPROM.update(_address + 1, value & 0xFF);
+
+                return toInt();
             }
         };
     }

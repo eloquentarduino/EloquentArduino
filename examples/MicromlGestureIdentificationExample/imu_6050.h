@@ -11,7 +11,11 @@ void imu_setup() {
 }
 
 void imu_read(float *ax, float *ay, float *az) {
-    float gx, gy, gz;
+    int16_t _ax, _ay, _az, _gx, _gy, _gz;
 
-    imu.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+    imu.getMotion6(&_ax, &_ay, &_az, &_gx, &_gy, &_gz);
+
+    *ax = _ax;
+    *ay = _ay;
+    *az = _az;
 }

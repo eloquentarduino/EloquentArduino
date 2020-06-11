@@ -180,7 +180,7 @@ namespace Eloquent {
         bool send(const void *data, uint8_t size, bool ack = false) {
             sendNoAck(data, size, ack);
 
-            return read(20000).indexOf("OK") >= 0;
+            return read(30000).indexOf("OK") >= 0;
         }
 
 
