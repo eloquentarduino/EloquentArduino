@@ -1,5 +1,4 @@
 #include "imu_6050.h"
-#include "pca.h"
 #include "model.h"
 
 #define NUM_SAMPLES 30
@@ -10,7 +9,6 @@
 
 float baseline[NUM_AXES];
 float features[NUM_SAMPLES * NUM_AXES];
-Eloquent::ML::Port::PCA pca;
 Eloquent::ML::Port::SVM clf;
 
 
@@ -102,7 +100,6 @@ void printFeatures() {
  *
  */
 void classify() {
-    pca.transform(features);
     Serial.print("Detected gesture: ");
     Serial.println(clf.predictLabel(features));
 }

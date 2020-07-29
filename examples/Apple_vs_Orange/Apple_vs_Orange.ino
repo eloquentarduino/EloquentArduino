@@ -2,7 +2,7 @@
 
 #include <esp_camera.h>
 #include "camera_pins.h"
-#include "color_image_model.h"
+//#include "color_image_model.h"
 
 #define FRAME_SIZE FRAMESIZE_QQVGA
 #define WIDTH 160
@@ -104,6 +104,8 @@ void convert_to_rgb(uint8_t *buf, size_t len) {
     }
 
     for (size_t i = 0; i < len; i += 2) {
+//        uint16_t pix = *(uint16_t*) buf[i];
+//        pix = __builtin_bswap16(pix);
         const uint8_t high = buf[i];
         const uint8_t low  = buf[i+1];
         const uint16_t pixel = (high << 8) | low;
@@ -171,5 +173,5 @@ void print_features() {
  */
 void classify() {
     Serial.print("Object: ");
-    Serial.println(classIdxToName(predict(features)));
+    //Serial.println(classIdxToName(predict(features)));
 }
