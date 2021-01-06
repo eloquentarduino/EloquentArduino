@@ -5,24 +5,16 @@
 namespace eloquent {
     namespace io {
 
-
-        //#include "black_magic.h"
-
-        //#define serialprint(...) EVAL(MAP(Serial.print, __VA_ARGS__))
-
-        //#define _FCSV(f, x) f.print(x); f.print('\t');
-        //#define fcsv(f, ...) EVAL(MAP(Serial.print, __VA_ARGS__)) f.print('\n');
-        //#define fcsv(f, ...) EVAL(MAP_WITH_ARG(_FCSV, f, __VA_ARGS__)) f.print('\n');
-        //#define csv(...) fcsv(Serial, __VA_ARGS__);
-
-
         /**
-         * Stop condition
+         * fprint_all stop condition
          * @param stream
          */
-        void fprint_all(Stream* stream) {}
+        void fprint_all(Stream* stream) {
+            stream->print('\n');
+        }
 
         /**
+         * Print all arguments
          * @tparam T
          * @tparam Args
          * @param stream
@@ -35,26 +27,17 @@ namespace eloquent {
             fprint_all(stream, args...);
         }
 
-        /**
-         * @tparam Args
-         * @param args
-         */
-        template<typename... Args>
-        void print_all(Args... args) {
-            fprint_all(&Serial, args...);
-        }
-
 
         /**
-         * Stop condition
+         * print_csv stop condition
          * @param stream
          */
-        void printf_csv(Stream* stream) {
+        void fprint_csv(Stream* stream) {
             stream->print('\n');
         }
 
         /**
-         *
+         * Print all arguments comma-separated
          * @tparam T
          * @tparam Args
          * @param stream
@@ -62,23 +45,15 @@ namespace eloquent {
          * @param args
          */
         template<typename T, typename... Args>
-        void printf_csv(Stream* stream, T first, Args... args) {
+        void fprint_csv(Stream* stream, T first, Args... args) {
             stream->print(first);
             stream->print('\t');
-            printf_csv(stream, args...);
+            fprint_csv(stream, args...);
         }
 
-        /**
-         *
-         * @tparam Args
-         * @param args
-         */
-        template<typename... Args>
-        void print_csv(Args... args) { printf_csv(&Serial, args...); }
-
 
         /**
-         *
+         * Print array
          */
         template<typename T>
         void fprint_array(Stream *stream, T *array, uint16_t length, char separator=',') {
@@ -86,15 +61,6 @@ namespace eloquent {
                 stream->print(array[i]);
                 stream->print(i == length - 1 ? '\n' : separator);
             }
-        }
-
-
-        /**
-         *
-         */
-        template<typename T>
-        void print_array(T *array, uint16_t length, char separator=',') {
-            fprint_array(&Serial, array, length, separator);
         }
 
     }
