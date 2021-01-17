@@ -24,6 +24,7 @@ using namespace Eloquent::Vision;
 
 camera_fb_t *frame;
 Camera::ESP32Camera camera(PIXFORMAT);
+uint8_t downscaled[w * h];
 //IO::Decoders::GrayscaleRandomAccessDecoder decoder;
 IO::Decoders::Red565RandomAccessDecoder decoder;
 Processing::Downscaling::Center<W / w, H / h> strategy;
@@ -34,6 +35,7 @@ IO::Writers::JpegWriter<W, H> jpegWriter;
 
 void capture();
 void save();
+void stream_downscaled();
 void stream();
 
 
@@ -64,7 +66,10 @@ void loop() {
         // save();
 
         // uncomment to stream to the Python script for visualization
-        //stream();
+        // stream();
+
+        // uncomment to stream downscaled imaged tp Python script
+        // stream_downscaled();
 
         delay(1000);
     }
@@ -74,9 +79,6 @@ void loop() {
 
 
 void capture() {
-    uint32_t start = millis();
-    uint8_t downscaled[w * h];
-
     timeit("capture frame", frame = camera.capture());
 
     // scale image from size H * W to size h * w
@@ -84,8 +86,6 @@ void capture() {
 
     // detect motion on the downscaled image
     timeit("motion detection", motion.detect(downscaled));
-
-    //eloquent::io::print_all(1000 / (millis() - start), " FPS");
 }
 
 
@@ -106,4 +106,11 @@ void stream() {
     jpegWriter.write(Serial, frame->buf, PIXFORMAT, 30);
 
     eloquent::io::print_all("END OF FRAME");
+}
+
+
+void stream_downscaled() {
+    eloquent::io::print_all("START OF DOWNSCALED");
+    eloquent::io::print_array(downscaled, w * h);
+    eloquent::io::print_all("END OF DOWNSCALED");
 }
