@@ -1,8 +1,10 @@
-#pragma once
+#ifndef ELOQUENTARDUINO_SERIAL_PRINT
+#define ELOQUENTARDUINO_SERIAL_PRINT 1
+
+#if defined(Stream_h)
 
 #include "print.h"
 
-#if defined(Stream_h)
 
 namespace eloquent {
     namespace io {
@@ -40,4 +42,5 @@ namespace eloquent {
     }
 }
 
+#endif
 #endif

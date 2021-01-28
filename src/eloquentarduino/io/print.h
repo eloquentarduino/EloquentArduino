@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ELOQUENTARDUINO_PRINT
+#define ELOQUENTARDUINO_PRINT 1
 
 #if defined(Stream_h)
 
@@ -66,4 +67,5 @@ namespace eloquent {
     }
 }
 
+#endif
 #endif

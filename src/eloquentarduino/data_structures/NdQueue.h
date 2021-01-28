@@ -91,11 +91,11 @@ namespace Eloquent {
                     uint8_t sampleIdx = (_head + k) % depth;
                     uint16_t offset = k * num_features;
 
-                    memcpy(X + offset, _samples[sampleIdx], sizeof(float) * num_features);
+                    //memcpy(X + offset, _samples[sampleIdx], sizeof(float) * num_features);
 
-                    //for (uint16_t i = 0; i < num_features; i++) {
-                    //    X[offset + i] = _samples[sampleIdx][i];
-                    //}
+                    for (uint16_t i = 0; i < num_features; i++) {
+                        X[offset + i] = _samples[sampleIdx][i];
+                    }
                 }
             }
 
