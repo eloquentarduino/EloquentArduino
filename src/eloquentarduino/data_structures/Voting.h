@@ -6,10 +6,9 @@ namespace Eloquent {
         /**
          * Output a robust value when a given number of votes agree
          * @tparam votes
-         * @tparam quorum
          */
-        template<uint8_t votes, uint8_t quorum>
-        class MajorityVoting {
+        template<uint8_t votes>
+        class Voting {
         public:
 
             /**
@@ -32,14 +31,16 @@ namespace Eloquent {
 
             /**
              * Test if quorum was achieved
+             * @param quorum how many votes should agree
+             * @param row how many votes "in row" should agree
              */
-            bool hasMajority() {
+            bool agree(uint8_t quorum, uint8_t row = 0) {
                 _decision = 255;
 
                 if (_idx < votes)
                     return false;
 
-                bool majority = false;
+                bool agree = false;
 
                 for (uint8_t i = 0; i < votes - quorum; i++) {
                     uint8_t vote = _votes[i];
@@ -51,12 +52,32 @@ namespace Eloquent {
 
                     if (count >= quorum) {
                         _decision = vote;
-                        majority = true;
+                        agree = true;
                         break;
                     }
                 }
 
-                return majority;
+                // check votes "in row"
+                if (row > 0) {
+                    for (uint8_t i = votes - row; i < votes; i++) {
+                        if (_votes[i] != _decision) {
+                            _decision = 255;
+                            agree = false;
+                            break;
+                        }
+                    }
+                }
+
+                return agree;
+            }
+
+            /**
+             * Test if quorum was achieved
+             * @param quorum how many votes should agree (in percent)
+             * @param row how many votes "in row" should agree
+             */
+            bool agree(float quorum, uint8_t row = 0) {
+                return agree((uint8_t) round(votes * quorum), row);
             }
 
             /**
