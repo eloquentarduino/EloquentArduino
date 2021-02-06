@@ -10,6 +10,6 @@ fi
 message=${2:-bump}
 
 
-sed -E "s/\"version\": \".+\",/\"version\": \"${1}\",/" library.json
-sed -E "s/version=.+/version=${1}/" library.properties
+sed -i -E "s/\"version\": \".+\",/\"version\": \"${1}\",/" library.json
+sed -i -E "s/version=.+/version=${1}/" library.properties
 git add . && git commit -m "bump dist to ${1}" && git tag -a $1 -m "$message" && git push origin master -f && git push origin $1
