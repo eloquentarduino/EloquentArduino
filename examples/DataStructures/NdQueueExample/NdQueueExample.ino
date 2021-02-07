@@ -1,5 +1,5 @@
 #include <ArduinoUnit.h>
-#include <eloquentarduino.h>
+#include <EloquentArduino.h>
 #include <eloquentarduino/data_structures/NdQueue.h>
 
 
