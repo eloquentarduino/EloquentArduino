@@ -31,14 +31,20 @@ namespace Eloquent {
 
             /**
              * Test if quorum was achieved
-             * @param quorum how many votes should agree
+             * @param quorum how many votes should agree (if < 1, it is considered as a percent)
              * @param row how many votes "in row" should agree
              */
-            bool agree(uint8_t quorum, uint8_t row = 0) {
+            bool agree(float quorum, uint8_t row = 0) {
                 _decision = 255;
 
                 if (_idx < votes)
                     return false;
+
+                if (quorum < 0)
+                    return false;
+
+                if (quorum < 1)
+                    quorum *= votes;
 
                 bool agree = false;
 
@@ -69,15 +75,6 @@ namespace Eloquent {
                 }
 
                 return agree;
-            }
-
-            /**
-             * Test if quorum was achieved
-             * @param quorum how many votes should agree (in percent)
-             * @param row how many votes "in row" should agree
-             */
-            bool agree(float quorum, uint8_t row = 0) {
-                return agree((uint8_t) round(votes * quorum), row);
             }
 
             /**
