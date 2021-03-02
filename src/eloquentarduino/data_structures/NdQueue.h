@@ -99,6 +99,19 @@ namespace Eloquent {
                 }
             }
 
+            /**
+             * Get all values of a given axis
+             * @param axes
+             * @param dest
+             */
+            void getAxis(uint8_t axis, float *dest) {
+                for (uint8_t k = 0; k < depth; k++) {
+                    uint8_t sampleIdx = (_head + k) % depth;
+                    
+                    dest[k] = _samples[sampleIdx][axis];
+                }
+            }
+
         protected:
             uint8_t _head = 0;
             size_t _idx = 0;
