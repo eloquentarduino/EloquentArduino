@@ -189,7 +189,7 @@ namespace Eloquent {
                 float _motionThreshold;
                 uint8_t _debounce;
                 uint8_t _debouncing;
-                uint8_t _changes;
+                uint16_t _changes;
                 bool _isFirst;
             };
         }
