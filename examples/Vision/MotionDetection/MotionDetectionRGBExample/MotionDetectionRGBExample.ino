@@ -2,10 +2,14 @@
 
 #include <FS.h>
 #include <SPIFFS.h>
-#include <eloquentarduino.h>
+#include <EloquentArduino.h>
 #include <eloquentarduino/io/serial_print.h>
 #include <eloquentarduino/vision/camera/ESP32Camera.h>
 #include <eloquentarduino/vision/io/writers/JpegWriter.h>
+#include <eloquentarduino/vision/io/decoders/Red565RandomAccessDecoder.h>
+#include <eloquentarduino/vision/processing/downscaling/Downscaler.h>
+#include <eloquentarduino/vision/processing/MotionDetector.h>
+
 
 #define FRAME_SIZE FRAMESIZE_QVGA
 #define PIXFORMAT PIXFORMAT_RGB565
