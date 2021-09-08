@@ -1,0 +1,16 @@
+//
+// Created by Simone on 07/09/2021.
+//
+
+#ifndef ELOQUENTARDUINO_RGBHISTOGRAM_H
+#define ELOQUENTARDUINO_RGBHISTOGRAM_H
+
+
+
+class RGBHistogram {
+
+};
+
+
+
+#endif //ELOQUENTARDUINO_RGBHISTOGRAM_H
