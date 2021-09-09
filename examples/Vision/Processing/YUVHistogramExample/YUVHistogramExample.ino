@@ -1,18 +1,18 @@
 /**
- * Example on how to use the RGBHistogram class.
- * It computes the (binned) frequency histogram of R, G, B values in an image.
+ * Example on how to use the YUVHistogram class.
+ * It computes the (binned) frequency histogram of Y, U, V values in an image.
  */
 #define CAMERA_MODEL_M5STACK_WIDE
 #define FRAME_SIZE FRAMESIZE_QVGA
-#define NUM_BINS 16
+#define NUM_BINS 32
 
 #include <EloquentArduino.h>
 #include <eloquentarduino/vision/camera/ESP32Camera.h>
-#include <eloquentarduino/vision/processing/RGBHistogram.h>
+#include <eloquentarduino/vision/processing/YUVHistogram.h>
 
 
-Eloquent::Vision::Camera::ESP32Camera camera(PIXFORMAT_RGB565);
-Eloquent::Vision::Processing::RGBHistogram<NUM_BINS> hist;
+Eloquent::Vision::Camera::ESP32Camera camera(PIXFORMAT_YUV422);
+Eloquent::Vision::Processing::YUVHistogram<NUM_BINS> hist;
 
 
 /**
@@ -40,9 +40,14 @@ void loop() {
     // actually compute histogram
     hist.update(frame->buf, frame->len);
 
-    // the hist object has the attributes rHistogram, gHistrogram, bHistogram
+    // YUVHistogram can tell if an image looks very dark or very bright
+    Serial.println(hist.looksDark()   ? "Image looks dark"   : "Image doesn't look dark");
+    Serial.println(hist.looksBright() ? "Image looks bright" : "Image doesn't look bright");
+
+
+    // the hist object has the attributes yHistogram, uHistrogram, vHistogram
     // that contain the calculated histograms
-    printHistogram(hist.gHistogram);
+    printHistogram(hist.yHistogram);
     delay(4000);
 }
 

@@ -37,6 +37,8 @@ namespace Eloquent {
                         gDx = maxBins / 64.0f;
                         bDx = (maxBins > 32 ? 32 : maxBins) / 32.0f;
                     }
+
+                    clear();
                 }
 
                 /**
@@ -97,6 +99,7 @@ namespace Eloquent {
                 /**
                  * Read next pixel
                  *
+                 * @param buf
                  * @param r
                  * @param g
                  * @param b
