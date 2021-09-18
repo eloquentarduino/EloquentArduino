@@ -61,13 +61,14 @@ namespace Eloquent {
 
                     bool ok = esp_camera_init(&config) == ESP_OK;
 
-                    sensor_t *sensor = esp_camera_sensor_get();
-                    sensor->set_framesize(sensor, frameSize);
+                    _sensor = esp_camera_sensor_get();
+                    _sensor->set_framesize(_sensor, frameSize);
 
                     return ok;
                 }
 
                 /**
+                 * Capture image
                  *
                  * @return
                  */
@@ -75,9 +76,70 @@ namespace Eloquent {
                     return (_frame = esp_camera_fb_get());
                 }
 
+                /**
+                 * Enable manual exposure control
+                 *
+                 * @param exposure
+                 * @return
+                 */
+                int setExposure(uint16_t exposure) {
+                    return enableAutoExposure(false) && _sensor->set_aec_value(_sensor, exposure);
+                }
+
+                /**
+                 * Set contrast
+                 *
+                 * @param contrast
+                 * @return
+                 */
+                int setContrast(int contrast) {
+                    return _sensor->set_contrast(_sensor, contrast);
+                }
+
+                /**
+                 * Set brightness
+                 *
+                 * @param brightness
+                 * @return
+                 */
+                int setBrightness(int brightness) {
+                    return _sensor->set_brightness(_sensor, brightness);
+                }
+
+                /**
+                 * Set saturation
+                 *
+                 * @param saturation
+                 * @return
+                 */
+                int setSaturation(int saturation) {
+                    return _sensor->set_saturation(_sensor, saturation);
+                }
+
+                /**
+                 * Disable manual exposure control
+                 *
+                 * @param enable
+                 * @return
+                 */
+                int enableAutoExposure(bool enable = true) {
+                    return _sensor->set_exposure_ctrl(_sensor, enable);
+                }
+
+                /**
+                 * Enable Automatic White Balancing
+                 *
+                 * @param enable
+                 * @return
+                 */
+                int enableAWB(bool enable = true) {
+                    return _sensor->set_whitebal(_sensor, enable);
+                }
+
             protected:
                 pixformat_t _pixelFormat;
                 camera_fb_t *_frame;
+                sensor_t * _sensor;
             };
         }
     }
