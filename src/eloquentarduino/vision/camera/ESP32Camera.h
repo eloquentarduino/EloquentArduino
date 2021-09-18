@@ -12,6 +12,14 @@ namespace Eloquent {
              */
             class ESP32Camera {
             public:
+                enum Level {
+                    Lowest = -2,
+                    Low,
+                    Normal,
+                    High,
+                    Highest
+                };
+
                 /**
                  *
                  */
