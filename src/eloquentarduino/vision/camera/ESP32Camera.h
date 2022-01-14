@@ -85,6 +85,13 @@ namespace Eloquent {
                 }
 
                 /**
+                 * Release frame memory
+                 */
+                void release() {
+                    esp_camera_fb_return(_frame);
+                }
+
+                /**
                  * Enable manual exposure control
                  *
                  * @param exposure
