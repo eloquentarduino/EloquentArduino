@@ -9,6 +9,6 @@ yarn-error.log
 model.h
 tensorflow
 .idea/
-examples/.idea/
-examples/Vision/Processing/RGBHistogramExample/main.cpp
-examples/Vision/Processing/RGBHistogramExample/a.out
+deprecated/examples/.idea/
+deprecated/examples/Vision/Processing/RGBHistogramExample/main.cpp
+deprecated/examples/Vision/Processing/RGBHistogramExample/a.out

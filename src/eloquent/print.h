@@ -12,6 +12,8 @@ namespace eloquent {
 
         /**
          *
+         * @tparam Stream
+         * @param stream
          * @param fmt
          * @param ...
          */
@@ -22,6 +24,25 @@ namespace eloquent {
             va_list args;
             va_start (args, fmt );
             vsnprintf(buf, 128, fmt, args);
+            va_end (args);
+            stream.print(buf);
+        }
+
+        /**
+         *
+         * @tparam Stream
+         * @tparam bufferSize
+         * @param stream
+         * @param fmt
+         * @param ...
+         */
+        template<typename Stream, size_t bufferSize>
+        void printf(Stream &stream, char *fmt, ...) {
+            char buf[bufferSize];
+
+            va_list args;
+            va_start (args, fmt );
+            vsnprintf(buf, bufferSize, fmt, args);
             va_end (args);
             stream.print(buf);
         }

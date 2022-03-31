@@ -5,5 +5,5 @@
 #pragma once
 
 
-#include "./transform/Transform.h"
-#include "./transform/NearestResize.h"
+//#include "transform/gray/Transform.h"
+//#include "transform/gray/NearestResize.h"

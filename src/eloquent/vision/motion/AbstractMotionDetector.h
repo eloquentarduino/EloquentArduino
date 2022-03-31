@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "../MonoImage.h"
+#include "../image/Gray.h"
 
 
 namespace Eloquent {
