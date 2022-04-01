@@ -6,9 +6,12 @@
 
 #include "../BaseImage.h"
 #include "../../transform/gray/NearestResize.h"
+#include "../../jpeg/JpegBuilder.h"
+
 
 using namespace Eloquent::Vision::Image;
 using namespace Eloquent::Vision::Transform::Gray;
+using Eloquent::Vision::Jpeg::JpegBuilder;
 
 
 namespace Eloquent {
@@ -23,6 +26,14 @@ namespace Eloquent {
                 template<uint16_t width, uint16_t height>
                 class Custom : public BaseImage<width, height, 1, 1> {
                 public:
+
+                    /**
+                     *
+                     * @param buffer
+                     */
+                    Custom(uint8_t *buffer = NULL) : BaseImage<width, height, 1, 1>(buffer) {
+
+                    }
 
                     /**
                      *
@@ -56,6 +67,26 @@ namespace Eloquent {
                     }
 
                     /**
+                     * Resize to QVGA
+                     * @return
+                     */
+                    Custom<width, height>& qvga() {
+                        resize<320, 240>();
+
+                        return *this;
+                    }
+
+                    /**
+                     * Resize to QQVGA
+                     * @return
+                     */
+                    Custom<width, height>& qqvga() {
+                        resize<160, 120>();
+
+                        return *this;
+                    }
+
+                    /**
                      * Resize to new dimensions
                      * @param newWidth
                      * @param newHeight
@@ -68,16 +99,48 @@ namespace Eloquent {
                     }
 
                     /**
-                     * Apply transformation
-                     * @param transform
+                     * Resize to new dimensions into a new container
+                     * @tparam newWidth
+                     * @tparam newHeight
+                     * @tparam Image
+                     * @param target
                      */
-                    void transform(BaseTransform &transform) {
-                        transform.apply(this);
-                        //transform.apply(this->buffer, &this->_width, &this->_height);
+                    template<uint16_t newWidth, uint16_t newHeight, class Image>
+                    void resizeTo(Image &target) {
+                        NearestResize<width, height, newWidth, newHeight> resize;
+
+                        resize.apply(this, &target);
+                    }
+
+                    /**
+                     *
+                     * @return
+                     */
+                    JpegBuilder& jpeg() {
+                        return JpegBuilder(this->buffer, this->getWidth(), this->getHeight(), 1, 1).grayscale();
                     }
 
                 protected:
 
+                };
+
+
+                /**
+                 * Grayscale image at custom resolution with inner buffer memory
+                 * @tparam width
+                 * @tparam height
+                 */
+                template<uint16_t width, uint16_t height>
+                class CustomWithBuffer : public Custom<width, height> {
+                public:
+
+                    /**
+                     * Constructor
+                     */
+                    CustomWithBuffer() : Custom<width, height>(_stack) {}
+
+                protected:
+                    uint8_t _stack[width * height];
                 };
             }
         }

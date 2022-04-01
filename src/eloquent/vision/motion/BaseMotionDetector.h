@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "../image/Gray.h"
+#include "../image/BaseImage.h"
 
 
 namespace Eloquent {
@@ -14,9 +14,9 @@ namespace Eloquent {
              * Base class for motion detectors
              *
              */
-            class AbstractMotionDetector {
+            class BaseMotionDetector {
             public:
-                AbstractMotionDetector() :
+                BaseMotionDetector() :
                     _updated(false),
                     _motion(false),
                     _numFrames(0),
@@ -41,17 +41,53 @@ namespace Eloquent {
                  * @param frames
                  */
                 void debounceMotionTriggerEvery(uint32_t frames) {
-                    throttle(frames);
+                    _throttle = frames;
                 }
 
                 /**
                  * Throttle motion triggering to 1 eveny n frames
-                 *
                  * @param frames
                  */
                 void throttle(uint32_t frames) {
                     startSinceFrameNumber(frames);
-                    _throttle = frames;
+                    debounceMotionTriggerEvery(frames);
+                }
+
+                /**
+                 * Update background model and detect motion
+                 * @tparam Image
+                 * @param image
+                 * @return
+                 */
+                template<class Image>
+                bool updateAndDetect(Image &image) {
+                    update(image);
+
+                    return isMotionDetected();
+                }
+                
+                /**
+                 * Test if motion happened
+                 * @return 
+                 */
+                bool isMotionDetected() {
+                    if (_numFrames < _skipFrames + 1)
+                        return false;
+
+                    if (_numFrames - _motionAt < _throttle)
+                        return false;
+
+                    if (!_updated)
+                        return _motion;
+
+                    _updated = false;
+
+                    bool motion = detectMotion();
+
+                    if (motion)
+                        _motionAt = _numFrames;
+
+                    return (_motion = motion);
                 }
 
 
@@ -64,42 +100,25 @@ namespace Eloquent {
                 uint32_t _throttle;
 
                 /**
-                 * Update frame
-                 *
-                 * @tparam Image
-                 * @param image
-                 */
-                template<typename Callback, typename Image>
-                void step(Callback callback, Image &image) {
-                    _updated = true;
-                    _numFrames += 1;
-                    callback(image);
-                }
-
-                /**
-                 * Test if motion happened
-                 *
+                 * Test if motion is detected
                  * @return
                  */
-                 template<typename Callback>
-                 bool test(Callback callback) {
-                    if (_numFrames < _skipFrames + 1)
-                        return false;
+                 virtual bool detectMotion() = 0;
 
-                    if (!_updated)
-                        return _motion;
-
-                    if (_numFrames - _motionAt < _throttle)
-                        return false;
-
-                    bool motion = callback();
-
-                    _updated = false;
-
-                    if (motion)
-                        _motionAt = _numFrames;
-
-                    return (_motion = motion);
+                 /**
+                  *
+                  * @tparam Image
+                  * @tparam OnSetup
+                  * @tparam OnUpdate
+                  * @param image
+                  * @param onSetup
+                  * @param onUpdate
+                  */
+                template<class Image, typename OnSetup, typename OnUpdate>
+                 void step(Image &image, OnSetup onSetup, OnUpdate onUpdate) {
+                     _numFrames == 0 ? onSetup(image) : onUpdate(image);
+                     _numFrames += 1;
+                     _updated = true;
                  }
             };
         }

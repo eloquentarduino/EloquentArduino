@@ -224,6 +224,18 @@ namespace Eloquent {
                     jsonEncoder.closeObject();
                 }
 
+                /**
+                 * Save as jpeg
+                 * @tparam Writer
+                 * @param writer
+                 */
+//                template<class Writer>
+//                void writeAsJpegTo(Writer writer) {
+//                    Eloquent::Vision::Jpeg::Encoder<Writer> jpeg(writer);
+//
+//                    jpeg.write(buffer, getLength());
+//                }
+
             protected:
                 uint16_t _width;
                 uint16_t _height;

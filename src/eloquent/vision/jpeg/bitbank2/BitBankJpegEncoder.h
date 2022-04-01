@@ -26,7 +26,7 @@ namespace Eloquent {
                 }
 
                 int close() {
-                    JPEGEncodeEnd(_stream, &_jpeg);
+                    return JPEGEncodeEnd(_stream, &_jpeg);
                 }
 
                 int encodeBegin(JPEGENCODE *pEncode, int iWidth, int iHeight, uint8_t ucPixelType, uint8_t ucSubSample, uint8_t ucQFactor) {
