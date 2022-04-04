@@ -63,8 +63,8 @@ void setup() {
 
     // trigger motion when at least 10% of pixels change intensity by
     // at least 15 out of 255
-    detector.setIntensityChangeThreshold(15);
     detector.setPixelChangesThreshold(0.1);
+    detector.setIntensityChangeThreshold(15);
 }
 
 

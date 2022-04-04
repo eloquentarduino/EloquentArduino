@@ -30,7 +30,7 @@ void setup() {
     delay(4000);
     Serial.begin(115200);
 
-    // comment out if you want to increase the acquisition frequency
+    // turn on high frequency capturing
     // in the case of OV767x camera, highFreq = 5 fps instead of 1 fps
     // in the case of Esp32 camera, highFreq clock = 20 MHz instead of 10 MHz
     camera.setHighFreq();

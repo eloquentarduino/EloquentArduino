@@ -94,5 +94,5 @@
 #define PCLK_GPIO_NUM     22
 
 #else
-#error "Camera model not selected"
+#error "CameraMotionDetection model not selected"
 #endif
