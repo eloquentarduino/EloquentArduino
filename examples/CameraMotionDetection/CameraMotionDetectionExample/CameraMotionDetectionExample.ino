@@ -84,4 +84,7 @@ void loop() {
     if (detector.isMotionDetected()) {
         detector.printAsJsonTo(Serial);
     }
+
+    // release memory
+    camera.free();
 }

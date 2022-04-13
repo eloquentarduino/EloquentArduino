@@ -23,7 +23,7 @@ namespace Eloquent {
                     /**
                      * Release frame
                      */
-                    void free() {
+                    void free() override {
                         esp_camera_fb_return(_fb);
                     }
 

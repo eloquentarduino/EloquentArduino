@@ -21,13 +21,17 @@ namespace Eloquent {
              * Constructor
              * @param filename
              * @param mode
+             * @param openImmediately
              */
-            SpiffsFile(String filename, const char *mode) :
+            SpiffsFile(String filename, const char *mode, bool openImmediately = false) :
                 _filename(filename),
                 _mode(mode),
                 _opened(false) {
                 _isReadable = String(mode).indexOf("r") >= 0 || String(mode).indexOf("+") >= 0;
                 _isWritable = String(mode).indexOf("w") >= 0;
+
+                if (openImmediately)
+                    open();
             }
 
             /**
@@ -69,6 +73,22 @@ namespace Eloquent {
                 file.close();
 
                 return s;
+            }
+
+            /**
+             * Test if more data is available
+             * @return
+             */
+            bool available() {
+                return _file.available();
+            }
+
+            /**
+             *
+             * @return
+             */
+            uint8_t read() {
+                return _file.read();
             }
 
             /**
@@ -123,6 +143,16 @@ namespace Eloquent {
              */
             void begin(bool format = false) {
                 SPIFFS.begin(format);
+            }
+
+            /**
+             *
+             * @param filename
+             * @param openImmediately
+             * @return
+             */
+            SpiffsFile readBinary(String filename, bool openImmediately = true) {
+                return SpiffsFile(filename, "rb", openImmediately);
             }
 
             /**

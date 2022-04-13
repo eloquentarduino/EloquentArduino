@@ -91,4 +91,7 @@ void loop() {
             Serial.println(jpeg.getErrorMessage());
         }
     }
+
+    // release memory
+    camera.free();
 }

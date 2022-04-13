@@ -85,6 +85,13 @@ namespace Eloquent {
                     return concreteCapture();
                 }
 
+                /**
+                 * Release memory
+                 */
+                virtual void free() {
+                    // subclass-specific implementation here
+                }
+
 
             protected:
                 bool _beginOk = false;

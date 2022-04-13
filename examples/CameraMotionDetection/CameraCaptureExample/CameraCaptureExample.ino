@@ -56,4 +56,7 @@ void loop() {
     // resize for faster transmission over Serial port
     camera.image.resize<40, 30>();
     camera.image.printAsJsonTo(Serial);
+
+    // release memory
+    camera.free();
 }
