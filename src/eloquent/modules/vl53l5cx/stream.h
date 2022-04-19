@@ -50,7 +50,7 @@ namespace Eloquent {
              * @param i
              * @return
              */
-            uint8_t at(size_t i) {
+            float at(size_t i) {
                 return features[i];
             }
 
@@ -61,7 +61,7 @@ namespace Eloquent {
              * @param z
              * @return
              */
-            uint8_t at(uint8_t x, uint8_t y, size_t z) {
+            float at(uint8_t x, uint8_t y, size_t z) {
                 uint8_t width = sqrt(resolution);
 
                 return at(z * resolution + y * width + x);
@@ -72,18 +72,20 @@ namespace Eloquent {
              * @return
              */
             bool queue() {
-                size_t head = _counter % frames;
-
                 if (!read())
                     return false;
 
                 shift();
                 _counter += 1;
 
-                for (uint16_t i = 0, j = resolution * (frames - 1); i < resolution; i++, j++)
-                    features[j] = _data.distance_mm[i];
+                for (uint16_t i = 0, j = resolution * (frames - 1); i < resolution; i++, j++) {
+                    features[j] = VL53L5CX::at(i);
+                }
 
-                if (_counter % _throttle != 1)
+                if (_counter < frames)
+                    return false;
+
+                if ((_counter % _throttle) != 1)
                     return false;
 
                 return true;
@@ -100,7 +102,7 @@ namespace Eloquent {
             void printTo(Printer &printer, char delimiter = ',', char end = '\n') {
                 printer.print(at(0));
 
-                for (uint8_t i = 1; i < resolution * frames; i++) {
+                for (uint16_t i = 1; i < resolution * frames; i++) {
                     printer.print(delimiter);
                     printer.print(at(i));
                 }
@@ -118,7 +120,10 @@ namespace Eloquent {
              * Shift data to the left by one frame
              */
             void shift() {
-                memcpy(features, features + resolution, resolution * (frames - 1));
+                //memcpy(features, features + resolution, resolution * (frames - 1));
+
+                for (uint16_t i = 0; i < getLength(); i++)
+                    features[i] = features[i + resolution];
             }
         };
     }

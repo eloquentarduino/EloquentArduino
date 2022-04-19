@@ -3,7 +3,7 @@
 #include <eloquent/modules/vl53l5cx/stream.h>
 
 #define RESOLUTION 8*8
-#define NUM_FRAMES 10
+#define NUM_FRAMES 16
 
 
 Eloquent::Modules::VL53L5CXStream<RESOLUTION, NUM_FRAMES> stream;
@@ -17,14 +17,14 @@ void setup() {
     // turn on high speed communication
     stream.highFreq();
 
-    // truncate readings further than 2m to 2m
+    // truncate readings further than 2 meters
     stream.truncateAt(2000);
 
     // you may optionally rescale to a given range
-    //stream.setRange(0, 255);
+    stream.setRange(0, 1);
 
-    // emit the "queue" event once every 2 frames
-    stream.throttle(2);
+    // emit the "queue" event once every 4 frames
+    stream.throttle(4);
 
     if (!stream.begin())
         eloquent::abort(Serial, "vl53l5cx not found");

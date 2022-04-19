@@ -118,7 +118,7 @@ namespace Eloquent {
              * @param i
              * @return
              */
-            uint16_t at(uint8_t i) {
+            float at(uint8_t i) {
                 if (!isOk())
                     return 0;
 
@@ -139,7 +139,7 @@ namespace Eloquent {
              * @param y
              * @return
              */
-            uint16_t at(uint8_t x, uint8_t y) {
+            float at(uint8_t x, uint8_t y) {
                 const uint8_t width = sqrt(_resolution);
 
                 return at(y * width + x);

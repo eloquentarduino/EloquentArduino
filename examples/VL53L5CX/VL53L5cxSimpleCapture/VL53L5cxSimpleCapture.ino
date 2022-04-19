@@ -14,11 +14,11 @@ void setup() {
     // turn on high speed communication
     tof8x8.highFreq();
 
-    // truncate readings further than 2m to 2m
+    // truncate readings at 2 meters
     tof8x8.truncateAt(2000);
 
     // you may optionally rescale to a given range
-    //tof8x8.setRange(0, 255);
+    tof8x8.scale(0, 1);
 
     if (!tof8x8.begin())
         eloquent::abort(Serial, "vl53l5cx not found");
