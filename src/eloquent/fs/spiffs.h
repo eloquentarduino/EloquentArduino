@@ -23,12 +23,12 @@ namespace Eloquent {
              * @param mode
              * @param openImmediately
              */
-            SpiffsFile(String filename, const char *mode, bool openImmediately = false) :
+            SpiffsFile(String filename, char *mode, bool openImmediately = false) :
                 _filename(filename),
                 _mode(mode),
                 _opened(false) {
-                _isReadable = String(mode).indexOf("r") >= 0 || String(mode).indexOf("+") >= 0;
-                _isWritable = String(mode).indexOf("w") >= 0;
+
+                setMode(mode);
 
                 if (openImmediately)
                     open();
@@ -38,11 +38,11 @@ namespace Eloquent {
              * Open file
              * @return
              */
-            bool open() {
+            bool open(const char *mode = "") {
                 if (_opened)
-                    return true;
+                    close();
 
-                close();
+                setMode(mode);
                 _file = SPIFFS.open(_filename, _mode);
 
                 if (_file) {
@@ -50,6 +50,17 @@ namespace Eloquent {
                 }
 
                 return false;
+            }
+
+            /**
+             * Alias for open()
+             * @param mode
+             * @return
+             */
+            bool reopenAs(const char *mode) {
+                close();
+
+                return open(mode);
             }
 
             /**
@@ -70,7 +81,7 @@ namespace Eloquent {
                 File file = SPIFFS.open(_filename, "r");
                 size_t s = file.size();
 
-                file.close();
+                close();
 
                 return s;
             }
@@ -88,7 +99,10 @@ namespace Eloquent {
              * @return
              */
             uint8_t read() {
-                return _file.read();
+                if (_isReadable)
+                    return _file.read();
+
+                return 0;
             }
 
             /**
@@ -99,11 +113,13 @@ namespace Eloquent {
              */
             template<typename T>
             size_t write(T data) {
-                if (open() && _isWritable) {
-                    return _file.write(data);
-                }
+                if (!_isWritable)
+                    return 0;
 
-                return 0;
+                if (!_opened && !open())
+                    return 0;
+
+                return _file.write(data);
             }
 
             /**
@@ -115,20 +131,34 @@ namespace Eloquent {
              */
             template<typename T>
             size_t write(T data, size_t length) {
-                if (open() && _isWritable) {
-                    return _file.write(data, length);
-                }
+                if (!_isWritable)
+                    return 0;
 
-                return 0;
+                if (!_opened && !open())
+                    return 0;
+
+                return _file.write(data, length);
             }
 
         protected:
             String _filename;
-            const char *_mode;
+            char *_mode;
             File _file;
             bool _opened;
             bool _isReadable;
             bool _isWritable;
+
+            /**
+             *
+             * @param mode
+             */
+            void setMode(const char *mode) {
+                if (strlen(mode) > 0)
+                    _mode = (char *) mode;
+
+                _isReadable = String(_mode).indexOf("r") >= 0 || String(_mode).indexOf("+") >= 0;
+                _isWritable = String(_mode).indexOf("w") >= 0;
+            }
         };
 
         /**
@@ -162,6 +192,46 @@ namespace Eloquent {
              */
             SpiffsFile writeBinary(String filename) {
                 return SpiffsFile(filename, "wb");
+            }
+
+            /**
+             * List files to output stream
+             * @tparam Printer
+             * @param printer
+             */
+            template<class Printer>
+            void listTo(Printer &printer) {
+                File root = SPIFFS.open("/");
+                File file = root.openNextFile();
+
+                printer.print("List of files\n");
+
+                while(file) {
+                    float size = file.size();
+                    String unit = "bytes";
+
+                    if (size >= 1024 * 1024 * 1024) {
+                        size /= 1024 * 1024 * 1024;
+                        unit = "Gb";
+                    }
+                    else if (size >= 1024 * 1024) {
+                        size /= 1024 * 1024;
+                        unit = "Mb";
+                    }
+                    else if (size >= 1024) {
+                        size /= 1024;
+                        unit = "Kb";
+                    }
+
+                    printer.print(file.name());
+                    printer.print(": ");
+                    printer.print(size);
+                    printer.print(" ");
+                    printer.print(unit);
+                    printer.print("\n");
+
+                    file = root.openNextFile();
+                }
             }
         };
     }

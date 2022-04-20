@@ -35,15 +35,10 @@ void setup() {
     // in the case of Esp32 camera, highFreq clock = 20 MHz instead of 10 MHz
     camera.setHighFreq();
 
-    if (!camera.begin()) {
-        while (true)  {
-            Serial.println(camera.getErrorMessage());
-            delay(1000);
-        }
-    }
-    else {
-        Serial.println("Camera init OK");
-    }
+    if (!camera.begin())
+        eloquent::abort(Serial, "Camera init error");
+
+    Serial.println("Camera init OK");
 }
 
 void loop() {

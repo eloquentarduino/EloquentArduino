@@ -42,15 +42,10 @@ void setup() {
     // turn on high freq for fast streaming speed
     camera.setHighFreq();
 
-    if (!camera.begin()) {
-        while (true)  {
-            Serial.println(camera.getErrorMessage());
-            delay(1000);
-        }
-    }
-    else {
-        Serial.println("Camera init OK");
-    }
+    if (!camera.begin())
+        eloquent::abort(Serial, "Camera init error");
+
+    Serial.println("Camera init OK");
 
     // wait for at least 10 frames to be processed before starting to detect
     // motion (false triggers at start)

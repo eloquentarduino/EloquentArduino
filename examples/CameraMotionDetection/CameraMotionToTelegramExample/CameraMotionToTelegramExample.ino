@@ -1,11 +1,19 @@
 /**
- * Camera motion detection + JPEG capture demo
+ * Camera motion detection + JPEG capture + Telegram Bot demo
  */
 
-#include "eloquent.h"
-#include "eloquent/vision/image/gray/custom.h"
-#include "eloquent/vision/motion/naive.h"
-#include "eloquent/fs/spiffs.h"
+#define TELEGRAM_TOKEN "xxxxxxxxxx:yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+#define CHAT_ID "0123456789"
+#define WIFI_SSID "SSID"
+#define WIFI_PASSWORD "PASSWORD"
+
+#include <WiFi.h>
+#include <eloquent.h>
+#include <eloquent/vision/image/gray/custom.h>
+#include <eloquent/vision/motion/naive.h>
+#include <eloquent/fs/spiffs.h>
+#include <eloquent/networking/wifi.h>
+#include <eloquent/apps/telegram/bot/wifi.h>
 
 
 // uncomment based on your camera and resolution
@@ -49,7 +57,16 @@ void setup() {
     if (!camera.begin())
         eloquent::abort(Serial, "Camera init error");
 
+    if (!wifi.connectTo(WIFI_SSID, WIFI_PASSWORD))
+        eloquent::abort(Serial, "Cannot connect to WiFi");
+
+    if (!telegramBot.connect()) {
+        eloquent::abort(Serial, "Cannot connect to Telegram API");
+    }
+
     Serial.println("Camera init OK");
+    Serial.println("WiFi connected OK");
+    Serial.println("Telegram API connected OK");
 
     detector.throttle(10);
     detector.setIntensityChangeThreshold(15);
@@ -80,6 +97,19 @@ void loop() {
             Serial.print(". It took ");
             Serial.print(jpeg.getElapsedTime());
             Serial.println(" micros to encode");
+
+            // send to Telegram
+            file.reopenAs("rb");
+            bool messageOk = telegramBot.sendMessageTo(CHAT_ID, "Motion detected");
+            bool jpegOk = telegramBot.sendJpegTo(CHAT_ID, file);
+
+            Serial.println(messageOk ? "Message sent OK" : "Message send error");
+            Serial.println(jpegOk ? "Jpeg sent OK" : "Jpeg send error");
+
+            if (!jpegOk) {
+                Serial.print("Telegram error: ");
+                Serial.println(telegramBot.getErrorMessage());
+            }
         }
         else {
             Serial.print("Jpeg encoding error: ");

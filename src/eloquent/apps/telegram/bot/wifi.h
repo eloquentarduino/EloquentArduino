@@ -4,21 +4,22 @@
 
 #pragma once
 
-#include <WiFi.h>
 #include <WiFiClientSecure.h>
-#include "../../macros.h"
+#include "../../../macros.h"
 #include "./BaseTelegramBot.h"
+#include "./witnessmenow/TelegramCertificate.h"
+
+static WiFiClientSecure _telegramBotWifiSecureClient;
 
 
 namespace Eloquent {
     namespace Apps {
         namespace Telegram {
-            WiFiClientSecure _client;
 
             /**
              *
              */
-            class WiFiTelegramBot : public BaseTelegramBot<WiFiClientSecure> {
+            class WiFiTelegramBot : public BaseTelegramBot {
             public:
 
                 /**
@@ -26,8 +27,16 @@ namespace Eloquent {
                  * @param token
                  */
                 WiFiTelegramBot(const char *token) :
-                    BaseTelegramBot<WiFiClientSecure>(_client, token) {
+                    BaseTelegramBot(&_telegramBotWifiSecureClient, token) {
 
+                }
+
+                /**
+                 *
+                 * @return
+                 */
+                bool begin() override {
+                    _telegramBotWifiSecureClient.setCACert(TELEGRAM_CERTIFICATE_ROOT);
                 }
             };
         }
