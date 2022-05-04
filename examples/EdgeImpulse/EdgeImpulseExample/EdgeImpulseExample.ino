@@ -30,6 +30,7 @@ void loop() {
     for (int i = 0; i < EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE; i++)
         features[i] = Serial.readStringUntil(',').toFloat();
 
+    // here is where the magic happens...
     Serial.print("Predicted class: ");
     Serial.println(impulse.predict(features));
     Serial.print("Predicted label: ");
