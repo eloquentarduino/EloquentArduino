@@ -11,17 +11,17 @@
 namespace Eloquent {
     namespace Modules {
         /**
-         * Eloquent interface to VL53L5CX 8x8 Time of Flight sensor
-         * @require SparkFun_VL53L5CX_Library
+         * Eloquent interface to Vl53l5cx 8x8 Time of Flight sensor
+         * @require SparkFun_Vl53l5cx_Library
          */
-        class VL53L5CX {
+        class Vl53l5cx {
         public:
 
             /**
              * Constructor
              * @param resolution
              */
-            VL53L5CX(uint8_t resolution = 64) :
+            Vl53l5cx(uint8_t resolution = 64) :
                 _resolution(resolution),
                 _ok(false),
                 _maxDistance(0),
@@ -199,5 +199,5 @@ namespace Eloquent {
     }
 }
 
-ELOQUENT_SINGLETON(Eloquent::Modules::VL53L5CX tof8x8(64));
-ELOQUENT_SINGLETON(Eloquent::Modules::VL53L5CX tof4x4(16));
+ELOQUENT_SINGLETON(Eloquent::Modules::Vl53l5cx tof8x8(64));
+ELOQUENT_SINGLETON(Eloquent::Modules::Vl53l5cx tof4x4(16));

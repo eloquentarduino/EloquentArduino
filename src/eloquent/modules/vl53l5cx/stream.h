@@ -128,3 +128,8 @@ namespace Eloquent {
         };
     }
 }
+
+#ifdef VL53L5CX_FRAMES
+ELOQUENT_SINGLETON(Eloquent::Modules::VL53L5CXStream<64, VL53L5CX_FRAMES> tof8x8Stream);
+ELOQUENT_SINGLETON(Eloquent::Modules::VL53L5CXStream<16, VL53L5CX_FRAMES> tof4x4Stream);
+#endif

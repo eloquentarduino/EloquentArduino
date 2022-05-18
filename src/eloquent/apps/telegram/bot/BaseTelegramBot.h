@@ -4,6 +4,8 @@
 
 #pragma once
 
+#ifndef NO_TELEGRAM
+
 #include "./witnessmenow/UniversalTelegramBot.h"
 #include "./Errors.h"
 
@@ -194,3 +196,5 @@ namespace Eloquent {
         }
     }
 }
+
+#endif
