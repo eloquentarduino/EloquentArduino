@@ -4,6 +4,8 @@
 
 #pragma once
 
+#ifndef NO_TELEGRAM
+
 #include <WiFiClientSecure.h>
 #include "../../../macros.h"
 #include "./BaseTelegramBot.h"
@@ -45,4 +47,6 @@ namespace Eloquent {
 
 #ifdef TELEGRAM_TOKEN
 ELOQUENT_SINGLETON(Eloquent::Apps::Telegram::WiFiTelegramBot telegramBot(TELEGRAM_TOKEN));
+#endif
+
 #endif
