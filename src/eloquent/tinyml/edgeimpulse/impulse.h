@@ -43,15 +43,13 @@ namespace Eloquent {
                     _idx = -1;
                     _errorCode = numpy::signal_from_buffer(features, EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE, &_signal);
 
-                    if (!isOk()) {
+                    if (!isOk())
                         return error("numpy::signal_from_buffer");
-                    }
 
                     _errorCode = run_classifier(&_signal, &_result, _debug);
 
-                    if (!isOk()) {
+                    if (!isOk())
                         return error("run_classifier");
-                    }
 
 #if EI_CLASSIFIER_HAS_ANOMALY == 1
                     if (isAnomaly())
@@ -70,9 +68,8 @@ namespace Eloquent {
                             proba = p;
                         }
 
-                        if (proba >= 0.5) {
+                        if (proba >= 0.5)
                             break;
-                        }
                     }
 
                     return _idx;

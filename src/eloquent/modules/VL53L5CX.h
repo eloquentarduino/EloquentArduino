@@ -6,6 +6,7 @@
 
 #include <SparkFun_VL53L5CX_Library.h>
 #include "../macros.h"
+#include "../math.h"
 
 
 namespace Eloquent {
@@ -16,6 +17,8 @@ namespace Eloquent {
          */
         class Vl53l5cx {
         public:
+            float distances[64];
+
 
             /**
              * Constructor
@@ -24,12 +27,22 @@ namespace Eloquent {
             Vl53l5cx(uint8_t resolution = 64) :
                 _resolution(resolution),
                 _ok(false),
-                _maxDistance(0),
-                _rangeMin(0),
-                _rangeMax(0) {
+                _ready(false),
+                _frequency(10),
+                _sleepDistance(0),
+                _sleepDebounce(0),
+                _sleepDebounceCounter(0),
+                _sleepFails(0) {
 
                 if (_resolution != 64 && _resolution != 16)
                     _resolution = 64;
+
+                _config.truncateLowerThan = 0;
+                _config.truncateHigherThan = 4000;
+                _config.scaleMin = 0;
+                _config.scaleMax = 0;
+                _config.objectsThreshold = 0;
+                _config.objectsCount = 0;
             }
 
             /**
@@ -37,7 +50,7 @@ namespace Eloquent {
              * @return
              */
             bool isOk() {
-                return _ok;
+                return _sensor.isConnected();
             }
 
             /**
@@ -56,17 +69,32 @@ namespace Eloquent {
              * @param frequency
              */
             void highFreq() {
-                Wire.setClock(400000);
                 _sensor.setWireMaxPacketSize(128);
+                setFrequency(_resolution == 16 ? 60 : 15);
             }
 
             /**
-             * Set max distance
-             * Distances above this will be truncated
-             * @param maxDistance
+             *
+             * @param frequency
              */
-            void truncateAt(float maxDistance) {
-                _maxDistance = maxDistance;
+            void setFrequency(uint8_t frequency) {
+                _frequency = frequency;
+            }
+
+            /**
+             * Truncate readings lower than given threshold
+             * @param threshold
+             */
+            void truncateLowerThan(float threshold) {
+                _config.truncateLowerThan = threshold;
+            }
+
+            /**
+             * Truncate readings higher than given threshold
+             * @param threshold
+             */
+            void truncateHigherThan(float threshold) {
+                _config.truncateHigherThan = threshold;
             }
 
             /**
@@ -74,9 +102,20 @@ namespace Eloquent {
              * @param low
              * @param high
              */
-            void scale(float low, float high) {
-                _rangeMin = low;
-                _rangeMax = high;
+            void scaleToRange(float low, float high) {
+                _config.scaleMin = low;
+                _config.scaleMax = high;
+            }
+
+            /**
+             * Detect objects when at list minPixels have a value lower than threshold
+             * @param threshold
+             * @param minPixels
+             */
+            void detectObjectsWhenNearerThan(float threshold, uint8_t minPixels = 1)
+            {
+                _config.objectsThreshold = threshold;
+                _config.objectsCount = minPixels;
             }
 
             /**
@@ -84,33 +123,63 @@ namespace Eloquent {
              * @param frequency
              * @return
              */
-            bool begin(uint8_t frequency = 10) {
+            bool begin() {
                 if (!_sensor.begin())
                     return false;
 
                 _sensor.setResolution(_resolution);
-                _sensor.setRangingFrequency(frequency);
+                _sensor.setRangingFrequency(_frequency);
                 _sensor.startRanging();
 
-                return (_ok = true);
+                return (_ok = _sensor.isConnected());
             }
 
             /**
-             * Read data
+             * Test if sensor has new data
+             * @return
+             */
+            bool hasNewData() {
+                return _sensor.isDataReady();
+            }
+
+            /**
+             * Read data from sensor
+             * @return always true
              */
             bool read() {
-                if (!isOk())
-                    begin();
-
-                if (!isOk())
+                if (!_sensor.getRangingData(&_data))
                     return false;
 
-                if (!available())
-                    return false;
+                for (uint8_t i = 0; i < _resolution; i++) {
+                    float distance = _data.distance_mm[i];
 
-                _sensor.getRangingData(&_data);
+                    distance = eloquent::math::mapConstrain(
+                        distance,
+                        _config.truncateLowerThan,
+                        _config.truncateHigherThan,
+                        _config.scaleMin,
+                        _config.scaleMax
+                    );
+
+                    distances[i] = distance;
+                }
 
                 return true;
+            }
+
+            /**
+             * Test if the given number of pixels is within range
+             * @return
+             */
+            bool hasObjectsNearby() {
+                if (!_config.objectsCount || !_config.objectsThreshold)
+                    return true;
+
+                uint8_t passes = eloquent::math::arrayCountWhere(distances, _resolution, [this](float distance) {
+                    return distance > 0 && distance < this->_config.objectsThreshold;
+                });
+
+                return passes >= _config.objectsCount;
             }
 
             /**
@@ -119,18 +188,7 @@ namespace Eloquent {
              * @return
              */
             float at(uint8_t i) {
-                if (!isOk())
-                    return 0;
-
-                float d = _data.distance_mm[i];
-
-                if (_maxDistance > 0 && d > _maxDistance)
-                    d = _maxDistance;
-
-                if (_maxDistance > 0 && _rangeMin != _rangeMax)
-                    d = (d / _maxDistance) * (_rangeMax - _rangeMin) + _rangeMin;
-
-                return d;
+                return distances[i];
             }
 
             /**
@@ -143,6 +201,14 @@ namespace Eloquent {
                 const uint8_t width = sqrt(_resolution);
 
                 return at(y * width + x);
+            }
+
+            /**
+             * Get mean value of distances
+             * @return
+             */
+            float mean() {
+                return eloquent::math::arrayMean(distances, _resolution);
             }
 
             /**
@@ -189,15 +255,23 @@ namespace Eloquent {
 
         protected:
             bool _ok;
+            bool _ready;
             uint8_t _resolution;
-            float _maxDistance;
-            float _rangeMin;
-            float _rangeMax;
+            uint8_t _frequency;
+            float _sleepDistance;
+            uint16_t _sleepDebounce;
+            uint16_t _sleepDebounceCounter;
+            uint8_t _sleepFails;
             SparkFun_VL53L5CX _sensor;
             VL53L5CX_ResultsData _data;
+            struct {
+                float truncateLowerThan;
+                float truncateHigherThan;
+                float scaleMin;
+                float scaleMax;
+                float objectsThreshold;
+                uint8_t objectsCount;
+            } _config;
         };
     }
 }
-
-ELOQUENT_SINGLETON(Eloquent::Modules::Vl53l5cx tof8x8(64));
-ELOQUENT_SINGLETON(Eloquent::Modules::Vl53l5cx tof4x4(16));
