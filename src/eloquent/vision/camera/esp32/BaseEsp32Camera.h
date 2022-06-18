@@ -132,7 +132,7 @@ namespace Eloquent {
                     bool concreteCapture() override {
                         this->_fb = esp_camera_fb_get();
 
-                        if (this->_fb->len == 0) {
+                        if (this->_fb == NULL || this->_fb->len == 0) {
                             return setError(Error::CAPTURE_ERROR);
                         }
 

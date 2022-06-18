@@ -111,7 +111,7 @@ namespace Eloquent {
                 }
 
                 /**
-                 *
+                 * Get pixel at (x, y)
                  * @param x
                  * @param y
                  */
@@ -120,7 +120,7 @@ namespace Eloquent {
                 }
 
                 /**
-                 *
+                 * Get pixel at (x, y, z)
                  * @param x
                  * @param y
                  * @param z
@@ -139,6 +139,38 @@ namespace Eloquent {
                         return 0;
 
                     return buffer[i];
+                }
+
+                /**
+                 * Set pixel at (x, y)
+                 * @param x
+                 * @param y
+                 */
+                uint8_t set(uint16_t x, uint16_t y, value) {
+                    return at(x, y, 0, value);
+                }
+
+                /**
+                 * Set pixel at (x, y, z)
+                 * @param x
+                 * @param y
+                 * @param z
+                 */
+                uint8_t set(uint16_t x, uint16_t y, uint8_t z, uin8_t value) {
+                    return set(y * getWidth() * getBytesPerPixel() + x * getBytesPerPixel() + z, value);
+                }
+
+                /**
+                 * Set pixel value at given index
+                 * @param i
+                 * @param value
+                 * @return
+                 */
+                uint8_t set(uint16_t i, uint8_t value) {
+                    if (i > getLength())
+                        return 0;
+
+                    return (buffer[i] = value);
                 }
 
                 /**

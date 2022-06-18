@@ -39,6 +39,8 @@ namespace Eloquent {
                  */
                 bool begin() override {
                     _telegramBotWifiSecureClient.setCACert(TELEGRAM_CERTIFICATE_ROOT);
+
+                    return true;
                 }
             };
         }

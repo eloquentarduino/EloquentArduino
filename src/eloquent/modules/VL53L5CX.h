@@ -17,6 +17,8 @@ namespace Eloquent {
          */
         class Vl53l5cx {
         public:
+            const bool USE_SEQUENCE_NUMBER = true;
+            const bool USE_TIMESTAMP = false;
             float distances[64];
 
 
@@ -32,7 +34,8 @@ namespace Eloquent {
                 _sleepDistance(0),
                 _sleepDebounce(0),
                 _sleepDebounceCounter(0),
-                _sleepFails(0) {
+                _sleepFails(0),
+                _sequenceNumber(0) {
 
                 if (_resolution != 64 && _resolution != 16)
                     _resolution = 64;
@@ -262,6 +265,7 @@ namespace Eloquent {
             uint16_t _sleepDebounce;
             uint16_t _sleepDebounceCounter;
             uint8_t _sleepFails;
+            long unsigned int _sequenceNumber;
             SparkFun_VL53L5CX _sensor;
             VL53L5CX_ResultsData _data;
             struct {
