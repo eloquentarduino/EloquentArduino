@@ -145,8 +145,9 @@ namespace Eloquent {
                  * Set pixel at (x, y)
                  * @param x
                  * @param y
+                 * @param value
                  */
-                uint8_t set(uint16_t x, uint16_t y, value) {
+                uint8_t set(uint16_t x, uint16_t y, uint8_t value) {
                     return at(x, y, 0, value);
                 }
 
@@ -156,7 +157,7 @@ namespace Eloquent {
                  * @param y
                  * @param z
                  */
-                uint8_t set(uint16_t x, uint16_t y, uint8_t z, uin8_t value) {
+                uint8_t set(uint16_t x, uint16_t y, uint8_t z, uint8_t value) {
                     return set(y * getWidth() * getBytesPerPixel() + x * getBytesPerPixel() + z, value);
                 }
 
