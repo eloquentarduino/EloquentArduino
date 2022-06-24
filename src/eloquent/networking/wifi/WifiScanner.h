@@ -70,7 +70,7 @@ namespace Eloquent {
                  * @param i
                  * @return
                  */
-                String ssidAt(uint8_t i) {
+                virtual String ssidAt(uint8_t i) {
                     return WiFi.SSID(i);
                 }
 
@@ -90,7 +90,7 @@ namespace Eloquent {
                  * @param i
                  * @return
                  */
-                String macAt(uint8_t i) {
+                virtual String macAt(uint8_t i) {
                     return WiFi.BSSIDstr(i);
                 }
 
@@ -110,7 +110,7 @@ namespace Eloquent {
                  * @param i
                  * @return
                  */
-                int rssiAt(uint8_t i) {
+                virtual int rssiAt(uint8_t i) {
                     return WiFi.RSSI(i);
                 }
 
@@ -119,7 +119,7 @@ namespace Eloquent {
                  * @param i
                  * @return
                  */
-                String idAt(uint8_t i) {
+                virtual String idAt(uint8_t i) {
                     return useMac ? macAt(i) : ssidAt(i);
                 }
 
@@ -129,7 +129,7 @@ namespace Eloquent {
                  * @param stream
                  */
                 template<typename Stream>
-                void printAsJson(Stream& stream) {
+                virtual void printAsJson(Stream& stream) {
                     stream.print('{');
 
                     for (uint8_t i = 0; i < numNetworks; i++) {
