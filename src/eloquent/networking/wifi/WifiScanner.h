@@ -11,6 +11,20 @@ namespace Eloquent {
             public:
 
                 /**
+                 * Identify networks by SSID
+                 */
+                void identifyBySSID() {
+                    useMac = false;
+                }
+
+                /**
+                 * Identify networks by MAC address
+                 */
+                void identifyByMAC() {
+                    useMac = true;
+                }
+
+                /**
                  * Perform scan
                  */
                 void scan() {
@@ -41,7 +55,7 @@ namespace Eloquent {
                 }
 
                 /**
-                 * Get SID of current network
+                 * Get SSID of current network
                  * @return
                  */
                 String ssid() {
@@ -58,6 +72,26 @@ namespace Eloquent {
                  */
                 String ssidAt(uint8_t i) {
                     return WiFi.SSID(i);
+                }
+
+                /**
+                 * Get MAC address of current network
+                 * @return
+                 */
+                String mac() {
+                    if (hasNext())
+                        return macAt(i);
+
+                    return "";
+                }
+
+                /**
+                 * Get Mac address of given network
+                 * @param i
+                 * @return
+                 */
+                String macAt(uint8_t i) {
+                    return WiFi.BSSIDstr(i);
                 }
 
                 /**
@@ -81,6 +115,15 @@ namespace Eloquent {
                 }
 
                 /**
+                 * Get identifier of given network
+                 * @param i
+                 * @return
+                 */
+                String idAt(uint8_t i) {
+                    return useMac ? macAt(i) : ssidAt(i);
+                }
+
+                /**
                  * Print scan results as JSON
                  * @tparam Stream
                  * @param stream
@@ -91,7 +134,7 @@ namespace Eloquent {
 
                     for (uint8_t i = 0; i < numNetworks; i++) {
                         stream.print('"');
-                        stream.print(ssidAt(i));
+                        stream.print(idAt(i));
                         stream.print('"');
                         stream.print(':');
                         stream.print(rssiAt(i));
@@ -107,6 +150,7 @@ namespace Eloquent {
             protected:
                 uint8_t i = 0;
                 uint8_t numNetworks;
+                bool useMac = false;
             };
         }
     }

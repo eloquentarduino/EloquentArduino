@@ -22,6 +22,11 @@ void setup() {
     Serial.println("Instructions:");
     Serial.println("\tEnter the name of the location to start scanning");
     Serial.println("\tEnter 'stop' to stop scanning");
+
+    // you can identify networks either by MAC address
+    wifiScanner.identifyByMAC();
+    // or SSID (default)
+    wifiScanner.identifyBySSID();
 }
 
 void loop() {

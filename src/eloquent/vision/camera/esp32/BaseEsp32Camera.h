@@ -41,6 +41,46 @@ namespace Eloquent {
                         _config.xclk_freq_hz = 10000000;
                     }
 
+                    /**
+                     *
+                     * @param flip
+                     */
+                    void vflip(bool flip = true) {
+                        if (_sensor != NULL) {
+                            _sensor->set_vflip(_sensor, flip);
+                        }
+                    }
+
+                    /**
+                     *
+                     * @param mirror
+                     */
+                    void hmirror(bool mirror = true) {
+                        if (_sensor != NULL) {
+                            _sensor->set_hmirror(_sensor, mirror);
+                        }
+                    }
+
+                    /**
+                     *
+                     * @param brightness
+                     */
+                    void setBrightness(int8_t brightness) {
+                        if (_sensor != NULL) {
+                            _sensor->set_brightness(_sensor, brightness);
+                        }
+                    }
+
+                    /**
+                     *
+                     * @param saturation
+                     */
+                    void setSaturation(int8_t saturation) {
+                        if (_sensor != NULL) {
+                            _sensor->set_saturation(_sensor, saturation);
+                        }
+                    }
+
                 protected:
                     camera_config_t _config;
                     sensor_t *_sensor;
@@ -71,6 +111,13 @@ namespace Eloquent {
                      * @param config
                      */
                     virtual void setConfig() {
+
+                    }
+
+                    /**
+                     * Configure sensor
+                     */
+                    virtual void configSensor() {
 
                     }
 
@@ -122,6 +169,8 @@ namespace Eloquent {
                         }
 
                         _sensor = esp_camera_sensor_get();
+                        _sensor->set_framesize(_sensor, getFrameSize());
+                        configSensor();
 
                         return true;
                     }
