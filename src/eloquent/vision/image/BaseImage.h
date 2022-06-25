@@ -203,6 +203,17 @@ namespace Eloquent {
                 }
 
                 /**
+                 * Cast to given type
+                 * @tparam T
+                 * @param dest
+                 */
+                template<typename T>
+                void castTo(T* dest) {
+                    for (size_t i = 0; i < getLength(); i++)
+                        dest[i] = (T) buffer[i];
+                }
+
+                /**
                  * Write raw data to image container
                  * @param buffer
                  * @param length how many bytes to write
@@ -229,6 +240,26 @@ namespace Eloquent {
                 template<typename Writer>
                 size_t writeTo(Writer writer) {
                     return writer.write(buffer, getLength());
+                }
+
+                /**
+                 *
+                 * @tparam Printer
+                 * @param printer
+                 * @param separator
+                 * @param end
+                 * @return
+                 */
+                template<typename Printer>
+                void printTo(Printer printer, char separator = ',', char end = '\n') {
+                    printer.print(at(0));
+
+                    for (size_t i = 1; i < 30; i++) {
+                        printer.print(separator);
+                        printer.print(at(i));
+                    }
+
+                    printer.print(end);
                 }
                 
                 /**

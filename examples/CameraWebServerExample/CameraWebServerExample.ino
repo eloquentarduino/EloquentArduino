@@ -2,7 +2,7 @@
 #include "eloquent/networking/wifi.h"
 #include "eloquent/vision/camera/esp32/webserver.h"
 // replace according to your own camera
-#include "eloquent/vision/camera/esp32/m5wide/jpeg/vga.h"
+#include "eloquent/vision/camera/esp32/m5wide/jpeg/qqvga.h"
 
 
 

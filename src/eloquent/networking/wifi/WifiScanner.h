@@ -91,7 +91,15 @@ namespace Eloquent {
                  * @return
                  */
                 virtual String macAt(uint8_t i) {
-                    return WiFi.BSSIDstr(i);
+                    uint8_t *bssid = WiFi.BSSID(i);
+
+                    return  this->hex(bssid[0]) + ":" +
+                            this->hex(bssid[1]) + ":" +
+                            this->hex(bssid[2]) + ":" +
+                            this->hex(bssid[3]) + ":" +
+                            this->hex(bssid[4]) + ":" +
+                            this->hex(bssid[5]) + ":" +
+                            this->hex(bssid[6]);
                 }
 
                 /**
@@ -115,6 +123,14 @@ namespace Eloquent {
                 }
 
                 /**
+                 * Get identifier of current network
+                 * @return
+                 */
+                virtual String id() {
+                    return idAt(i);
+                }
+
+                /**
                  * Get identifier of given network
                  * @param i
                  * @return
@@ -129,7 +145,7 @@ namespace Eloquent {
                  * @param stream
                  */
                 template<typename Stream>
-                virtual void printAsJson(Stream& stream) {
+                void printAsJson(Stream& stream) {
                     stream.print('{');
 
                     for (uint8_t i = 0; i < numNetworks; i++) {
@@ -151,6 +167,22 @@ namespace Eloquent {
                 uint8_t i = 0;
                 uint8_t numNetworks;
                 bool useMac = false;
+
+                /**
+                 * Convert byte to hex string
+                 * @param byte
+                 * @return
+                 */
+                String hex(uint8_t byte) {
+                    String alphabet = "0123456789ABCDEF";
+                    char hex[3] = {
+                        alphabet.charAt(byte >> 4),
+                        alphabet.charAt(byte & 0b1111),
+                        '\0'
+                    };
+
+                    return String(hex);
+                }
             };
         }
     }

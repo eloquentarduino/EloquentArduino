@@ -39,6 +39,7 @@ void loop() {
     if (location != "" && location != "stop") {
         Serial.print(location);
         Serial.print(": ");
+        wifiScanner.scan();
         wifiScanner.printAsJson(Serial);
         delay(2000);
     }
