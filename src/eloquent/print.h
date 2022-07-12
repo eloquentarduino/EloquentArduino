@@ -12,39 +12,45 @@ namespace eloquent {
 
         /**
          *
-         * @tparam Stream
+         * @tparam Printer
          * @param stream
          * @param fmt
          * @param ...
          */
-         template<typename Stream>
-        void printf(Stream &stream, char *fmt, ...) {
-            char buf[128];
+         template<class Printer>
+        void printf(Printer &printer, char *fmt, ...) {
+            char buf[256];
 
             va_list args;
             va_start (args, fmt );
-            vsnprintf(buf, 128, fmt, args);
+            vsnprintf(buf, 256, fmt, args);
             va_end (args);
-            stream.print(buf);
+            printer.print(buf);
         }
 
         /**
-         *
-         * @tparam Stream
-         * @tparam bufferSize
-         * @param stream
-         * @param fmt
-         * @param ...
+         * Stop condition for print_all
+         * @tparam Printer
+         * @param printer
          */
-        template<typename Stream, size_t bufferSize>
-        void printf(Stream &stream, char *fmt, ...) {
-            char buf[bufferSize];
+        template<class Printer>
+        void print_all(Printer& printer) {
 
-            va_list args;
-            va_start (args, fmt );
-            vsnprintf(buf, bufferSize, fmt, args);
-            va_end (args);
-            stream.print(buf);
+        }
+
+        /**
+         * Print all arguments
+         * @tparam Printer
+         * @tparam T
+         * @tparam Args
+         * @param stream
+         * @param first
+         * @param args
+         */
+        template<class Printer, typename T, typename... Args>
+        void print_all(Printer& printer, T first, Args... args) {
+            printer.print(first);
+            print_all(printer, args...);
         }
     }
 }

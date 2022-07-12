@@ -6,7 +6,7 @@
 
 #include "../../../../../macros.h"
 #include "../../../../image/gray/x96x96.h"
-#include "../../pins/m5.h"
+#include "../../pins/m5stack.h"
 #include "../../BaseEsp32Camera.h"
 
 

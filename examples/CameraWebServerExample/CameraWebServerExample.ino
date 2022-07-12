@@ -1,22 +1,28 @@
 #include "eloquent.h"
 #include "eloquent/networking/wifi.h"
 #include "eloquent/vision/camera/esp32/webserver.h"
-// replace according to your own camera
-#include "eloquent/vision/camera/esp32/m5wide/jpeg/qqvga.h"
+
+// replace 'm5wide' with your own model
+// possible values are 'aithinker', 'eye', 'm5stack', 'm5wide', 'wrover'
+#include "eloquent/vision/camera/m5wide.h"
 
 
 
 void setup() {
     Serial.begin(115200);
+    delay(2000);
 
+    camera.jpeg();
+    // replace with desired resolution
+    // possible values are qqvga, qvga, vga
+    camera.qqvga();
+
+    // replace with your WiFi credentials
     while (!wifi.connectTo("Abc", "12345678"))
         Serial.println("Cannot connect to WiFi");
 
     while (!camera.begin())
         Serial.println("Cannot connect to camera");
-
-    Serial.println("WiFi connected");
-    Serial.println("Camera connected");
 
     webServer.start();
     Serial.print("Camera web server started at http://");
@@ -24,5 +30,5 @@ void setup() {
 }
 
 void loop() {
-
+    // do nothing
 }

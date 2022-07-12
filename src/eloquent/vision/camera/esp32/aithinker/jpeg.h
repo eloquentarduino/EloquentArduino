@@ -5,7 +5,8 @@
 #pragma once
 
 #include "../../../../macros.h"
-#include "./m5wide.h"
+#include "../pins/aithinker.h"
+#include "../BaseEsp32Camera.h"
 
 
 namespace Eloquent {
@@ -17,7 +18,7 @@ namespace Eloquent {
                  * Grayscale
                  * QQVGA
                  */
-                class BaseJpegCamera : public M5WideCamera {
+                class BaseJpegCamera : public BaseEsp32Camera {
                 public:
 
                     /**
@@ -43,13 +44,6 @@ namespace Eloquent {
                     }
 
                     /**
-                     *
-                     */
-                    void setBestQuality() {
-                        setQuality(10);
-                    }
-
-                    /**
                      * Set jpeg quality
                      * @param quality
                      */
@@ -58,7 +52,7 @@ namespace Eloquent {
                     }
 
                 protected:
-                    uint8_t _quality = 10;
+                    uint8_t _quality = 30;
 
                     /**
                      *

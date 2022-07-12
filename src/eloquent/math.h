@@ -197,5 +197,18 @@ namespace eloquent {
         float mapConstrain(float x, float l, float h, float m, float M) {
             return eloquent::math::map(eloquent::math::constrainRange(x, l, h), l, h, m, M);
         }
+
+        /**
+         * Convert byte to hex string
+         * @param b
+         * @param str
+         */
+        void byteToHex(uint8_t b, char *str) {
+            const char alphabet[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+
+            str[0] = alphabet[b >> 4];
+            str[1] = alphabet[b & 0b1111];
+            str[2] = '\0';
+        }
     }
 }

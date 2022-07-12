@@ -18,7 +18,7 @@ namespace Eloquent {
                      *
                      */
                     void configureSensor() {
-                        vflip();
+                        //vflip();
                         //hmirror();
                     }
                 };

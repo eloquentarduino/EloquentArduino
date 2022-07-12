@@ -5,6 +5,7 @@
 #pragma once
 
 #include "../../io/json/JsonEncoder.h"
+#include "../../math.h"
 
 
 namespace Eloquent {
@@ -254,9 +255,31 @@ namespace Eloquent {
                 void printTo(Printer printer, char separator = ',', char end = '\n') {
                     printer.print(at(0));
 
-                    for (size_t i = 1; i < 30; i++) {
+                    for (size_t i = 1; i < getLength(); i++) {
                         printer.print(separator);
                         printer.print(at(i));
+                    }
+
+                    printer.print(end);
+                }
+
+                /**
+                 *
+                 * @tparam Printer
+                 * @param printer
+                 * @param end
+                 * @return
+                 */
+                template<typename Printer>
+                void printToAsHexStream(Printer printer, char end = '\n') {
+                    char hex[3];
+
+                    eloquent::math::byteToHex(at(0), hex);
+                    printer.print(hex);
+
+                    for (size_t i = 1; i < getLength(); i++) {
+                        eloquent::math::byteToHex(at(i), hex);
+                        printer.print(hex);
                     }
 
                     printer.print(end);

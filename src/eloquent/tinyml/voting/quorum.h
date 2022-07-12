@@ -19,7 +19,7 @@ namespace Eloquent {
                 /**
                  * Constructor
                  */
-                Quorum() {
+                Quorum() : _vote(-1) {
                     clear();
                     atLeastMajority();
                 }
@@ -65,17 +65,26 @@ namespace Eloquent {
                             quorum -= 1;
 
                             if (quorum == 0)
-                                return vote;
+                                return (_vote = vote);
                         }
                     }
 
-                    return -1;
+                    return (_vote = -1);
+                }
+
+                /**
+                 * Test if last vote was stable
+                 * @return
+                 */
+                bool isStable() {
+                    return _vote >= 0;
                 }
 
             protected:
                 int8_t _votes[votes];
                 uint16_t _i;
                 uint16_t _quorum;
+                int8_t _vote;
             };
         }
     }
