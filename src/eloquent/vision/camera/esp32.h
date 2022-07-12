@@ -7,8 +7,6 @@
 #include <esp_camera.h>
 #include "../../macros.h"
 #include "./errors.h"
-#include "./decoders/gray.h"
-#include "./decoders/rgb565.h"
 #include "./esp32_sensor_config.h"
 
 
