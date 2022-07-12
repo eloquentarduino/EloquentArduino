@@ -107,14 +107,14 @@ namespace Eloquent {
                  * Set jpeg pixel format (high quality)
                  */
                 void jpegHighQuality() {
-                    jpeg(10);
+                    jpeg(20);
                 }
 
                 /**
                  * Set jpeg pixel format (best quality)
                  */
                 void jpegBestQuality() {
-                    jpeg(0);
+                    jpeg(10);
                 }
 
                 /**
@@ -127,6 +127,7 @@ namespace Eloquent {
                     _config.fb_count = 1;
                     _config.pixel_format = _pixformat;
                     _config.frame_size = _framesize;
+                    _config.jpeg_quality = _jpegQuality;
 
                     if (!_config.xclk_freq_hz)
                         _config.xclk_freq_hz = 20000000;
@@ -138,7 +139,7 @@ namespace Eloquent {
                     }
 
                     _sensor = esp_camera_sensor_get();
-                    _sensor->set_framesize(_sensor, _framesize);
+                    //_sensor->set_framesize(_sensor, _framesize);
                     sensorConfig.setSensor(_sensor);
 
                     return true;
