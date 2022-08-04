@@ -4,7 +4,7 @@
 
 #pragma once
 
-#ifndef NO_TELEGRAM
+#ifdef ELOQUENT_TELEGRAM
 
 #include <WiFiClientSecure.h>
 #include "../../../macros.h"

@@ -33,6 +33,7 @@
    SSL errors
  */
 
+#ifdef ELOQUENT_TELEGRAM
 #include "./UniversalTelegramBot.h"
 
 #define ZERO_COPY(STR)    ((char*)STR.c_str())
@@ -683,3 +684,5 @@ bool UniversalTelegramBot::answerCallbackQuery(const String &query_id, const Str
   closeClient();
   return answer;
 }
+
+#endif

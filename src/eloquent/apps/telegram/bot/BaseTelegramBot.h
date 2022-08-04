@@ -4,7 +4,7 @@
 
 #pragma once
 
-#ifndef NO_TELEGRAM
+#ifdef ELOQUENT_TELEGRAM
 
 #include "./witnessmenow/UniversalTelegramBot.h"
 #include "./Errors.h"
