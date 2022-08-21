@@ -2,6 +2,9 @@
  * Camera motion detection + JPEG capture + Telegram Bot demo
  */
 
+// this is required to include the TelegramBot class
+#define ELOQUENT_TELEGRAM
+
 // replace with your own values
 #define TELEGRAM_TOKEN "xxxxxxxxxx:yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
 #define CHAT_ID "0123456789"

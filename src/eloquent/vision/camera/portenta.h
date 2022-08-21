@@ -15,6 +15,9 @@ namespace Eloquent {
         namespace Cam {
             class PortentaCamera {
             public:
+                HM01B0 himax;
+                Camera cam;
+                FrameBuffer buffer;
 
                 /**
                  *
@@ -103,9 +106,6 @@ namespace Eloquent {
                 int mode;
                 uint8_t fps;
                 uint16_t timeout;
-                HM01B0 himax;
-                Camera cam;
-                FrameBuffer buffer;
             };
         }
     }
