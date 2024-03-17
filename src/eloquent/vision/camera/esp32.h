@@ -6,7 +6,7 @@
 
 #include <esp_camera.h>
 #include "../../macros.h"
-#include "./errors.h"
+#include "./Errors.h"
 #include "./esp32_sensor_config.h"
 
 
